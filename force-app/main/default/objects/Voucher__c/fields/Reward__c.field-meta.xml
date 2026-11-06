@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Reward__c</fullName><deleteConstraint>Restrict</deleteConstraint><description>Reward for the EneOil loyalty program.</description><label>Reward</label><referenceTo>Reward__c</referenceTo><relationshipLabel>Issued Vouchers</relationshipLabel><relationshipName>Issued_Vouchers</relationshipName><type>Lookup</type>
+</CustomField>

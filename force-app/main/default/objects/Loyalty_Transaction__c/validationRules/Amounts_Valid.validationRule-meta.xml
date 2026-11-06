@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Amounts_Valid</fullName><active>true</active><description>Amounts must be nonnegative, add up to the total, and fuel amount must match the presence of liters.</description><errorMessage>Amounts must be nonnegative, add up to the total, and fuel amount must match the presence of liters.</errorMessage><errorConditionFormula><![CDATA[OR(Total_Amount__c <= 0, Fuel_Amount__c < 0, Other_Amount__c < 0, Liters__c < 0, Fuel_Amount__c + Other_Amount__c <> Total_Amount__c, AND(Fuel_Amount__c > 0, Liters__c <= 0), AND(Fuel_Amount__c = 0, Liters__c <> 0))]]></errorConditionFormula>
+</ValidationRule>

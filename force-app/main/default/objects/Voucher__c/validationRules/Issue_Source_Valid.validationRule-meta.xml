@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Issue_Source_Valid</fullName><active>true</active><description>Only an active member can receive an active reward at its current price and partner.</description><errorMessage>Only an active member can receive an active reward at its current price and partner.</errorMessage><errorConditionFormula><![CDATA[AND(ISNEW(), OR(NOT(Reward__r.Is_Active__c), Partner__c <> Reward__r.Partner__c, Points_Spent__c <> Reward__r.Points_Cost__c, Value_CZK__c <> Reward__r.Value_CZK__c, NOT(ISPICKVAL(Member__r.Membership_Status__c, "Active")), NOT(ISPICKVAL(Status__c, "Issued"))))]]></errorConditionFormula>
+</ValidationRule>

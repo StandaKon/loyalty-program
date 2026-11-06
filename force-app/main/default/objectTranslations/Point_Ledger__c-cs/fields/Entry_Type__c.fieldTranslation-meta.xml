@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Typ pohybu</label>
+    <name>Entry_Type__c</name>
+    <picklistValues>
+        <masterLabel>PurchaseBase</masterLabel>
+        <translation>Základní body z nákupu</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CampaignBonus</masterLabel>
+        <translation>Bonus za kampaň</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ProfileBonus</masterLabel>
+        <translation>Bonus za dokončení profilu</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MarketingBonus</masterLabel>
+        <translation>Bonus za marketingový souhlas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Redemption</masterLabel>
+        <translation>Čerpání za voucher</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Refund</masterLabel>
+        <translation>Vrácení bodů</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Adjustment</masterLabel>
+        <translation>Ruční úprava</translation>
+    </picklistValues>
+</CustomFieldTranslation>

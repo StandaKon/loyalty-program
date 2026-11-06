@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Reward_Values_Valid</fullName><active>true</active><description>Use a Business Account partner, a positive points price, and complete the active reward description.</description><errorMessage>Use a Business Account partner, a positive points price, and complete the active reward description.</errorMessage><errorConditionFormula><![CDATA[OR(Points_Cost__c <= 0, Value_CZK__c < 0, Partner__r.IsPersonAccount, NOT(ISPICKVAL(Partner__r.Type, "Partner")), AND(Is_Active__c, ISBLANK(Description__c)))]]></errorConditionFormula>
+</ValidationRule>

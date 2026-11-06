@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Fuel_Amount__c</fullName><description>Fuel Amount for the EneOil loyalty program.</description><label>Fuel Amount</label><precision>16</precision><scale>2</scale><type>Currency</type>
+</CustomField>

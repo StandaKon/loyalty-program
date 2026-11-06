@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Status_Transition_Valid</fullName><active>true</active><description>A redeemed or cancelled voucher cannot change status again.</description><errorMessage>A redeemed or cancelled voucher cannot change status again.</errorMessage><errorConditionFormula><![CDATA[AND(NOT(ISNEW()), ISCHANGED(Status__c), NOT(ISPICKVAL(PRIORVALUE(Status__c), "Issued")))]]></errorConditionFormula>
+</ValidationRule>

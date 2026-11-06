@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <caseType>Nominative</caseType>
         <plural>false</plural>
-        <value>Transakce</value>
+        <value>Nákup</value>
     </caseValues>
     <caseValues>
-        <caseType>Nominative</caseType>
-        <plural>true</plural>
-        <value>Transakce</value>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Nákupu</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Nákupu</value>
     </caseValues>
     <caseValues>
         <caseType>Accusative</caseType>
@@ -16,14 +21,19 @@
         <value>Nákup</value>
     </caseValues>
     <caseValues>
-        <caseType>Accusative</caseType>
-        <plural>true</plural>
-        <value>Nákupy</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Genitive</caseType>
+        <caseType>Locative</caseType>
         <plural>false</plural>
         <value>Nákupu</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Nákupem</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Nákupy</value>
     </caseValues>
     <caseValues>
         <caseType>Genitive</caseType>
@@ -32,34 +42,48 @@
     </caseValues>
     <caseValues>
         <caseType>Dative</caseType>
-        <plural>false</plural>
-        <value>Nákupu</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Dative</caseType>
         <plural>true</plural>
         <value>Nákupům</value>
     </caseValues>
     <caseValues>
-        <caseType>Instrumental</caseType>
-        <plural>false</plural>
-        <value>Nákupem</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Instrumental</caseType>
+        <caseType>Accusative</caseType>
         <plural>true</plural>
         <value>Nákupy</value>
-    </caseValues>
-    <caseValues>
-        <caseType>Locative</caseType>
-        <plural>false</plural>
-        <value>Nákupu</value>
     </caseValues>
     <caseValues>
         <caseType>Locative</caseType>
         <plural>true</plural>
         <value>Nákupech</value>
     </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Nákupy</value>
+    </caseValues>
     <gender>Masculine</gender>
-    <nameFieldLabel><!-- Loyalty Transaction Number --></nameFieldLabel>
+    <nameFieldLabel>Číslo nákupu</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Částky nesmějí být záporné a palivo s ostatním nákupem se musí rovnat celkové částce. Částka za palivo a počet litrů musejí být současně kladné, nebo současně nulové.</errorMessage>
+        <name>Amounts_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vyberte registrovaného člena Klubu.</errorMessage>
+        <name>Member_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Zpracovaný nákup nelze upravit. Změnu řešte opravným pohybem.</errorMessage>
+        <name>Processed_Transaction_Immutable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Doplňte výsledek zpracování nebo popis chyby. Vypočtené body nesmějí být záporné.</errorMessage>
+        <name>Processing_State_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Datum nákupu nesmí být v budoucnosti.</errorMessage>
+        <name>Purchase_Not_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Chybí povinné údaje programu.</errorMessage>
+        <name>Required_Program_Fields</name>
+    </validationRules>
 </CustomObjectTranslation>
