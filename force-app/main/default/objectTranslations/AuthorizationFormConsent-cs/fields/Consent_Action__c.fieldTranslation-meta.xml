@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Projev člena</label>
+    <name>Consent_Action__c</name>
+    <picklistValues>
+        <masterLabel>Accepted</masterLabel>
+        <translation>Přijetí</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Declined</masterLabel>
+        <translation>Odmítnutí</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Withdrawn</masterLabel>
+        <translation>Odvolání</translation>
+    </picklistValues>
+</CustomFieldTranslation>

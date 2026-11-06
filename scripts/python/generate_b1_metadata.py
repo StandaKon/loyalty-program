@@ -337,4 +337,5 @@ for obj, flag in [(C, 'Is_Enabled__c'), (R, 'Is_Active__c')]:
 write('objects/Account/Account.object-meta.xml', 'CustomObject', tag('enableHistory', True) + tag('externalSharingModel', 'Private'))
 
 if __name__ == '__main__':
-    print(json.dumps({'custom_objects': len(CUSTOM), 'fields': sum(map(len, FIELDS.values())), 'validation_rules': sum(map(len, RULES.values())), 'permission_sets': 7}, indent=2))
+    from generate_b1_translations import generate
+    print(json.dumps({'custom_objects': len(CUSTOM), 'fields': sum(map(len, FIELDS.values())), 'validation_rules': sum(map(len, RULES.values())), 'permission_sets': 7, 'czech_translations': generate()}, indent=2))

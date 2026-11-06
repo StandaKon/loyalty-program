@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Voucher</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>false</plural>
+        <value>Voucheru</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>false</plural>
+        <value>Voucheru</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>false</plural>
+        <value>Voucher</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>false</plural>
+        <value>Voucheru</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>false</plural>
+        <value>Voucherem</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Vouchery</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Genitive</caseType>
+        <plural>true</plural>
+        <value>Voucherů</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Dative</caseType>
+        <plural>true</plural>
+        <value>Voucherům</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Accusative</caseType>
+        <plural>true</plural>
+        <value>Vouchery</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Locative</caseType>
+        <plural>true</plural>
+        <value>Voucherech</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Instrumental</caseType>
+        <plural>true</plural>
+        <value>Vouchery</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <nameFieldLabel>Číslo voucheru</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Údaje voucheru uložené při vydání nelze změnit.</errorMessage>
+        <name>Issue_Details_Immutable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Aktivní člen může získat pouze aktivní odměnu s její aktuální cenou a partnerem.</errorMessage>
+        <name>Issue_Source_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Chybí povinné údaje programu.</errorMessage>
+        <name>Required_Program_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Doplňte datumy, autora a další údaje odpovídající stavu voucheru a odeslání e-mailu.</errorMessage>
+        <name>State_Details_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Stav uplatněného nebo zrušeného voucheru již nelze změnit.</errorMessage>
+        <name>Status_Transition_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vyberte registrovaného člena a firemního partnera. Bodová cena musí být kladná a kód musí mít platný formát ENE-XXXX-XXXX.</errorMessage>
+        <name>Voucher_Values_Valid</name>
+    </validationRules>
+</CustomObjectTranslation>

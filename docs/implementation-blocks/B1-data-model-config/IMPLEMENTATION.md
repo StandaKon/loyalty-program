@@ -63,3 +63,18 @@ Následující funkce nejsou součástí této datové vrstvy:
 - Operátorská sada dostane přístup ke konkrétní akci až s její implementací. Nevzniká obecný voucherový CRUD přístup.
 
 Žádná členská, partnerská ani nákupní seed data nebyla vytvořena. Po schválení finančních vstupů je připraví B4 přes stejné serverové služby jako běžný provoz. Do produkce se nenasazovalo a existující obchodní data se neměnila.
+
+
+## České překlady — 6. 11. 2026
+
+Česká lokalizace používá standardní Translation Workbench (`cs`). Obsahuje názvy šesti vlastních objektů včetně Custom Metadata, šest pádových tvarů podporovaných Salesforce v jednotném i množném čísle, názvová pole pěti datových objektů, 80 vlastních polí, 43 hodnot picklistů, 30 validačních hlášení, 11 názvů souvisejících seznamů a dva existující record typy Accountu. Person Account record type se překládá prostřednictvím `PersonAccount-cs`; firemní record type prostřednictvím `Account-cs`.
+
+Standardní objekty, jejich pole a standardní sekce rozložení využívají češtinu Salesforce. Všech pět stávajících rozložení používá standardní sekci Information (`customLabel=false`), proto pro ni není vlastní překlad. Popisky záložek vycházejí z přeložených názvů objektů. Administrátorské názvy permission setů a další popisky, pro které Salesforce překlad neposkytuje, zůstávají anglicky. API názvy, uložené hodnoty picklistů, oprávnění a výchozí anglické labely se nemění. Textový obsah obchodních záznamů není součástí překladu metadat.
+
+Zdrojový slovník je `scripts/python/b1_cs.json`. Generátor `scripts/python/generate_b1_translations.py` načítá aktuální B1 metadata a kontroluje úplnost polí, picklistů, vztahů a validací. Spouští jej i hlavní generátor B1. Samostatná kontrola bez zápisu je `python3 scripts/python/generate_b1_translations.py --check`. Při přidávání dalších uživatelských textů je nutné aktualizovat také slovník.
+
+V Language settings se povolily end-user jazyky, které zahrnují češtinu. Translation Workbench zůstává zapnutý. Jazyk orgu ani existujících uživatelů se neměnil; české popisky se zobrazí uživateli s jazykem Čeština v osobním nastavení. Lokalizační test používá dočasného testovacího uživatele a po testu se všechna jeho data vrátí zpět.
+
+Deployment `0Afaj00000qcka9CAA` do stejného Developer Edition orgu skončil `Succeeded`: 12 komponent bez chyb, test `LoyaltyCzechTranslationsTest` úspěšný (1/1). Test ve skutečném českém uživatelském kontextu ověřuje názvy objektů a polí, přeložené picklisty se zachovanými API hodnotami a české validační hlášení. Lokálně prošla kontrola XML, opakovatelnost generování a nezávislá revize překladů. Překlady byly následně načteny zpět z orgu přes Metadata API a porovnány se zdrojovými soubory. Salesforce při čtení vrací šest pádů; vokativ ignoruje, proto jej výsledná metadata neobsahují. V Language settings se proti původnímu stavu změnilo pouze `enableEndUserLanguages` z false na true.
+
+Širší ověření `0Afaj00000qckALCAY` před finálním nasazením mělo 9 úspěšných a 2 neúspěšné testy; metadata neměla chyby a tento pokus se vrátil zpět. Dva původní B1 testy již neodpovídají souběžně aktivovanému bodovému enginu v orgu: test součtu očekává 109 bodů, ale automatický základ přidá dalších 54 (výsledek 163), a přístupový test očekává jeden pohyb, ale engine vytvoří druhý. Překladový test prošel i v tomto běhu. Tyto dva testy vyžadují úpravu testovacích dat v rámci implementace enginu; lokalizační změna je neupravuje.

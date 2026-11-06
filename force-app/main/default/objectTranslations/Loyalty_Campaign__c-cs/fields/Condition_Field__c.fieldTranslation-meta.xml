@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Sledovaná veličina</label>
+    <name>Condition_Field__c</name>
+    <picklistValues>
+        <masterLabel>Liters</masterLabel>
+        <translation>Litry paliva</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OtherAmount</masterLabel>
+        <translation>Ostatní nákup (Kč)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FuelAmount</masterLabel>
+        <translation>Palivo (Kč)</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TotalAmount</masterLabel>
+        <translation>Celkový nákup (Kč)</translation>
+    </picklistValues>
+</CustomFieldTranslation>
