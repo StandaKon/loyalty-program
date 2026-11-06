@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Voucher</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Vouchery</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <validationRules>
+        <errorMessage>Údaje o vydání voucheru nelze měnit.</errorMessage>
+        <name>Issue_Details_Immutable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Aktivní odměnu za aktuální cenu a partnera může dostat jen aktivní člen.</errorMessage>
+        <name>Issue_Source_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vyplňte všechna povinná pole programu.</errorMessage>
+        <name>Required_Program_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Doplňte údaje o stavu voucheru a o e-mailu.</errorMessage>
+        <name>State_Details_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Uplatněný nebo zrušený voucher už nelze změnit.</errorMessage>
+        <name>Status_Transition_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Použijte registrovaného člena, firemní účet partnera, kladné body a platný kód ENE.</errorMessage>
+        <name>Voucher_Values_Valid</name>
+    </validationRules>
+</CustomObjectTranslation>

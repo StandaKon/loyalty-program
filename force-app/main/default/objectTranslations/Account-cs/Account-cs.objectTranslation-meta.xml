@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <validationRules>
+        <errorMessage>Zůstatek bodů nesmí být záporný.</errorMessage>
+        <name>Balance_Not_Negative</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>U firemního účtu zadejte nezáporný rozpočet a jeho rok.</errorMessage>
+        <name>Budget_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Členem věrnostního programu může být jen osobní účet.</errorMessage>
+        <name>Member_Must_Be_Person</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Číslo člena nelze změnit ani smazat.</errorMessage>
+        <name>Member_Number_Immutable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vyplňte všechna povinná pole programu.</errorMessage>
+        <name>Required_Program_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Zadejte platný rok výroby vozidla.</errorMessage>
+        <name>Vehicle_Year_Valid</name>
+    </validationRules>
+</CustomObjectTranslation>

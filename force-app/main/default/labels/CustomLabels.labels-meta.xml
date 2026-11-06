@@ -24,4 +24,452 @@
         <shortDescription>Loyalty transaction: member not active</shortDescription>
         <value>The member is blocked or cancelled and cannot earn points.</value>
     </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_No_Permission</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error No Permission</shortDescription>
+        <value>You do not have permission to perform this action.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Not_Member</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Not Member</shortDescription>
+        <value>The record is not a registered loyalty member.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Points_Zero</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Points Zero</shortDescription>
+        <value>Enter a non-zero whole number of points.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Category_Required</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Category Required</shortDescription>
+        <value>Select a valid reason category.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Comment_Required</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Comment Required</shortDescription>
+        <value>Enter a comment.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Comment_Too_Long</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Comment Too Long</shortDescription>
+        <value>The comment can have at most 255 characters.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Insufficient_Balance</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Insufficient Balance</shortDescription>
+        <value>The member has only {0} points. You can deduct at most {0} points.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Invalid_Request</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Invalid Request</shortDescription>
+        <value>The request is invalid. Reload the page and try again.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Voucher_Not_Found</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Voucher Not Found</shortDescription>
+        <value>The voucher was not found.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Voucher_Not_Issued</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Voucher Not Issued</shortDescription>
+        <value>Only an issued (unused) voucher can be cancelled.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Redemption_Missing</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Redemption Missing</shortDescription>
+        <value>The original points deduction of this voucher was not found, so the points cannot be refunded.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Amount_Negative</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Amount Negative</shortDescription>
+        <value>Litres and amounts cannot be negative.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Total_Zero</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Total Zero</shortDescription>
+        <value>The total amount must be greater than zero.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Fuel_Liters</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Fuel Liters</shortDescription>
+        <value>Litres and fuel amount must both be zero or both be positive.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Future_Purchase</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Future Purchase</shortDescription>
+        <value>The purchase time cannot be in the future.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Campaign_Locked</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Campaign Locked</shortDescription>
+        <value>Campaign {0} has already awarded points. Its condition, reward and dates cannot be changed. Create a new campaign instead.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Unexpected</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Unexpected</shortDescription>
+        <value>The action failed: {0}</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Error_Member_Not_Active</fullName>
+        <categories>Loyalty,BackOffice,Error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Error Member Not Active</shortDescription>
+        <value>Purchases can be simulated only for an active member.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Member</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Member</shortDescription>
+        <value>Member</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Current_Balance</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Current Balance</shortDescription>
+        <value>Current balance</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_New_Balance</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: New Balance</shortDescription>
+        <value>New balance</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Points_Unit</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Points Unit</shortDescription>
+        <value>points</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reason_Category</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Reason Category</shortDescription>
+        <value>Reason category</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Comment</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Comment</shortDescription>
+        <value>Comment</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Comment_Optional</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Comment Optional</shortDescription>
+        <value>Comment (optional)</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Close</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Close</shortDescription>
+        <value>Close</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Back</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Back</shortDescription>
+        <value>Back</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Select_Placeholder</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Select Placeholder</shortDescription>
+        <value>Select an option</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_No_Permission_Info</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: No Permission Info</shortDescription>
+        <value>This action is available only to the loyalty manager.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Adjust_Title</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Adjust Title</shortDescription>
+        <value>Manual Point Adjustment</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Adjust_Points</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Adjust Points</shortDescription>
+        <value>Points (+ add, − deduct)</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Adjust_Points_Help</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Adjust Points Help</shortDescription>
+        <value>Enter a positive number to add points or a negative number to deduct them. A deduction cannot exceed the balance.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Adjust_Submit</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Adjust Submit</shortDescription>
+        <value>Adjust Points</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Adjust_Success</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Adjust Success</shortDescription>
+        <value>Points adjusted. New balance: {0} points.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Cancel_Title</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Cancel Title</shortDescription>
+        <value>Cancel Voucher</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Cancel_Code</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Cancel Code</shortDescription>
+        <value>Code</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Cancel_Reward</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Cancel Reward</shortDescription>
+        <value>Reward</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Cancel_Status</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Cancel Status</shortDescription>
+        <value>Status</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Cancel_Refund</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Cancel Refund</shortDescription>
+        <value>Points to refund</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Cancel_Warning</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Cancel Warning</shortDescription>
+        <value>The voucher becomes invalid and the points are returned to the member. This cannot be undone.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Cancel_Submit</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Cancel Submit</shortDescription>
+        <value>Cancel Voucher</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Cancel_Success</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Cancel Success</shortDescription>
+        <value>Voucher cancelled, {0} points refunded to the member.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Title</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Title</shortDescription>
+        <value>Simulate Purchase</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Liters</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Liters</shortDescription>
+        <value>Litres</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Fuel_Amount</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Fuel Amount</shortDescription>
+        <value>Fuel amount (CZK)</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Other_Amount</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Other Amount</shortDescription>
+        <value>Other amount (CZK)</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Total</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Total</shortDescription>
+        <value>Total (CZK)</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Purchased_At</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Purchased At</shortDescription>
+        <value>Purchase time</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Submit</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Submit</shortDescription>
+        <value>Submit Purchase</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_New</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim New</shortDescription>
+        <value>New Purchase</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Processed</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Processed</shortDescription>
+        <value>Purchase {0} processed.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Error</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Error</shortDescription>
+        <value>Purchase {0} was saved with an error: {1}</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Base_Fuel</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Base Fuel</shortDescription>
+        <value>Base points – fuel</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Base_Other</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Base Other</shortDescription>
+        <value>Base points – other</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Campaign</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Campaign</shortDescription>
+        <value>Campaign bonus</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Sim_Total_Points</fullName>
+        <categories>Loyalty,BackOffice,UI</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back office: Sim Total Points</shortDescription>
+        <value>Total points</value>
+    </labels>
 </CustomLabels>

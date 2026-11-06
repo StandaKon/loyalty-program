@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Allows manual point adjustments and voucher cancellations with refund in the EneOil Klub back office (B5). Checked by the UI and by the Apex services.</description>
+    <label>Adjust Loyalty Points</label>
+</CustomPermission>

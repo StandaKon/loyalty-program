@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Věrnostní kampaň</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Věrnostní kampaně</value>
+    </caseValues>
+    <gender>Feminine</gender>
+    <nameFieldLabel>Název kampaně</nameFieldLabel>
+    <validationRules>
+        <errorMessage>Zkontrolujte platnost kampaně, práh a hodnotu odměny.</errorMessage>
+        <name>Campaign_Values_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vyplňte všechna povinná pole programu.</errorMessage>
+        <name>Required_Program_Fields</name>
+    </validationRules>
+</CustomObjectTranslation>

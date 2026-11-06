@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Palivo vozidla</label>
+    <name>Vehicle_Fuel_Type__c</name>
+    <picklistValues>
+        <masterLabel>Petrol</masterLabel>
+        <translation>Benzin</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Diesel</masterLabel>
+        <translation>Nafta</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LPG</masterLabel>
+        <translation>LPG</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CNG</masterLabel>
+        <translation>CNG</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Electric</masterLabel>
+        <translation>Elektro</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hybrid</masterLabel>
+        <translation>Hybrid</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation>Jiné</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Adjustment_Category__c</fullName>
+    <description>Reason category of a manual point adjustment (B5). Required by the adjustment service for entry type Adjustment, blank for all other entry types. Enables reporting of manual interventions by reason.</description>
+    <inlineHelpText>Why the points were adjusted manually. The free-text comment is stored in Reason.</inlineHelpText>
+    <label>Adjustment Category</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+                <label>Complaint</label>
+            </value>
+            <value>
+                <fullName>ImportError</fullName>
+                <default>false</default>
+                <label>Import Error</label>
+            </value>
+            <value>
+                <fullName>Goodwill</fullName>
+                <default>false</default>
+                <label>Goodwill</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

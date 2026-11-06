@@ -6,6 +6,43 @@
 **Solution design reference:** Chapter 6  
 **Open points:** OP-07, Q10
 
+## Summary (what was done and why)
+
+**What it is:** the automatic points engine of EneOil Klub. When a purchase (`Loyalty_Transaction__c`) is saved – by CSV import or manual entry – Salesforce calculates the points, records them in the point ledger and updates the member balance. Nobody calculates points by hand.
+
+**Why:** members must get the right number of points exactly once, the loyalty manager must be able to explain every point (which purchase, which campaign), and campaigns must be configurable without a developer.
+
+**What it does on every purchase:**
+1. Checks the member is active and the settings are valid; otherwise the purchase gets status *Error* with a reason and no points. Invalid data (amounts not adding up, future date, unknown member) is rejected at import by the B1 validation rules.
+2. Base points: 1 per whole litre + 1 per whole CZK 20 of other spend (rates in `Loyalty_Settings__mdt`).
+3. Campaigns valid on the purchase day: fixed bonus or multiplier of base points; several can apply, everything is rounded down.
+4. Writes one ledger entry for the base and one per matched campaign; the balance on the member is a roll-up of these entries.
+5. A processed purchase is locked; the same POS ID can never be awarded twice.
+
+**Who uses the result:** members see balance and history in the portal (B6); the loyalty manager sees the points breakdown and failed purchases in the back office (B5); the management report (B9) reads ledger entries for KPIs and campaign performance.
+
+## How to Test
+
+**Automated (Apex tests):**
+```bash
+sf apex run test --class-names PointsCalculatorTest --class-names LoyaltyTransactionServiceTest --result-format human --code-coverage --wait 20
+```
+Covers T01–T07, T10 (reference calculations), T20 (amount mismatch), T21 (duplicate POS ID), blocked member, future date, multiple multipliers, Prague date boundaries, reprocessing of an *Error* purchase, lock of a processed purchase, bulk 251 purchases and invalid settings.
+
+**Smoke test in the org (acceptance example):**
+```bash
+sf apex run --file scripts/apex/b2-points-engine-smoke.apex
+```
+Creates a demo member `ENE-DEMO-B2` and the two reference campaigns if missing, imports a purchase of 45 l / 1 710 CZK + 180 CZK, prints the result and **rolls everything back** – no data is kept. Expected: status `Processed`, 109 points, ledger `PurchaseBase 54`, `CampaignBonus 50`, `CampaignBonus 5`, balance 109.
+Prerequisites for the running user: permission set `Loyalty_Manager` (field access) and the *Person Account* record type available on the profile. Without them, use the Apex tests above – they cover the same scenario and also leave no data.
+
+**Manual check in the UI** (assign permission set `Loyalty_Manager` first):
+1. Open the demo member → related list *Point Ledger* shows the three entries, *Points Balance* shows the total.
+2. Create a purchase with the same POS ID → save is rejected (duplicate).
+3. Edit a processed purchase → save is rejected (locked).
+4. Set the member to *Blocked*, create a purchase → status *Error* with reason, balance unchanged; set the member back to *Active* and save the purchase again → it is processed.
+5. Disable a campaign (`Is_Enabled__c = false`) and create a purchase → that campaign no longer adds points; earlier entries stay unchanged.
+
 ## Objective
 
 Implement a bulk-safe and idempotent engine that validates loyalty transactions, calculates base and campaign points, creates an auditable ledger, and maintains the member balance.

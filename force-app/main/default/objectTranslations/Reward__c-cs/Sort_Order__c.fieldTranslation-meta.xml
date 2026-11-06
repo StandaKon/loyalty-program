@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Volitelné pořadí v katalogu portálu; nižší číslo je výš.</help>
+    <label>Pořadí</label>
+    <name>Sort_Order__c</name>
+</CustomFieldTranslation>

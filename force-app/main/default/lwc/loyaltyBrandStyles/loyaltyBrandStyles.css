@@ -1,0 +1,57 @@
+:host {
+    --loyalty-brand: #ffa41b;
+    --loyalty-brand-hover: #ffb13d;
+    --loyalty-on-brand: #1d2c38;
+    --loyalty-brand-soft: #fff1db;
+    --loyalty-green-soft: #e8f3e4;
+    --loyalty-plus: #2d6e22;
+    --loyalty-minus: #b4382a;
+    --loyalty-ink: #1d2c38;
+    --loyalty-ink-muted: #505f6b;
+
+    --slds-c-button-brand-color-background: var(--loyalty-brand);
+    --slds-c-button-brand-color-border: var(--loyalty-brand);
+    --slds-c-button-brand-text-color: var(--loyalty-on-brand);
+    --slds-c-button-brand-color-background-hover: var(--loyalty-brand-hover);
+    --slds-c-button-brand-color-border-hover: var(--loyalty-brand-hover);
+    --slds-c-button-brand-text-color-hover: var(--loyalty-on-brand);
+    --slds-c-button-brand-color-background-active: var(--loyalty-brand-hover);
+    --slds-c-button-brand-text-color-active: var(--loyalty-on-brand);
+}
+
+.loyalty-summary {
+    background: var(--loyalty-brand-soft);
+    border-radius: 0.5rem;
+    color: var(--loyalty-ink);
+    padding: 0.75rem 1rem;
+}
+
+.loyalty-success {
+    background: var(--loyalty-green-soft);
+    border-radius: 0.5rem;
+    color: var(--loyalty-ink);
+    padding: 0.75rem 1rem;
+}
+
+.loyalty-label {
+    color: var(--loyalty-ink-muted);
+}
+
+.loyalty-value {
+    color: var(--loyalty-ink);
+    font-weight: 700;
+}
+
+.loyalty-plus {
+    color: var(--loyalty-plus);
+    font-weight: 700;
+}
+
+.loyalty-minus {
+    color: var(--loyalty-minus);
+    font-weight: 700;
+}
+
+.loyalty-error {
+    color: var(--loyalty-minus);
+}

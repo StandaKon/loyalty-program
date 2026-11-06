@@ -1,0 +1,71 @@
+<template>
+    <lightning-quick-action-panel header={labels.TITLE}>
+        <template lwc:if={isLoading}>
+            <lightning-spinner alternative-text={labels.TITLE} size="small"></lightning-spinner>
+        </template>
+        <template lwc:elseif={context}>
+            <div class="loyalty-summary slds-grid slds-wrap slds-m-bottom_medium">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+                    <p class="loyalty-label">{labels.MEMBER}</p>
+                    <p class="loyalty-value">{context.memberName} · {context.memberNumber}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                    <p class="loyalty-label">{labels.CURRENT_BALANCE}</p>
+                    <p class="loyalty-value">{balanceText}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-medium-size_1-of-4">
+                    <p class="loyalty-label">{labels.NEW_BALANCE}</p>
+                    <p class={newBalanceClass}>{newBalanceText}</p>
+                </div>
+            </div>
+            <template lwc:if={canAdjust}>
+                <lightning-input
+                    data-id="points"
+                    data-validate
+                    type="number"
+                    step="1"
+                    required
+                    label={labels.POINTS}
+                    field-level-help={labels.POINTS_HELP}
+                    value={points}
+                    onchange={handlePointsChange}
+                ></lightning-input>
+                <lightning-combobox
+                    data-validate
+                    class="slds-m-top_small"
+                    required
+                    label={labels.CATEGORY}
+                    placeholder={labels.SELECT_PLACEHOLDER}
+                    options={context.categories}
+                    value={category}
+                    onchange={handleCategoryChange}
+                ></lightning-combobox>
+                <lightning-textarea
+                    data-validate
+                    class="slds-m-top_small"
+                    required
+                    max-length={maxCommentLength}
+                    label={labels.COMMENT}
+                    value={comment}
+                    onchange={handleCommentChange}
+                ></lightning-textarea>
+            </template>
+            <template lwc:else>
+                <p class="loyalty-error">{labels.NO_PERMISSION}</p>
+            </template>
+        </template>
+        <template lwc:if={errorMessage}>
+            <p class="loyalty-error slds-m-top_small" role="alert">{errorMessage}</p>
+        </template>
+        <div slot="footer">
+            <lightning-button label={labels.CLOSE} onclick={handleClose}></lightning-button>
+            <lightning-button
+                class="slds-m-left_x-small"
+                variant="brand"
+                label={labels.SUBMIT}
+                disabled={isSubmitDisabled}
+                onclick={handleSubmit}
+            ></lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

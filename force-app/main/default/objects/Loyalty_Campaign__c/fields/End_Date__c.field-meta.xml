@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-<fullName>End_Date__c</fullName><description>End Date for the EneOil loyalty program.</description><label>End Date</label><trackHistory>true</trackHistory><type>Date</type>
+<fullName>End_Date__c</fullName><description>End Date for the EneOil loyalty program.</description><inlineHelpText>Last day of validity (inclusive). Must not be before the start date. Cannot be changed once the campaign has awarded points.</inlineHelpText><label>End Date</label><trackHistory>true</trackHistory><type>Date</type>
 </CustomField>

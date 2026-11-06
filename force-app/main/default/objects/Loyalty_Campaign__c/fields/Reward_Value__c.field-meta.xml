@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-<fullName>Reward_Value__c</fullName><description>Reward Value for the EneOil loyalty program.</description><label>Reward Value</label><precision>12</precision><scale>4</scale><trackHistory>true</trackHistory><type>Number</type>
+<fullName>Reward_Value__c</fullName><description>Reward Value for the EneOil loyalty program.</description><inlineHelpText>Fixed Bonus: positive whole number of points. Base Multiplier: coefficient of at least 1 (e.g. 2 = double base points). Locked after first use.</inlineHelpText><label>Reward Value</label><precision>12</precision><scale>4</scale><trackHistory>true</trackHistory><type>Number</type>
 </CustomField>

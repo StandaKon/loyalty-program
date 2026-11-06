@@ -1,0 +1,65 @@
+<template>
+    <lightning-quick-action-panel header={labels.TITLE}>
+        <template lwc:if={isLoading}>
+            <lightning-spinner alternative-text={labels.TITLE} size="small"></lightning-spinner>
+        </template>
+        <template lwc:elseif={context}>
+            <div class="loyalty-summary slds-grid slds-wrap slds-m-bottom_medium">
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-3">
+                    <p class="loyalty-label">{labels.MEMBER}</p>
+                    <p class="loyalty-value">{context.memberName} · {context.memberNumber}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                    <p class="loyalty-label">{labels.CURRENT_BALANCE}</p>
+                    <p class="loyalty-value">{balanceText}</p>
+                </div>
+            </div>
+            <template lwc:if={showForm}>
+                <div class="slds-grid slds-wrap slds-gutters_small">
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <lightning-input data-field="liters" data-validate type="number" step="0.001" min="0" label={labels.LITERS} value={liters} onchange={handleInputChange}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <lightning-input data-field="fuelAmount" data-validate type="number" step="0.01" min="0" label={labels.FUEL_AMOUNT} value={fuelAmount} onchange={handleInputChange}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+                        <lightning-input data-field="otherAmount" data-validate type="number" step="0.01" min="0" label={labels.OTHER_AMOUNT} value={otherAmount} onchange={handleInputChange}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_2-of-3 slds-m-top_small">
+                        <lightning-input data-field="purchasedAt" data-validate type="datetime" required max={maxPurchasedAt} label={labels.PURCHASED_AT} value={purchasedAt} onchange={handleInputChange}></lightning-input>
+                    </div>
+                    <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3 slds-m-top_small">
+                        <p class="loyalty-label">{labels.TOTAL}</p>
+                        <p class="loyalty-value slds-p-top_x-small">{totalText}</p>
+                    </div>
+                </div>
+            </template>
+            <template lwc:if={result}>
+                <div class={resultClass} role="status">
+                    <p class="loyalty-value slds-m-bottom_x-small">{resultMessage}</p>
+                    <template for:each={resultRows} for:item="row">
+                        <div key={row.key} class="slds-grid slds-grid_align-spread">
+                            <span class="loyalty-label">{row.label}</span>
+                            <span class={row.valueClass}>{row.value}</span>
+                        </div>
+                    </template>
+                </div>
+            </template>
+            <template lwc:if={isInactive}>
+                <p class="loyalty-error">{labels.MEMBER_NOT_ACTIVE}</p>
+            </template>
+        </template>
+        <template lwc:if={errorMessage}>
+            <p class="loyalty-error slds-m-top_small" role="alert">{errorMessage}</p>
+        </template>
+        <div slot="footer">
+            <lightning-button label={labels.CLOSE} onclick={handleClose}></lightning-button>
+            <template lwc:if={result}>
+                <lightning-button class="slds-m-left_x-small" variant="brand" label={labels.NEW_PURCHASE} onclick={handleNewPurchase}></lightning-button>
+            </template>
+            <template lwc:else>
+                <lightning-button class="slds-m-left_x-small" variant="brand" label={labels.SUBMIT} disabled={isSubmitDisabled} onclick={handleSubmit}></lightning-button>
+            </template>
+        </div>
+    </lightning-quick-action-panel>
+</template>

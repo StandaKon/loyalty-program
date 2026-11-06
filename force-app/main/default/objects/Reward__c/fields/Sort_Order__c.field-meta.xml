@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-<fullName>Sort_Order__c</fullName><description>Sort Order for the EneOil loyalty program.</description><label>Sort Order</label><precision>5</precision><scale>0</scale><type>Number</type>
+<fullName>Sort_Order__c</fullName><description>Sort Order for the EneOil loyalty program.</description><inlineHelpText>Optional position in the portal catalogue; lower numbers first.</inlineHelpText><label>Sort Order</label><precision>5</precision><scale>0</scale><type>Number</type>
 </CustomField>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Rozpočet voucherů (Kč)</label>
+    <name>Voucher_Budget_CZK__c</name>
+</CustomFieldTranslation>
