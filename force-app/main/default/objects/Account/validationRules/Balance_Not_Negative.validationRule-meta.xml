@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Balance_Not_Negative</fullName><active>true</active><description>The points balance cannot be negative.</description><errorMessage>The points balance cannot be negative.</errorMessage><errorConditionFormula><![CDATA[Points_Balance__c < 0]]></errorConditionFormula>
+</ValidationRule>

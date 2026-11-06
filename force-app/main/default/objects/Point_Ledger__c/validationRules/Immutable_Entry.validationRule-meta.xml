@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Immutable_Entry</fullName><active>true</active><description>Point entries cannot be edited. Create a compensating entry.</description><errorMessage>Point entries cannot be edited. Create a compensating entry.</errorMessage><errorConditionFormula><![CDATA[NOT(ISNEW())]]></errorConditionFormula>
+</ValidationRule>

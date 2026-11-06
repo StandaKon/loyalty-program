@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Redeemed_By__c</fullName><deleteConstraint>SetNull</deleteConstraint><description>Redeemed By for the EneOil loyalty program.</description><label>Redeemed By</label><referenceTo>User</referenceTo><relationshipLabel>Redeemed Vouchers</relationshipLabel><relationshipName>Redeemed_Vouchers</relationshipName><type>Lookup</type>
+</CustomField>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Fuel_Points_Per_Liter__c</fullName><description>Fuel Points Per Liter for the EneOil loyalty program.</description><fieldManageability>DeveloperControlled</fieldManageability><label>Fuel Points Per Liter</label><precision>8</precision><scale>0</scale><type>Number</type>
+</CustomField>

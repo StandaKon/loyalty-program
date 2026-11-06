@@ -1,10 +1,13 @@
 # B1 — Data Model and Configuration
 
-**Status:** Draft  
+**Status:** Data-layer metadata deployed and verified, 2026-11-06
+
 **Phase:** Implementation I  
 **Depends on:** B0  
 **Solution design references:** Chapters 5 and 11  
 **Open point:** OP-06
+
+Implementation scope, deployment IDs, permission sets, verification results, and the explicit B2/B6–B8 service dependencies are recorded in [IMPLEMENTATION.md](./IMPLEMENTATION.md).
 
 ## Objective
 
@@ -63,7 +66,7 @@ _To be completed and approved before implementation._
 
 | ID/question | Decision | Approved by/date |
 | --- | --- | --- |
-| OP-06 | | |
+| OP-06 | `Loyalty_Campaign__c`; standard Campaign is not directly available under Customer Community. | User approved the B1 design on 2026-11-06. |
 
 ### 3. Implementation Steps
 
@@ -71,4 +74,4 @@ _List metadata, security, deployment, seed-data, and verification steps in execu
 
 ### 4. Implementation and Test Results
 
-_Record deployed components, validation results, deviations, and follow-up work._
+Data-layer metadata is deployed to the configured Developer Edition org. All 10 B1 tests pass, including USER_MODE isolation of two Customer Community members. See [IMPLEMENTATION.md](./IMPLEMENTATION.md) for exact scope, security setup, remaining runtime services, and deployment evidence.

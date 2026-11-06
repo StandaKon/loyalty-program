@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Profile_Bonus_Points__c</fullName><description>Profile Bonus Points for the EneOil loyalty program.</description><fieldManageability>DeveloperControlled</fieldManageability><label>Profile Bonus Points</label><precision>12</precision><scale>0</scale><type>Number</type>
+</CustomField>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+<sharingCriteriaRules><fullName>Campaign_Managers_Edit</fullName><accessLevel>Edit</accessLevel><booleanFilter>1 OR 2</booleanFilter><description>Internal campaign managers can maintain all shared catalogue records, without Delete or Modify All.</description><label>Campaign Managers Edit</label><sharedTo><group>Loyalty_Campaign_Managers</group></sharedTo><criteriaItems><field>Is_Active__c</field><operation>equals</operation><value>true</value></criteriaItems><criteriaItems><field>Is_Active__c</field><operation>equals</operation><value>false</value></criteriaItems></sharingCriteriaRules>
+</SharingRules>

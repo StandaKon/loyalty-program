@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Is_Enabled__c</fullName><defaultValue>false</defaultValue><description>Is Enabled for the EneOil loyalty program.</description><label>Is Enabled</label><trackHistory>true</trackHistory><type>Checkbox</type>
+</CustomField>

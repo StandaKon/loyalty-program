@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Redemption_Amount_Matches</fullName><active>true</active><description>The redemption must equal the voucher points price.</description><errorMessage>The redemption must equal the voucher points price.</errorMessage><errorConditionFormula><![CDATA[AND(ISPICKVAL(Entry_Type__c, "Redemption"), Points__c <> -Voucher__r.Points_Spent__c)]]></errorConditionFormula>
+</ValidationRule>

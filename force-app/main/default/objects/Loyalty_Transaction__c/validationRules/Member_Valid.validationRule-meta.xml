@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Member_Valid</fullName><active>true</active><description>Select a registered Person Account member.</description><errorMessage>Select a registered Person Account member.</errorMessage><errorConditionFormula><![CDATA[OR(NOT(Member__r.IsPersonAccount), ISBLANK(Member__r.Member_Number__c))]]></errorConditionFormula>
+</ValidationRule>
