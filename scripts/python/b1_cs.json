@@ -1,0 +1,325 @@
+{
+  "objects": {
+    "Loyalty_Transaction__c": {
+      "gender": "Masculine",
+      "nameFieldLabel": "Číslo nákupu",
+      "singular": [
+        "Nákup",
+        "Nákupu",
+        "Nákupu",
+        "Nákup",
+        "Nákupu",
+        "Nákupem"
+      ],
+      "plural": [
+        "Nákupy",
+        "Nákupů",
+        "Nákupům",
+        "Nákupy",
+        "Nákupech",
+        "Nákupy"
+      ]
+    },
+    "Loyalty_Campaign__c": {
+      "gender": "Feminine",
+      "nameFieldLabel": "Název kampaně",
+      "singular": [
+        "Kampaň",
+        "Kampaně",
+        "Kampani",
+        "Kampaň",
+        "Kampani",
+        "Kampaní"
+      ],
+      "plural": [
+        "Kampaně",
+        "Kampaní",
+        "Kampaním",
+        "Kampaně",
+        "Kampaních",
+        "Kampaněmi"
+      ]
+    },
+    "Point_Ledger__c": {
+      "gender": "Masculine",
+      "nameFieldLabel": "Číslo pohybu",
+      "singular": [
+        "Pohyb bodů",
+        "Pohybu bodů",
+        "Pohybu bodů",
+        "Pohyb bodů",
+        "Pohybu bodů",
+        "Pohybem bodů"
+      ],
+      "plural": [
+        "Pohyby bodů",
+        "Pohybů bodů",
+        "Pohybům bodů",
+        "Pohyby bodů",
+        "Pohybech bodů",
+        "Pohyby bodů"
+      ]
+    },
+    "Reward__c": {
+      "gender": "Feminine",
+      "nameFieldLabel": "Název odměny",
+      "singular": [
+        "Odměna",
+        "Odměny",
+        "Odměně",
+        "Odměnu",
+        "Odměně",
+        "Odměnou"
+      ],
+      "plural": [
+        "Odměny",
+        "Odměn",
+        "Odměnám",
+        "Odměny",
+        "Odměnách",
+        "Odměnami"
+      ]
+    },
+    "Voucher__c": {
+      "gender": "Masculine",
+      "nameFieldLabel": "Číslo voucheru",
+      "singular": [
+        "Voucher",
+        "Voucheru",
+        "Voucheru",
+        "Voucher",
+        "Voucheru",
+        "Voucherem"
+      ],
+      "plural": [
+        "Vouchery",
+        "Voucherů",
+        "Voucherům",
+        "Vouchery",
+        "Voucherech",
+        "Vouchery"
+      ]
+    },
+    "Loyalty_Settings__mdt": {
+      "gender": "Neuter",
+      "singular": [
+        "Nastavení věrnostního programu",
+        "Nastavení věrnostního programu",
+        "Nastavení věrnostního programu",
+        "Nastavení věrnostního programu",
+        "Nastavení věrnostního programu",
+        "Nastavením věrnostního programu"
+      ],
+      "plural": [
+        "Nastavení věrnostního programu",
+        "Nastavení věrnostního programu",
+        "Nastavením věrnostního programu",
+        "Nastavení věrnostního programu",
+        "Nastaveních věrnostního programu",
+        "Nastaveními věrnostního programu"
+      ]
+    }
+  },
+  "fields": {
+    "Member_Number__c": "Číslo člena",
+    "Membership_Status__c": "Stav členství",
+    "Joined_At__c": "Datum registrace do Klubu",
+    "Points_Balance__c": "Zůstatek bodů",
+    "Vehicle_Make__c": "Značka vozidla",
+    "Vehicle_Model__c": "Model vozidla",
+    "Vehicle_Fuel_Type__c": "Druh pohonu",
+    "Vehicle_Year__c": "Rok výroby",
+    "Vehicle_Registration__c": "SPZ",
+    "Profile_Complete__c": "Dokončený profil",
+    "Marketing_Consent__c": "Marketingový souhlas",
+    "Voucher_Budget_Year__c": "Rok rozpočtu voucherů",
+    "Voucher_Budget_CZK__c": "Roční rozpočet voucherů (Kč)",
+    "Member__c": "Člen",
+    "POS_Transaction_Id__c": "Identifikátor nákupu z pokladny",
+    "Purchased_At__c": "Datum a čas nákupu",
+    "Total_Amount__c": "Celková částka (Kč)",
+    "Fuel_Amount__c": "Částka za palivo (Kč)",
+    "Other_Amount__c": "Částka za ostatní nákup (Kč)",
+    "Liters__c": "Objem paliva (l)",
+    "Processing_Status__c": "Stav zpracování",
+    "Processing_Error__c": "Chyba zpracování",
+    "Processed_At__c": "Zpracováno dne",
+    "Base_Fuel_Points__c": "Body za palivo",
+    "Base_Other_Points__c": "Body za ostatní nákup",
+    "Campaign_Points__c": "Body za kampaně",
+    "Total_Points__c": "Body celkem",
+    "Is_Enabled__c": "Povolená kampaň",
+    "Start_Date__c": "Platnost od",
+    "End_Date__c": "Platnost do",
+    "Condition_Field__c": "Sledovaná veličina",
+    "Threshold__c": "Minimální hodnota",
+    "Reward_Type__c": "Typ bonusu",
+    "Reward_Value__c": "Hodnota bonusu",
+    "Member_Description__c": "Popis pro člena",
+    "Is_Portal_Visible__c": "Aktuálně v portálu",
+    "Points__c": "Počet bodů",
+    "Entry_Type__c": "Typ pohybu",
+    "Occurred_At__c": "Datum pohybu",
+    "Unique_Key__c": "Unikátní klíč pohybu",
+    "Transaction__c": "Nákup",
+    "Campaign__c": "Kampaň",
+    "Voucher__c": "Voucher",
+    "Reverses_Entry__c": "Opravovaný pohyb",
+    "Reason__c": "Důvod",
+    "Applied_Condition_Field__c": "Použitá veličina",
+    "Applied_Threshold__c": "Použitý práh",
+    "Applied_Reward_Type__c": "Použitý typ bonusu",
+    "Applied_Reward_Value__c": "Použitá hodnota bonusu",
+    "Partner__c": "Partner",
+    "Points_Cost__c": "Cena v bodech",
+    "Value_CZK__c": "Nominální hodnota (Kč)",
+    "Is_Active__c": "Aktivní odměna",
+    "Description__c": "Podmínky odměny",
+    "Sort_Order__c": "Pořadí zobrazení",
+    "Reward__c": "Odměna",
+    "Redeemed_By__c": "Uplatnil",
+    "Code__c": "Kód voucheru",
+    "Request_Key__c": "Klíč žádosti",
+    "Status__c": "Stav voucheru",
+    "Points_Spent__c": "Cena v bodech při vydání",
+    "Reward_Name__c": "Název vydané odměny",
+    "Reward_Description__c": "Podmínky vydané odměny",
+    "Issued_At__c": "Vydáno dne",
+    "Redeemed_At__c": "Uplatněno dne",
+    "Cancelled_At__c": "Zrušeno dne",
+    "Email_Sent_At__c": "E-mail odeslán dne",
+    "Cancellation_Reason__c": "Důvod zrušení",
+    "Email_Status__c": "Stav odeslání e-mailu",
+    "Email_Error__c": "Chyba odeslání e-mailu",
+    "Consent_Type__c": "Druh souhlasu",
+    "Consent_Action__c": "Projev člena",
+    "Fuel_Points_Per_Liter__c": "Body za celý litr",
+    "Other_CZK_Per_Point__c": "Částka za jeden bod (Kč)",
+    "Profile_Bonus_Points__c": "Body za dokončení profilu",
+    "Marketing_Bonus_Points__c": "Body za marketingový souhlas"
+  },
+  "fieldOverrides": {
+    "Voucher__c.Value_CZK__c": "Nominální hodnota při vydání (Kč)"
+  },
+  "picklists": {
+    "membership": {
+      "Active": "Aktivní",
+      "Blocked": "Blokované",
+      "Cancelled": "Zrušené"
+    },
+    "fuel": {
+      "Petrol": "Benzín",
+      "Diesel": "Nafta",
+      "LPG": "LPG",
+      "CNG": "CNG",
+      "Electric": "Elektřina",
+      "Hybrid": "Hybridní",
+      "Other": "Jiný"
+    },
+    "processing": {
+      "Pending": "Čeká na zpracování",
+      "Processed": "Zpracováno",
+      "Error": "Chyba"
+    },
+    "condition": {
+      "Liters": "Litry paliva",
+      "OtherAmount": "Ostatní nákup (Kč)",
+      "FuelAmount": "Palivo (Kč)",
+      "TotalAmount": "Celkový nákup (Kč)"
+    },
+    "bonus": {
+      "FixedBonus": "Pevný bonus",
+      "BaseMultiplier": "Násobitel základních bodů"
+    },
+    "entry": {
+      "PurchaseBase": "Základní body z nákupu",
+      "CampaignBonus": "Bonus za kampaň",
+      "ProfileBonus": "Bonus za dokončení profilu",
+      "MarketingBonus": "Bonus za marketingový souhlas",
+      "Redemption": "Čerpání za voucher",
+      "Refund": "Vrácení bodů",
+      "Adjustment": "Ruční úprava"
+    },
+    "voucher": {
+      "Issued": "Vydaný",
+      "Redeemed": "Uplatněný",
+      "Cancelled": "Zrušený"
+    },
+    "email": {
+      "Pending": "Čeká na odeslání",
+      "Sent": "Odesláno",
+      "Error": "Chyba odeslání"
+    },
+    "consentType": {
+      "Terms": "Podmínky Klubu",
+      "Marketing": "Marketingový souhlas"
+    },
+    "consentAction": {
+      "Accepted": "Přijetí",
+      "Declined": "Odmítnutí",
+      "Withdrawn": "Odvolání"
+    }
+  },
+  "picklistAssignments": {
+    "Account.Membership_Status__c": "membership",
+    "Account.Vehicle_Fuel_Type__c": "fuel",
+    "Loyalty_Transaction__c.Processing_Status__c": "processing",
+    "Loyalty_Campaign__c.Condition_Field__c": "condition",
+    "Loyalty_Campaign__c.Reward_Type__c": "bonus",
+    "Point_Ledger__c.Entry_Type__c": "entry",
+    "Point_Ledger__c.Applied_Condition_Field__c": "condition",
+    "Point_Ledger__c.Applied_Reward_Type__c": "bonus",
+    "Voucher__c.Status__c": "voucher",
+    "Voucher__c.Email_Status__c": "email",
+    "AuthorizationForm.Consent_Type__c": "consentType",
+    "AuthorizationFormConsent.Consent_Action__c": "consentAction"
+  },
+  "relationships": {
+    "Loyalty_Transaction__c.Member__c": "Nákupy",
+    "Point_Ledger__c.Member__c": "Pohyby bodů",
+    "Point_Ledger__c.Transaction__c": "Pohyby bodů",
+    "Point_Ledger__c.Campaign__c": "Pohyby bodů",
+    "Point_Ledger__c.Voucher__c": "Pohyby bodů",
+    "Point_Ledger__c.Reverses_Entry__c": "Opravné pohyby",
+    "Reward__c.Partner__c": "Odměny partnera",
+    "Voucher__c.Member__c": "Vouchery člena",
+    "Voucher__c.Reward__c": "Vydané vouchery",
+    "Voucher__c.Partner__c": "Vouchery partnera",
+    "Voucher__c.Redeemed_By__c": "Uplatněné vouchery"
+  },
+  "validationRules": {
+    "Required_Program_Fields": "Chybí povinné údaje programu.",
+    "Account.Member_Must_Be_Person": "Členem Klubu může být pouze účet fyzické osoby.",
+    "Account.Member_Number_Immutable": "Číslo člena nelze změnit ani smazat.",
+    "Account.Vehicle_Year_Valid": "Rok výroby musí být od roku 1900 do příštího kalendářního roku.",
+    "Account.Balance_Not_Negative": "Zůstatek bodů nesmí být záporný.",
+    "Account.Budget_Valid": "U firemního účtu vyplňte nezáporný rozpočet a odpovídající rok.",
+    "Loyalty_Transaction__c.Amounts_Valid": "Částky nesmějí být záporné a palivo s ostatním nákupem se musí rovnat celkové částce. Částka za palivo a počet litrů musejí být současně kladné, nebo současně nulové.",
+    "Loyalty_Transaction__c.Member_Valid": "Vyberte registrovaného člena Klubu.",
+    "Loyalty_Transaction__c.Purchase_Not_Future": "Datum nákupu nesmí být v budoucnosti.",
+    "Loyalty_Transaction__c.Processing_State_Valid": "Doplňte výsledek zpracování nebo popis chyby. Vypočtené body nesmějí být záporné.",
+    "Loyalty_Transaction__c.Processed_Transaction_Immutable": "Zpracovaný nákup nelze upravit. Změnu řešte opravným pohybem.",
+    "Loyalty_Campaign__c.Campaign_Values_Valid": "Zkontrolujte platnost kampaně, minimální hodnotu a bonus. Pevný bonus musí být kladné celé číslo a násobitel alespoň 1.",
+    "Point_Ledger__c.Immutable_Entry": "Pohyb bodů nelze upravit. Vytvořte opravný pohyb.",
+    "Point_Ledger__c.Member_Valid": "Vyberte registrovaného člena Klubu.",
+    "Point_Ledger__c.Signs_Valid": "Znaménko počtu bodů musí odpovídat typu pohybu.",
+    "Point_Ledger__c.Source_Required": "Zdrojové vazby a důvod musí odpovídat typu pohybu bodů.",
+    "Point_Ledger__c.Source_Member_Matches": "Zdroj musí patřit stejnému členovi. Vrácení bodů musí odpovídat původnímu čerpání za voucher.",
+    "Point_Ledger__c.Campaign_Snapshot_Required": "Uložte použitou podmínku a hodnoty bonusu kampaně.",
+    "Point_Ledger__c.Redemption_Amount_Matches": "Počet odečtených bodů musí odpovídat bodové ceně voucheru.",
+    "Reward__c.Reward_Values_Valid": "Vyberte firemního partnera a kladnou bodovou cenu. U aktivní odměny doplňte podmínky.",
+    "Voucher__c.Voucher_Values_Valid": "Vyberte registrovaného člena a firemního partnera. Bodová cena musí být kladná a kód musí mít platný formát ENE-XXXX-XXXX.",
+    "Voucher__c.Issue_Source_Valid": "Aktivní člen může získat pouze aktivní odměnu s její aktuální cenou a partnerem.",
+    "Voucher__c.Issue_Details_Immutable": "Údaje voucheru uložené při vydání nelze změnit.",
+    "Voucher__c.Status_Transition_Valid": "Stav uplatněného nebo zrušeného voucheru již nelze změnit.",
+    "Voucher__c.State_Details_Required": "Doplňte datumy, autora a další údaje odpovídající stavu voucheru a odeslání e-mailu."
+  },
+  "recordTypes": {
+    "Account": {
+      "Individual": "Firma"
+    },
+    "PersonAccount": {
+      "PersonAccount": "Fyzická osoba"
+    }
+  }
+}
