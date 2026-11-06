@@ -1,0 +1,18 @@
+{
+  "packageDirectories": [
+    {
+      "path": "force-app",
+      "default": true
+    }
+  ],
+  "name": "Enehano Template Repository",
+  "namespace": "",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "63.0",
+  "packageAliases": {
+      "apex-mockery": "04tDn0000011NtdIAE",
+      "trigger-actions-framework": "04tKY000000Pb8tYAC",
+      "enehano-logger": "04t7Q000000yFBQQA2",
+      "dml-operation-wrapper": "04tPk000000JGInIAO"
+  }
+}

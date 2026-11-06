@@ -1,0 +1,38 @@
+name: deploy
+
+on:
+
+  workflow_dispatch:
+    inputs:
+      environment:
+        type: environment
+        description: 'Select the environment'
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    container:
+      image: salesforce/cli:latest-slim
+    steps:
+      - name: Fail if branch is not release
+        if: "!startsWith(github.ref, 'refs/heads/release/')"
+        run: |
+          echo "This workflow should not be triggered with branch other than release/*"
+          exit 1
+
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Authorize
+        env:
+          SF_AUTH_URL: ${{ secrets.SF_AUTH_URL }}
+        run:
+          echo $SF_AUTH_URL | sf org login sfdx-url --set-default --sfdx-url-stdin
+
+      - name: Deploy ${{ github.ref }} to ${{ inputs.environment }}
+        run:
+          sf project deploy start --test-level RunLocalTests --verbose

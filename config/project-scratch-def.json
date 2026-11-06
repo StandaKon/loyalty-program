@@ -1,0 +1,47 @@
+{
+  "orgName": "Enehano Template Repository",
+  "edition": "Enterprise",
+  "features": [
+    "EnableSetPasswordInApi"
+  ],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    },
+    "userManagementSettings": {
+      "enableNewProfileUI": true
+    },
+    "quoteSettings": {
+      "enableQuote": true
+    },
+    "mapsAndLocationSettings": {
+      "enableMapsAndLocation": true,
+      "enableAddressAutoComplete": true
+    },
+    "customAddressFieldSettings": {
+      "enableCustomAddressField": true
+    },
+    "ActionsSettings": {
+      "enableDefaultQuickActionsOn": true
+    },
+    "chatterSettings": {
+      "enableChatter": true,
+      "enableFeedEdit": true
+    },
+    "enhancedNotesSettings": {
+      "enableEnhancedNotes": true
+    },
+    "omniChannelSettings": {
+      "enableOmniChannel": true,
+      "enableOmniSecondaryRoutingPriority": true,
+      "enableOmniSkillsRouting": true
+    },
+    "languageSettings": {
+      "enableTranslationWorkbench":  true,
+      "enableEndUserLanguages": true
+    }
+  }
+}

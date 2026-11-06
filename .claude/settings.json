@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "enabledPlugins": {
+    "salesforce-dev@enehano": true
+  },
+  "env": {
+    "ENABLE_LSP_TOOL": "1"
+  },
+  "extraKnownMarketplaces": {
+    "enehano": {
+      "source": {
+        "source": "github",
+        "repo": "Enehano/enehano-claude-kit"
+      },
+      "autoUpdate": true
+    }
+  },
+  "permissions": {
+    "deny": [
+      "Bash(sf -o *)",
+      "Bash(sf * -o *)",
+      "Bash(sf * -o=*)",
+      "Bash(sf --target-org *)",
+      "Bash(sf * --target-org *)",
+      "Bash(sf * --target-org=*)",
+      "Bash(sfdx -o *)",
+      "Bash(sfdx * -o *)",
+      "Bash(sfdx * -o=*)",
+      "Bash(sfdx --target-org *)",
+      "Bash(sfdx * --target-org *)",
+      "Bash(sfdx * --target-org=*)",
+      "Bash(sfdx -u *)",
+      "Bash(sfdx * -u *)",
+      "Bash(sfdx * -u=*)",
+      "Bash(sfdx --targetusername *)",
+      "Bash(sfdx * --targetusername *)",
+      "Bash(sfdx * --targetusername=*)",
+      "Bash(sf config set *)",
+      "Bash(sf alias set *)",
+      "Bash(sf org login *)",
+      "Bash(sfdx force:auth:*)"
+    ]
+  }
+}
