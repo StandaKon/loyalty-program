@@ -1,31 +1,78 @@
 <template>
-    <section class="catalogue" aria-labelledby="rewards-title">
-        <header class="header">
-            <div><h2 id="rewards-title">{labels.title}</h2><p>{labels.intro}</p></div>
-            <template lwc:if={hasRewards}><div class="balance"><span>{labels.balance}</span><strong>{balance}</strong></div></template>
-        </header>
-        <template lwc:if={isLoading}><lightning-spinner alternative-text={labels.processing} size="medium"></lightning-spinner></template>
-        <template lwc:if={errorMessage}><p class="error" role="alert">{errorMessage}</p></template>
-        <div class="grid">
-            <template for:each={rewards} for:item="reward">
-                <article key={reward.id} class="reward-card">
-                    <p class="partner">{reward.partnerName}</p><h3>{reward.name}</h3><p class="description">{reward.description}</p>
-                    <p class="value">{reward.valueLabel}</p>
-                    <template lwc:if={reward.canRedeem}>
-                        <lightning-button variant="brand" label={reward.actionLabel} data-id={reward.id} onclick={handleSelect}></lightning-button>
-                    </template>
-                    <template lwc:else><p class="missing">{reward.missingLabel}</p></template>
-                </article>
-            </template>
+  <section class="catalogue" aria-labelledby="rewards-title">
+    <header class="header">
+      <div>
+        <h2 id="rewards-title">{labels.title}</h2>
+        <p>{labels.intro}</p>
+      </div>
+      <template lwc:if={hasRewards}
+        ><div class="balance">
+          <span>{labels.balance}</span><strong>{balance}</strong>
+        </div></template
+      >
+    </header>
+    <template lwc:if={isLoading}
+      ><lightning-spinner
+        alternative-text={labels.processing}
+        size="medium"
+      ></lightning-spinner
+    ></template>
+    <template lwc:if={errorMessage}
+      ><p class="error" role="alert">{errorMessage}</p></template
+    >
+    <div class="grid">
+      <template for:each={rewards} for:item="reward">
+        <article key={reward.id} class="reward-card">
+          <p class="partner">{reward.partnerName}</p>
+          <h3>{reward.name}</h3>
+          <p class="description">{reward.description}</p>
+          <p class="value">{reward.valueLabel}</p>
+          <template lwc:if={reward.canRedeem}>
+            <lightning-button
+              variant="brand"
+              label={reward.actionLabel}
+              data-id={reward.id}
+              onclick={handleSelect}
+            ></lightning-button>
+          </template>
+          <template lwc:else
+            ><p class="missing">{reward.missingLabel}</p></template
+          >
+        </article>
+      </template>
+    </div>
+    <template lwc:if={isEmpty}><p class="empty">{labels.empty}</p></template>
+  </section>
+  <template lwc:if={selectedReward}>
+    <section
+      class="modal-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="confirm-title"
+    >
+      <div class="modal">
+        <h2 id="confirm-title">{selectedReward.name}</h2>
+        <p>{selectedReward.description}</p>
+        <p class="confirm-price">{selectedReward.actionLabel}</p>
+        <div class="actions">
+          <lightning-button
+            label={labels.close}
+            onclick={handleClose}
+          ></lightning-button
+          ><lightning-button
+            variant="brand"
+            label={selectedReward.actionLabel}
+            disabled={isSaving}
+            onclick={handleConfirm}
+          ></lightning-button>
         </div>
-        <template lwc:if={isEmpty}><p class="empty">{labels.empty}</p></template>
+        <template lwc:if={isSaving}
+          ><lightning-spinner
+            alternative-text={labels.processing}
+            size="small"
+          ></lightning-spinner
+        ></template>
+      </div>
     </section>
-    <template lwc:if={selectedReward}>
-        <section class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
-            <div class="modal"><h2 id="confirm-title">{selectedReward.name}</h2><p>{selectedReward.description}</p><p class="confirm-price">{selectedReward.actionLabel}</p>
-                <div class="actions"><lightning-button label={labels.close} onclick={handleClose}></lightning-button><lightning-button variant="brand" label={selectedReward.actionLabel} disabled={isSaving} onclick={handleConfirm}></lightning-button></div>
-                <template lwc:if={isSaving}><lightning-spinner alternative-text={labels.processing} size="small"></lightning-spinner></template>
-            </div>
-        </section>
-    </template>
+  </template>
 </template>

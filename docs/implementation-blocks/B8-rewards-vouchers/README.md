@@ -64,20 +64,25 @@ Let members securely redeem points for partner rewards, receive a unique voucher
 
 ### 1. Final Assignment
 
-_To be completed and approved before implementation._
+Implement the v1 reward catalogue, atomic point redemption, unique text vouchers, member voucher list, service email, operator verification/redemption, and existing loyalty-manager cancellation. Use the preferred decisions from the marketing specification while client-owned contacts, locations, budget, and legal approval remain configurable rollout items.
 
 ### 2. Resolved Open Points
 
-| ID/question | Decision | Approved by/date |
-| --- | --- | --- |
-| OP-09 | | |
-| OP-10 | | |
-| Q3 | | |
+| ID/question | Decision                                                                                                                                                                      | Approved by/date                         |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| OP-09       | Store 200/500/2,000 CZK snapshots; report budget without blocking issuance.                                                                                                   | Marketing specification v0.9, 2026-11-06 |
+| OP-10       | `ENE-XXXX-XXXX`, 31-character alphabet, case-insensitive unique field, five generated candidates before a controlled failure.                                                 | Marketing specification v0.9, 2026-11-06 |
+| Q3          | API states remain `Issued`, `Redeemed`, `Cancelled`; Czech UI translates them to Aktivní, Uplatněný, Zrušený. Operator redemption requires location and service-order number. | Marketing specification v0.9, 2026-11-06 |
 
 ### 3. Implementation Steps
 
-_List LWC, Apex, metadata, email, Flow, security, test, and deployment steps in order._
+1. Extend reward availability and voucher redemption audit metadata.
+2. Add selectors, code generator, atomic redemption service, asynchronous service email, and controllers.
+3. Add Experience Cloud catalogue and My Vouchers LWCs.
+4. Add the least-privilege operator verification LWC and permission-set access. A Flow is not used because code normalization, row locking, and the terminal state transition are centralized in the same tested Apex service.
+5. Add Czech labels/translations, seed script, Apex tests, and Jest tests.
+6. Validate locally, deploy to the configured non-production default org, and run the specified Apex tests.
 
 ### 4. Implementation and Test Results
 
-_Record components, test results, email evidence, reconciliation, deviations, and follow-up work._
+Implementation is in progress. Test and deployment evidence will be recorded after validation.
