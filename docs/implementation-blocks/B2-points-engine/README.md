@@ -65,14 +65,40 @@ Implement a bulk-safe and idempotent engine that validates loyalty transactions,
 
 ### 1. Final Assignment
 
-_To be completed and approved before implementation._
+**Goal:** Every valid member purchase earns the correct points exactly once, every point is traceable to its source, and the member balance always equals the sum of ledger entries.
+
+**Input (1 record = 1 POS purchase, delivered by B3):** POS transaction ID, purchase date/time, member number (`Member_Number__c`), station, total CZK, fuel CZK, litres, other CZK.
+
+**Processing rules**
+1. **Validation:** all values ≥ 0, total > 0, fuel + other = total (to the haléř), fuel > 0 ⇔ litres > 0, member exists and is Active, purchase date is not in the future. Invalid → status *Error* with a reason, no points.
+2. **Idempotency:** the same POS ID is processed exactly once; re-import awards nothing.
+3. **Base points:** `floor(litres)` + `floor(other CZK / 20)`; rates from `Loyalty_Settings__mdt`; Decimal arithmetic only.
+4. **Campaigns:** apply automatically to all members when active, the purchase date (Europe/Prague) is within valid from–to (inclusive), and `field ≥ threshold` holds. Each campaign applies at most once per transaction; campaigns add up.
+   - Fixed bonus: `+value`.
+   - Multiplier: `floor(base × coefficient) − base`, always calculated from base points only; multiple multipliers are each calculated separately from base and summed.
+5. **Output:** base, bonus and total points + status and error message on the transaction; one ledger entry for base points and one per matched campaign (including 0-point results), unique key per transaction + BASE / transaction + campaign; ledger date = purchase date; balance = roll-up of ledger.
+6. **Integrity:** ledger entries are never edited or deleted; processing of a transaction is atomic (transaction + all its ledger entries, or nothing); 5 000 transactions in one import stay within governor limits.
+
+**User impact**
+- *Member (portal, B6):* sees the balance grow after a purchase and a history line per purchase plus a separate line per campaign, dated by purchase date.
+- *Loyalty manager (back office, B5):* sees the points breakdown per transaction, sees failed transactions with a reason, fixes them and they are reprocessed; configures campaigns without a developer.
+
+**Out of scope:** transaction input/import UI (B3), portal activities (B7 – reuse the same ledger), manual adjustment (B5), storno (OP-13), expiration and tiers (B11).
+
+**Acceptance criteria:** reference calculations T01–T07 and T10 (SD ch. 14) match exactly – T01 = 109 (54 + 5 + 50); negative scenarios T20, T21, T23, T24 and bulk T25 pass; no failure leaves a partial ledger or balance change.
+
+**Dependency:** B1 data model (incl. OP-06 campaign storage) must be stable; API names above are provisional until then.
 
 ### 2. Resolved Open Points
 
 | ID/question | Decision | Approved by/date |
 | --- | --- | --- |
-| OP-07 | | |
-| Q10 | | |
+| OP-07 | Apex via trigger-actions-framework (trigger action + service + selectors). Reason: bulk 5 000 transactions, idempotency via unique keys, full unit-test coverage of T01–T25. Campaigns and rates stay configurable as records/CMDT. | Stanislav Konopásek, 2026-11-06 |
+| Q10 | Multiple multipliers: each calculated separately from base points, results summed (order-independent). | Stanislav Konopásek, 2026-11-06 |
+| Zero bonus | A matched campaign with a 0-point result (e.g. T04) still creates a 0-point ledger entry, so campaign performance reporting (FR-34) counts every hit. | Stanislav Konopásek, 2026-11-06 |
+| Errors & retry | Statuses `New → Processed / Error`. An *Error* transaction is saved with a reason, can be corrected and is reprocessed on save. A *Processed* transaction is locked; corrections go through storno or manual adjustment. | Stanislav Konopásek, 2026-11-06 |
+| Campaign change | Changes to a campaign apply only to transactions processed afterwards; already awarded points are never recalculated. | Stanislav Konopásek, 2026-11-06 |
+| Backdated / future dates | Campaign eligibility by purchase date (Europe/Prague), regardless of import time; no backdating limit (historic seed data in B4). Future-dated purchase → *Error*. Simultaneous transactions: balance is a roll-up, so no shared counter is updated concurrently. | Stanislav Konopásek, 2026-11-06 |
 
 ### 3. Implementation Steps
 
