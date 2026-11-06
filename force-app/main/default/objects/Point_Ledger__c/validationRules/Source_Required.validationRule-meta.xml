@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Source_Required</fullName>
+    <active>true</active>
+    <description>Source relationships and reason must match the entry type.</description>
+    <errorConditionFormula>OR(AND(OR(ISPICKVAL(Entry_Type__c, &quot;PurchaseBase&quot;), ISPICKVAL(Entry_Type__c, &quot;CampaignBonus&quot;), ISPICKVAL(Entry_Type__c, &quot;TierBonus&quot;), ISPICKVAL(Entry_Type__c, &quot;Reversal&quot;)), ISBLANK(Transaction__c)), AND(NOT(OR(ISPICKVAL(Entry_Type__c, &quot;PurchaseBase&quot;), ISPICKVAL(Entry_Type__c, &quot;CampaignBonus&quot;), ISPICKVAL(Entry_Type__c, &quot;TierBonus&quot;), ISPICKVAL(Entry_Type__c, &quot;Reversal&quot;))), NOT(ISBLANK(Transaction__c))), AND(ISPICKVAL(Entry_Type__c, &quot;CampaignBonus&quot;), ISBLANK(Campaign__c)), AND(NOT(ISPICKVAL(Entry_Type__c, &quot;CampaignBonus&quot;)), NOT(ISBLANK(Campaign__c))), AND(OR(ISPICKVAL(Entry_Type__c, &quot;Redemption&quot;), ISPICKVAL(Entry_Type__c, &quot;Refund&quot;)), ISBLANK(Voucher__c)), AND(NOT(OR(ISPICKVAL(Entry_Type__c, &quot;Redemption&quot;), ISPICKVAL(Entry_Type__c, &quot;Refund&quot;))), NOT(ISBLANK(Voucher__c))), AND(ISPICKVAL(Entry_Type__c, &quot;Refund&quot;), ISBLANK(Reverses_Entry__c)), AND(NOT(ISPICKVAL(Entry_Type__c, &quot;Refund&quot;)), NOT(ISBLANK(Reverses_Entry__c))), AND(OR(ISPICKVAL(Entry_Type__c, &quot;Adjustment&quot;), ISPICKVAL(Entry_Type__c, &quot;Refund&quot;), ISPICKVAL(Entry_Type__c, &quot;Reversal&quot;), ISPICKVAL(Entry_Type__c, &quot;Expiration&quot;)), ISBLANK(Reason__c)))</errorConditionFormula>
+    <errorMessage>Source relationships and reason must match the entry type.</errorMessage>
+</ValidationRule>

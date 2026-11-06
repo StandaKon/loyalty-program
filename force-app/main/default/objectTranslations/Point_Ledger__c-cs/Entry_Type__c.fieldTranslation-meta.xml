@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Typ pohybu</label>
+    <name>Entry_Type__c</name>
+    <picklistValues>
+        <masterLabel>Adjustment</masterLabel>
+        <translation>Ruční úprava</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CampaignBonus</masterLabel>
+        <translation>Bonus z kampaně</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MarketingBonus</masterLabel>
+        <translation>Bonus za marketingový souhlas</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ProfileBonus</masterLabel>
+        <translation>Bonus za profil</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PurchaseBase</masterLabel>
+        <translation>Nákup – základ</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Redemption</masterLabel>
+        <translation>Čerpání</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Refund</masterLabel>
+        <translation>Vrácení</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Expiration</masterLabel>
+        <translation>Propadlé body</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Reversal</masterLabel>
+        <translation>Storno nákupu</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TierBonus</masterLabel>
+        <translation>Bonus úrovně Dálnice</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Default</label>
+    <protected>false</protected>
+    <values>
+        <field>Fuel_Points_Per_Liter__c</field>
+        <value xsi:type="xsd:double">1.0</value>
+    </values>
+    <values>
+        <field>Marketing_Bonus_Points__c</field>
+        <value xsi:type="xsd:double">50.0</value>
+    </values>
+    <values>
+        <field>Other_CZK_Per_Point__c</field>
+        <value xsi:type="xsd:double">20.0</value>
+    </values>
+    <values>
+        <field>Profile_Bonus_Points__c</field>
+        <value xsi:type="xsd:double">100.0</value>
+    </values>
+    <values>
+        <field>Points_Validity_Months__c</field>
+        <value xsi:type="xsd:double">12</value>
+    </values>
+    <values>
+        <field>Expiry_Warning_Days__c</field>
+        <value xsi:type="xsd:double">30</value>
+    </values>
+    <values>
+        <field>Tier_Highway_Threshold__c</field>
+        <value xsi:type="xsd:double">2000</value>
+    </values>
+    <values>
+        <field>Tier_Qualification_Months__c</field>
+        <value xsi:type="xsd:double">12</value>
+    </values>
+    <values>
+        <field>Tier_Highway_Fuel_Multiplier__c</field>
+        <value xsi:type="xsd:double">1.2</value>
+    </values>
+    <values>
+        <field>Expiry_Effective_Date__c</field>
+        <value xsi:nil="true"/>
+    </values>
+</CustomMetadata>
