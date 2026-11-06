@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Získej body",
+  "contentBody" : {
+    "activeViewId" : "ziskejBody",
+    "configurationTags" : [],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-ziskej-body",
+    "urlPrefix" : "ziskej-body"
+  },
+  "urlName" : "ziskej-body"
+}

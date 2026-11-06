@@ -1,0 +1,78 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Získej body",
+  "contentBody" : {
+    "component" : {
+      "children" : [
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"150bd029-f8cb-4fcd-94e7-b3594ac5d7fe\",\"columns\":[{\"UUID\":\"e57ab3b0-b114-44cf-8417-7752a614030f\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "attributes" : { },
+                      "definition" : "c:portalEarnPoints",
+                      "id" : "99eac72f-d76a-49f0-9f2f-5caf102323f3",
+                      "type" : "component"
+                    }
+                  ],
+                  "id" : "e57ab3b0-b114-44cf-8417-7752a614030f",
+                  "name" : "col1",
+                  "title" : "Column 1",
+                  "type" : "region"
+                }
+              ],
+              "definition" : "community_layout:section",
+              "id" : "150bd029-f8cb-4fcd-94e7-b3594ac5d7fe",
+              "type" : "component"
+            }
+          ],
+          "id" : "dc051b8b-4218-42c4-872f-b7909d05eeed",
+          "name" : "content",
+          "title" : "Content",
+          "type" : "region"
+        },
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "customHeadTags" : "",
+                "description" : "",
+                "pageTitle" : "Získej body",
+                "recordId" : "{!recordId}"
+              },
+              "definition" : "community_builder:seoAssistant",
+              "id" : "b9467a65-cc10-4108-b594-b689f8adf278",
+              "type" : "component"
+            }
+          ],
+          "id" : "14862753-cee6-4b47-bbda-6ef86a1c1d07",
+          "name" : "sfdcHiddenRegion",
+          "title" : "sfdcHiddenRegion",
+          "type" : "region"
+        }
+      ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "7ffa74fd-90f5-4c62-93de-539d814193f5",
+      "type" : "component"
+    },
+    "dataProviders" : [],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-ziskej-body"
+  },
+  "urlName" : "ziskej-body"
+}

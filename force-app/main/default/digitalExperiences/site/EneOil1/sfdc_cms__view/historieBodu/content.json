@@ -1,0 +1,78 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Historie bodů",
+  "contentBody" : {
+    "component" : {
+      "children" : [
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"04d9d2f7-c1bd-4ed9-9204-cde492ae2c1d\",\"columns\":[{\"UUID\":\"2ecf0e4b-0ec2-4b13-90d5-4cee9a52f72a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "attributes" : {},
+                      "definition" : "c:portalPointHistory",
+                      "id" : "b63bb7b7-f48f-441f-bc4f-32c11623737c",
+                      "type" : "component"
+                    }
+                  ],
+                  "id" : "2ecf0e4b-0ec2-4b13-90d5-4cee9a52f72a",
+                  "name" : "col1",
+                  "title" : "Column 1",
+                  "type" : "region"
+                }
+              ],
+              "definition" : "community_layout:section",
+              "id" : "04d9d2f7-c1bd-4ed9-9204-cde492ae2c1d",
+              "type" : "component"
+            }
+          ],
+          "id" : "0d874abc-5f99-4ac5-81c5-196cc8751311",
+          "name" : "content",
+          "title" : "Content",
+          "type" : "region"
+        },
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "customHeadTags" : "",
+                "description" : "",
+                "pageTitle" : "Historie bodů",
+                "recordId" : "{!recordId}"
+              },
+              "definition" : "community_builder:seoAssistant",
+              "id" : "c2dc7118-7e5e-4c4b-8b56-6daae3ea9d06",
+              "type" : "component"
+            }
+          ],
+          "id" : "f257eedb-4f85-4c22-b66c-5279c5f931e6",
+          "name" : "sfdcHiddenRegion",
+          "title" : "sfdcHiddenRegion",
+          "type" : "region"
+        }
+      ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "00856701-74e4-4856-a834-564bc3e0a842",
+      "type" : "component"
+    },
+    "dataProviders" : [],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-historie-bodu"
+  },
+  "urlName" : "historie-bodu"
+}

@@ -1,0 +1,43 @@
+/*
+ * EneOil Klub design tokens (Solution Design ch. 13). Custom properties pass through
+ * shadow DOM, so portal LWCs read them with var(--eneoil-*, <fallback>).
+ */
+:root {
+    --eneoil-brand: #ffa41b;
+    --eneoil-ene-green: #378729;
+    --eneoil-plus: #2d6e22;
+    --eneoil-minus: #b4382a;
+    --eneoil-ink: #1d2c38;
+    --eneoil-steel: #243746;
+    --eneoil-brand-soft: #fff1db;
+    --eneoil-surface: #f6f7f8;
+    --eneoil-font-heading: 'Archivo', 'Noto Sans', Arial, sans-serif;
+    --eneoil-font-body: 'Noto Sans', Arial, sans-serif;
+    --eneoil-font-mono: 'Noto Sans Mono', 'Courier New', monospace;
+
+    --dxp-g-root-font-family: var(--eneoil-font-body);
+    --dxp-s-html-font-family: var(--eneoil-font-body);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    background: var(--eneoil-surface);
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    color: var(--eneoil-ink);
+    font-family: var(--eneoil-font-body);
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--eneoil-font-heading);
+}

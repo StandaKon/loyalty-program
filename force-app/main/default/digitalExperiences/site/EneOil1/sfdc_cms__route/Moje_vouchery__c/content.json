@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Moje vouchery",
+  "contentBody" : {
+    "activeViewId" : "mojeVouchery",
+    "configurationTags" : [],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-moje-vouchery",
+    "urlPrefix" : "moje-vouchery"
+  },
+  "urlName" : "moje-vouchery"
+}

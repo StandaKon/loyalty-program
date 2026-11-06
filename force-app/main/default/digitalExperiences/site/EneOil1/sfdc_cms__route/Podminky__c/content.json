@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Podmínky",
+  "contentBody" : {
+    "activeViewId" : "podminky",
+    "configurationTags" : [],
+    "pageAccess" : "Public",
+    "routeType" : "custom-podminky",
+    "urlPrefix" : "podminky"
+  },
+  "urlName" : "podminky"
+}

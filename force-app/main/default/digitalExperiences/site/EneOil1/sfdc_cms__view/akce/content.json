@@ -1,0 +1,78 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Akce",
+  "contentBody" : {
+    "component" : {
+      "children" : [
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"aa2ca684-d0c8-4dc9-8283-a7570c9fd1d8\",\"columns\":[{\"UUID\":\"373579d7-6492-4278-8c0f-86d8baab5744\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "attributes" : {},
+                      "definition" : "c:portalCampaigns",
+                      "id" : "8b3ec20c-a961-4c2e-a3a5-cc7e23fc8aa9",
+                      "type" : "component"
+                    }
+                  ],
+                  "id" : "373579d7-6492-4278-8c0f-86d8baab5744",
+                  "name" : "col1",
+                  "title" : "Column 1",
+                  "type" : "region"
+                }
+              ],
+              "definition" : "community_layout:section",
+              "id" : "aa2ca684-d0c8-4dc9-8283-a7570c9fd1d8",
+              "type" : "component"
+            }
+          ],
+          "id" : "82de1879-4687-4d2e-82b3-655a9cb984ff",
+          "name" : "content",
+          "title" : "Content",
+          "type" : "region"
+        },
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "customHeadTags" : "",
+                "description" : "",
+                "pageTitle" : "Akce",
+                "recordId" : "{!recordId}"
+              },
+              "definition" : "community_builder:seoAssistant",
+              "id" : "ee74dacc-0ae7-4b12-a051-e14f23ae277a",
+              "type" : "component"
+            }
+          ],
+          "id" : "f81a6be0-a7a1-4fd7-ab9e-b8e5e3ef805f",
+          "name" : "sfdcHiddenRegion",
+          "title" : "sfdcHiddenRegion",
+          "type" : "region"
+        }
+      ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "c7114366-f050-40bf-8842-531371e8b5a5",
+      "type" : "component"
+    },
+    "dataProviders" : [],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-akce"
+  },
+  "urlName" : "akce"
+}
