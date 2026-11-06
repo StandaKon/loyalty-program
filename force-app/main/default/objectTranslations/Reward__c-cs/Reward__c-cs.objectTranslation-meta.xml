@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
     <caseValues>
         <plural>false</plural>
@@ -10,13 +10,16 @@
     </caseValues>
     <gender>Feminine</gender>
     <nameFieldLabel>Název odměny</nameFieldLabel>
-    <validationRules><errorMessage>Datum Dostupná do nesmí být dříve než Dostupná od.</errorMessage><name>Availability_Dates_Valid</name></validationRules>
+    <validationRules><errorMessage
+    >Datum Dostupná do nesmí být dříve než Dostupná od.</errorMessage><name
+    >Availability_Dates_Valid</name></validationRules>
     <validationRules>
         <errorMessage>Vyplňte všechna povinná pole programu.</errorMessage>
         <name>Required_Program_Fields</name>
     </validationRules>
     <validationRules>
-        <errorMessage>Použijte firemní účet partnera, kladnou cenu v bodech a u aktivní odměny vyplňte popis.</errorMessage>
+        <errorMessage
+    >Použijte firemní účet partnera, kladnou cenu v bodech a u aktivní odměny vyplňte popis.</errorMessage>
         <name>Reward_Values_Valid</name>
     </validationRules>
 </CustomObjectTranslation>

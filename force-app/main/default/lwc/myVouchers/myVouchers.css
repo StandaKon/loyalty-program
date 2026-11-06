@@ -1,32 +1,49 @@
 :host {
   display: block;
-  color: #17352d;
+  color: var(--eneoil-ink, #1d2c38);
+  font-family: var(--eneoil-font-body, "Noto Sans", sans-serif);
 }
-.vouchers {
+.page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
   padding: 1rem;
 }
-h2,
+.page__header {
+  margin-bottom: 1.5rem;
+}
+.page__title,
 h3 {
-  font-family: Arial, sans-serif;
+  color: var(--eneoil-ink, #1d2c38);
+  font-family: var(--eneoil-font-heading, "Archivo", sans-serif);
   font-weight: 700;
   margin: 0 0 0.4rem;
+}
+.page__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+.page__intro {
+  margin: 0;
+  color: var(--eneoil-steel, #243746);
 }
 .list {
   display: grid;
   gap: 1rem;
-  margin-top: 1.5rem;
 }
 .voucher-card {
-  border: 1px solid #dce7e2;
-  border-radius: 1rem;
+  border: 1px solid #dfe3e6;
+  border-radius: 12px;
   padding: 1.25rem;
   background: #fff;
+  box-shadow: 0 1px 3px rgb(29 44 56 / 12%);
 }
 .voucher-card.active {
-  border-left: 0.5rem solid #2d7d62;
+  border-left: 0.4rem solid var(--eneoil-plus, #2d6e22);
 }
 .voucher-card.inactive {
-  opacity: 0.72;
+  background: var(--eneoil-surface, #f6f7f8);
 }
 .voucher-heading,
 .code-row {
@@ -37,29 +54,54 @@ h3 {
 }
 .partner,
 .meta {
-  color: #52655f;
+  color: var(--eneoil-muted, #505f6b);
+}
+.partner {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 .status {
-  background: #eef7f2;
+  color: var(--eneoil-plus, #2d6e22);
+  background: #edf6ea;
   border-radius: 2rem;
   padding: 0.25rem 0.7rem;
   font-weight: 700;
 }
 .code-row {
-  background: #eef7f2;
-  border-radius: 0.6rem;
+  background: var(--eneoil-surface, #f6f7f8);
+  border-left: 4px solid var(--eneoil-brand, #ffa41b);
+  border-radius: 4px;
   padding: 0.75rem 1rem;
   margin: 1rem 0;
 }
 .code-row code {
+  color: var(--eneoil-ink, #1d2c38);
+  font-family: var(--eneoil-font-mono, "Noto Sans Mono", monospace);
   font-size: 1.25rem;
   font-weight: 700;
   white-space: nowrap;
 }
+.description {
+  white-space: pre-line;
+}
 .error {
-  color: #ba0517;
+  color: var(--eneoil-error, #ba0517);
 }
 .empty {
+  color: var(--eneoil-steel, #243746);
   text-align: center;
   padding: 2rem;
+}
+@media (max-width: 40rem) {
+  .voucher-heading,
+  .code-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .code-row code {
+    font-size: 1.05rem;
+  }
 }

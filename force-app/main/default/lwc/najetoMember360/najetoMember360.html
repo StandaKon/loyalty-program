@@ -1,0 +1,86 @@
+<template>
+    <article class="m360">
+        <template lwc:if={errorMessage}>
+            <p class="loyalty-error" role="alert">{errorMessage}</p>
+        </template>
+        <template lwc:if={isLoading}>
+            <div class="m360__loading">
+                <lightning-spinner alternative-text={labels.TITLE} size="small"></lightning-spinner>
+            </div>
+        </template>
+        <template lwc:if={view}>
+            <section class="kpis" aria-label={labels.TITLE}>
+                <template for:each={kpiTiles} for:item="tile">
+                    <div key={tile.key} class={tile.tileClass}>
+                        <div class="kpi__head">
+                            <span class="kpi__icon"><lightning-icon icon-name={tile.icon} size="x-small"></lightning-icon></span>
+                            <span class="kpi__label">{tile.label}</span>
+                        </div>
+                        <p class={tile.valueClass}>{tile.value}</p>
+                    </div>
+                </template>
+            </section>
+
+            <section class="row">
+                <div class="panel panel_chart">
+                    <c-najeto-points-chart trend={view.trend} chart-title={labels.CHART_TITLE}></c-najeto-points-chart>
+                </div>
+                <div class="panel">
+                    <h3 class="panel__title">{labels.PROFILE_TITLE}</h3>
+                    <div class="vehicle">
+                        <span class="vehicle__icon"><lightning-icon icon-name="utility:travel_and_places" size="x-small"></lightning-icon></span>
+                        <span>{vehicleText}</span>
+                    </div>
+                    <ul class="facts">
+                        <li class={profileStatus.rowClass}>
+                            <lightning-icon icon-name={profileStatus.icon} size="x-small"></lightning-icon>
+                            <span class="fact__label">{profileStatus.label}</span>
+                        </li>
+                        <template lwc:if={canReadConsents}>
+                            <template for:each={consentRows} for:item="consent">
+                                <li key={consent.key} class={consent.rowClass}>
+                                    <lightning-icon icon-name={consent.icon} size="x-small"></lightning-icon>
+                                    <span class="fact__label">{consent.label}</span>
+                                    <span class="fact__detail">{consent.detail}</span>
+                                </li>
+                            </template>
+                        </template>
+                        <template lwc:else>
+                            <li class="fact">
+                                <lightning-icon icon-name="utility:lock" size="x-small"></lightning-icon>
+                                <span class="fact__detail">{labels.CONSENT_NO_ACCESS}</span>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="panel">
+                <h3 class="panel__title">{labels.TIMELINE_TITLE}</h3>
+                <template lwc:if={hasTimeline}>
+                    <ol class="timeline">
+                        <template for:each={timelineRows} for:item="row">
+                            <li key={row.id} class="timeline__item">
+                                <span class="timeline__icon"><lightning-icon icon-name={row.icon} size="x-small"></lightning-icon></span>
+                                <div class="timeline__body">
+                                    <p class="timeline__type">{row.entryTypeLabel}</p>
+                                    <p class="timeline__detail">
+                                        {row.dateText}
+                                        <template lwc:if={row.hasSource}>
+                                            · <a href="#" data-record-id={row.sourceId} onclick={handleSourceClick}>{row.sourceName}</a>
+                                        </template>
+                                        <template lwc:if={row.detail}> · {row.detail}</template>
+                                    </p>
+                                </div>
+                                <span class={row.pointsClass}>{row.pointsText}</span>
+                            </li>
+                        </template>
+                    </ol>
+                </template>
+                <template lwc:else>
+                    <p class="panel__empty">{labels.TIMELINE_EMPTY}</p>
+                </template>
+            </section>
+        </template>
+    </article>
+</template>

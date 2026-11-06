@@ -1,8 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Service_Order_Number__c</fullName>
-    <description>EneServis service order number linked to the one-time voucher redemption.</description>
-    <inlineHelpText>Enter the service order number before marking the voucher as redeemed.</inlineHelpText>
+    <description
+  >EneServis service order number linked to the one-time voucher redemption.</description>
+    <inlineHelpText
+  >Enter the service order number before marking the voucher as redeemed.</inlineHelpText>
     <label>Service Order Number</label>
     <length>80</length>
     <type>Text</type>

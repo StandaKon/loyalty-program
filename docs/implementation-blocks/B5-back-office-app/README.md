@@ -169,6 +169,12 @@ Provide loyalty managers and back-office users with a focused Lightning applicat
 - Verified: service returns data for all four periods in the org (≈22 SOQL per call).
 - **Pending:** `Loyalty_Manager` permission set (class access `LoyaltyDashboardController`) is not deployed, because the file now also contains parallel B8 field permissions (`Reward__c.Available_From__c`, `Available_Until__c`, `Voucher__c.Service_Location__c`, `Service_Order_Number__c`) for fields not yet in the org, placed before `applicationVisibilities` (invalid order). Deploy together with B8 after moving those lines below `description`. Users with `Loyalty_Back_Office` already have access.
 
+**Extension – member 360 (approved 2026-11-06)**
+- LWC `najetoMember360` on `Loyalty_Member_Record_Page` in its own first, default tab "Přehled člena" (tab title in Czech text – FlexiPage tab titles do not accept Custom Label references; standard highlights with actions kept): 7 KPI tiles (balance, earned/redeemed in total, purchases, total spend, last purchase, active vouchers), 12-month points chart (reuses `najetoPointsChart`), vehicle + profile completion + latest consent per type (Terms, Marketing – resolves the missing consents related list), timeline of the last 10 point movements with source links. Refreshes automatically when the balance changes after a quick action.
+- Apex `Member360Selector` (inherited sharing; member read in user mode, consents in user mode – users without consent access see a notice), `Member360Service`, `Member360Controller` (cacheable); 21 labels with `cs` translations. Verified in the org: 8 SOQL per call.
+- Home page app assignment: Metadata API rejects the app-default home override (`View` / `standard-home`) in this org even for an unmodified template page; activation is done manually in Lightning App Builder (Activation → App Default → Najeto) and will be retrieved back into the repo.
+- `Member360Controller` class access added to `Loyalty_Back_Office` (deployed) and `Loyalty_Manager` (pending, see above).
+
 **Follow-up**
 - Persona separation (Back Office without Manager) can only be verified with a user holding `Loyalty_Back_Office` alone.
 - Consents LWC on the member page; optional destructive removal of `Account.Loyalty_Member` compact layout.

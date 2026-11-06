@@ -196,6 +196,45 @@ private class RewardRedemptionServiceTest {
     );
   }
 
+  @IsTest
+  static void shouldCreateVoucher_WhenCustomerCannotSeePartnerAccount() {
+    Account member = getMemberWithContact('TEST-b8-member');
+    Reward__c reward = getReward();
+    User owner = createInternalOwner();
+    System.runAs(owner) {
+      Database.update(
+        new Account(Id = member.Id, OwnerId = owner.Id),
+        AccessLevel.SYSTEM_MODE
+      );
+    }
+    User customer = createCustomer(member);
+
+    Test.startTest();
+    System.runAs(customer) {
+      RewardsPortalController.RedemptionResult result = RewardsPortalController.redeem(
+        reward.Id,
+        REQUEST_KEY
+      );
+
+      Assert.isNotNull(
+        result.voucher.id,
+        'The portal member should receive an issued voucher.'
+      );
+      Assert.areEqual(
+        reward.Partner__c,
+        [
+          SELECT Partner__c
+          FROM Voucher__c
+          WHERE Id = :result.voucher.id
+          WITH SYSTEM_MODE
+        ]
+        .Partner__c,
+        'Issuance should retain the internal partner reference.'
+      );
+    }
+    Test.stopTest();
+  }
+
   private static Account getMember(String memberNumber) {
     return [
       SELECT Id, Points_Balance__c
@@ -204,6 +243,66 @@ private class RewardRedemptionServiceTest {
       WITH SYSTEM_MODE
       LIMIT 1
     ];
+  }
+
+  private static Account getMemberWithContact(String memberNumber) {
+    return [
+      SELECT Id, PersonContactId
+      FROM Account
+      WHERE Member_Number__c = :memberNumber
+      WITH SYSTEM_MODE
+      LIMIT 1
+    ];
+  }
+
+  private static User createCustomer(Account member) {
+    Id profileId = [
+      SELECT Id
+      FROM Profile
+      WHERE UserLicense.LicenseDefinitionKey = 'PID_Customer_Community'
+      WITH SYSTEM_MODE
+      ORDER BY CreatedDate DESC
+      LIMIT 1
+    ]
+    .Id;
+    String token = EncodingUtil.convertToHex(Crypto.generateAesKey(128));
+    User customer = new User(
+      Username = 'b8-customer-' + token + '@example.com',
+      Email = 'b8-customer@example.com',
+      Alias = 'b8cust',
+      LastName = 'B8 Customer',
+      CommunityNickname = 'b8-' + token.left(16),
+      ContactId = member.PersonContactId,
+      ProfileId = profileId,
+      TimeZoneSidKey = 'Europe/Prague',
+      LocaleSidKey = 'cs_CZ',
+      EmailEncodingKey = 'UTF-8',
+      LanguageLocaleKey = 'cs'
+    );
+    System.runAs(new User(Id = UserInfo.getUserId())) {
+      Database.insert(customer, AccessLevel.SYSTEM_MODE);
+    }
+    return customer;
+  }
+
+  private static User createInternalOwner() {
+    UserRole role = new UserRole(Name = 'B8 portal account owner');
+    Database.insert(role, AccessLevel.SYSTEM_MODE);
+    String token = EncodingUtil.convertToHex(Crypto.generateAesKey(128));
+    User owner = new User(
+      Username = 'b8-owner-' + token + '@example.com',
+      Email = 'b8-owner@example.com',
+      Alias = 'b8owner',
+      LastName = 'B8 Owner',
+      TimeZoneSidKey = 'Europe/Prague',
+      LocaleSidKey = 'cs_CZ',
+      EmailEncodingKey = 'UTF-8',
+      LanguageLocaleKey = 'cs',
+      ProfileId = UserInfo.getProfileId(),
+      UserRoleId = role.Id
+    );
+    Database.insert(owner, AccessLevel.SYSTEM_MODE);
+    return owner;
   }
 
   private static Reward__c getReward() {

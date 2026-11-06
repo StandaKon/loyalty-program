@@ -2,10 +2,17 @@ public inherited sharing class VoucherEmailQueueable implements Queueable {
   private static final String STATUS_SENT = 'Sent';
   private static final String STATUS_ERROR = 'Error';
   private static final Integer MAX_ERROR_LENGTH = 255;
+  private static final Integer MAX_ATTEMPTS = 3;
   private final Id voucherId;
+  private final Integer attempt;
 
   public VoucherEmailQueueable(Id voucherId) {
+    this(voucherId, 1);
+  }
+
+  private VoucherEmailQueueable(Id voucherId, Integer attempt) {
     this.voucherId = voucherId;
+    this.attempt = attempt;
   }
 
   public void execute(QueueableContext context) {
@@ -30,7 +37,7 @@ public inherited sharing class VoucherEmailQueueable implements Queueable {
         new List<Messaging.SingleEmailMessage>{ message }
       )[0];
       if (!result.isSuccess()) {
-        markError(result.getErrors()[0].getMessage());
+        retryOrMarkError(result.getErrors()[0].getMessage());
         return;
       }
       Database.update(
@@ -43,9 +50,7 @@ public inherited sharing class VoucherEmailQueueable implements Queueable {
         AccessLevel.SYSTEM_MODE
       );
     } catch (Exception caughtException) {
-      Log.error(caughtException);
-      Log.save();
-      markError(caughtException.getMessage());
+      retryOrMarkError(caughtException.getMessage());
     }
   }
 
@@ -92,5 +97,13 @@ public inherited sharing class VoucherEmailQueueable implements Queueable {
       ),
       AccessLevel.SYSTEM_MODE
     );
+  }
+
+  private void retryOrMarkError(String errorMessage) {
+    if (attempt < MAX_ATTEMPTS) {
+      System.enqueueJob(new VoucherEmailQueueable(voucherId, attempt + 1));
+      return;
+    }
+    markError(errorMessage);
   }
 }

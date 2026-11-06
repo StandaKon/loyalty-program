@@ -1,8 +1,8 @@
 <template
-  ><section class="vouchers" aria-labelledby="vouchers-title">
-    <header>
-      <h2 id="vouchers-title">{labels.title}</h2>
-      <p>{labels.intro}</p>
+  ><section class="page" aria-labelledby="vouchers-title">
+    <header class="page__header">
+      <h1 id="vouchers-title" class="page__title">{labels.title}</h1>
+      <p class="page__intro">{labels.intro}</p>
     </header>
     <template lwc:if={isLoading}
       ><lightning-spinner
@@ -36,7 +36,7 @@
                 ></lightning-button-icon
               ></template>
             </div>
-            <p>{voucher.description}</p>
+            <p class="description">{voucher.description}</p>
             <p class="meta">
               <lightning-formatted-date-time
                 value={voucher.issuedAt}
@@ -47,7 +47,7 @@
             </p>
             <template lwc:if={voucher.redeemedAt}
               ><p class="meta">
-                {voucher.redeemedText}
+                {voucher.statusLabel}
                 <lightning-formatted-date-time
                   value={voucher.redeemedAt}
                   year="numeric"
@@ -59,7 +59,7 @@
             >
             <template lwc:if={voucher.cancelledAt}
               ><p class="meta">
-                {voucher.cancelledText}
+                {voucher.statusLabel}
                 <lightning-formatted-date-time
                   value={voucher.cancelledAt}
                   year="numeric"

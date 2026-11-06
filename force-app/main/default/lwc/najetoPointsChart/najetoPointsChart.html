@@ -1,7 +1,7 @@
 <template>
     <div class="chart">
         <div class="chart__header">
-            <h3 class="chart__title">{labels.TITLE}</h3>
+            <h3 class="chart__title">{title}</h3>
             <lightning-button variant="base" label={toggleLabel} onclick={handleToggle}></lightning-button>
         </div>
         <ul class="legend">
@@ -30,7 +30,7 @@
         </template>
         <template lwc:else>
             <div class="plot" onmouseleave={handleLeave}>
-                <svg viewBox={viewBox} class="plot__svg" role="img" aria-label={labels.TITLE}>
+                <svg viewBox={viewBox} class="plot__svg" role="img" aria-label={title}>
                     <template for:each={gridLines} for:item="line">
                         <g key={line.key}>
                             <line class="grid" x1={line.x1} x2={line.x2} y1={line.y} y2={line.y}></line>

@@ -35,9 +35,7 @@ export default class MyVouchers extends LightningElement {
         cssClass:
           voucher.status === "Issued"
             ? "voucher-card active"
-            : "voucher-card inactive",
-        redeemedText: "",
-        cancelledText: ""
+            : "voucher-card inactive"
       }));
   }
   get hasVouchers() {

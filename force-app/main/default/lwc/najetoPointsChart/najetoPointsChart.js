@@ -35,11 +35,16 @@ const barPath = (x, y, width, height) => {
 
 export default class NajetoPointsChart extends LightningElement {
     @api trend = [];
+    @api chartTitle;
 
     labels = { TITLE, AWARDED, REDEEMED, MONTH };
     viewBox = `0 0 ${WIDTH} ${HEIGHT}`;
     isTableView = false;
     activeIndex;
+
+    get title() {
+        return this.chartTitle || TITLE;
+    }
 
     get toggleLabel() {
         return this.isTableView ? SHOW_CHART : SHOW_TABLE;

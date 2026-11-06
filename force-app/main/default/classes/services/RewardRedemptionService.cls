@@ -1,4 +1,6 @@
-public inherited sharing class RewardRedemptionService {
+// Issuance must access the internal partner Account referenced by the voucher;
+// the with-sharing portal controller binds memberId to the signed-in member.
+public without sharing class RewardRedemptionService {
   private static final String MEMBERSHIP_ACTIVE = 'Active';
   private static final String STATUS_ISSUED = 'Issued';
   private static final String EMAIL_PENDING = 'Pending';
