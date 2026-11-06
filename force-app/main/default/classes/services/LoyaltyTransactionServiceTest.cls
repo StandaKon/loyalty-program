@@ -46,18 +46,18 @@ private class LoyaltyTransactionServiceTest {
     }
 
     @IsTest
-    static void shouldMarkErrorWithoutPoints_WhenAmountsDoNotAddUp() {
+    static void shouldRejectImportRow_WhenAmountsDoNotAddUp() {
         // Given (T20)
         Loyalty_Transaction__c loyaltyTransaction = LoyaltyTestDataFactory.buildTransaction(getMember().Id, 'POS-T20', 45, 180);
         loyaltyTransaction.Total_Amount__c += 1;
 
         // When
         Test.startTest();
-        insert loyaltyTransaction;
+        Database.SaveResult saveResult = Database.insert(loyaltyTransaction, false);
         Test.stopTest();
 
         // Then
-        assertError(loyaltyTransaction.Id, Label.Loyalty_Tx_Error_Amount_Mismatch);
+        assertRejected(saveResult);
     }
 
     @IsTest
@@ -78,38 +78,41 @@ private class LoyaltyTransactionServiceTest {
     }
 
     @IsTest
-    static void shouldMarkErrorWithoutPoints_WhenPurchaseIsInFuture() {
+    static void shouldRejectImportRow_WhenPurchaseIsInFuture() {
         // Given
         Loyalty_Transaction__c loyaltyTransaction = LoyaltyTestDataFactory.buildTransaction(getMember().Id, 'POS-FUTURE', 45, 180);
         loyaltyTransaction.Purchased_At__c = Datetime.now().addDays(1);
 
         // When
         Test.startTest();
-        insert loyaltyTransaction;
+        Database.SaveResult saveResult = Database.insert(loyaltyTransaction, false);
         Test.stopTest();
 
         // Then
-        assertError(loyaltyTransaction.Id, Label.Loyalty_Tx_Error_Future_Purchase);
+        assertRejected(saveResult);
     }
 
     @IsTest
-    static void shouldProcessAndAwardPoints_WhenErrorTransactionIsCorrected() {
-        // Given
-        Loyalty_Transaction__c loyaltyTransaction = LoyaltyTestDataFactory.buildTransaction(getMember().Id, 'POS-RETRY', 45, 180);
-        loyaltyTransaction.Total_Amount__c += 1;
+    static void shouldProcessAndAwardPoints_WhenErrorTransactionIsSavedAgain() {
+        // Given: purchase of a blocked member ends in Error, then the member is reactivated
+        Account member = getMember();
+        member.Membership_Status__c = MEMBERSHIP_BLOCKED;
+        update member;
+        Loyalty_Transaction__c loyaltyTransaction = LoyaltyTestDataFactory.buildTransaction(member.Id, 'POS-RETRY', 45, 180);
         insert loyaltyTransaction;
+        member.Membership_Status__c = LoyaltyTransactionService.MEMBERSHIP_ACTIVE;
+        update member;
 
         // When
         Test.startTest();
-        loyaltyTransaction.Total_Amount__c -= 1;
         update loyaltyTransaction;
         Test.stopTest();
 
         // Then
         Loyalty_Transaction__c processed = getTransaction(loyaltyTransaction.Id);
-        Assert.areEqual(LoyaltyTransactionService.STATUS_PROCESSED, processed.Processing_Status__c, 'Corrected purchase is reprocessed');
+        Assert.areEqual(LoyaltyTransactionService.STATUS_PROCESSED, processed.Processing_Status__c, 'Error purchase is reprocessed on save');
         Assert.isNull(processed.Processing_Error__c, 'Error reason is cleared');
-        Assert.areEqual(109, getMember().Points_Balance__c, 'Points are awarded once after correction');
+        Assert.areEqual(109, getMember().Points_Balance__c, 'Points are awarded once after reprocessing');
     }
 
     @IsTest
@@ -126,7 +129,7 @@ private class LoyaltyTransactionServiceTest {
 
         // Then
         Assert.isFalse(updateResult.isSuccess(), 'Processed purchase must be locked');
-        Assert.areEqual(Label.Loyalty_Tx_Error_Processed_Locked, updateResult.getErrors()[0].getMessage(), 'User sees the lock reason');
+        Assert.areEqual(3, [SELECT COUNT() FROM Point_Ledger__c], 'No additional ledger entries');
         Assert.areEqual(109, getMember().Points_Balance__c, 'Balance is unchanged');
     }
 
@@ -166,6 +169,12 @@ private class LoyaltyTransactionServiceTest {
         Assert.areEqual(LoyaltyTransactionService.STATUS_ERROR, loyaltyTransaction.Processing_Status__c, 'Invalid settings stop processing');
         Assert.areEqual(Label.Loyalty_Tx_Error_Invalid_Settings, loyaltyTransaction.Processing_Error__c, 'Reason names the settings');
         Assert.isNull(loyaltyTransaction.Base_Fuel_Points__c, 'No points are calculated');
+    }
+
+    private static void assertRejected(Database.SaveResult saveResult) {
+        Assert.isFalse(saveResult.isSuccess(), 'Invalid row is rejected by the B1 validation rules');
+        Assert.areEqual(0, [SELECT COUNT() FROM Loyalty_Transaction__c], 'Nothing is stored');
+        Assert.areEqual(0, [SELECT COUNT() FROM Point_Ledger__c], 'No ledger entries');
     }
 
     private static void assertError(Id transactionId, String expectedError) {

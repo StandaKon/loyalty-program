@@ -3,6 +3,8 @@
  * Before save: validates the purchase and stores the points breakdown and processing status on the record.
  * After save: creates the immutable Point_Ledger__c entries for newly processed purchases.
  * Idempotency relies on unique POS_Transaction_Id__c and unique Point_Ledger__c.Unique_Key__c values.
+ * Data validity (amounts, future date, registered member) and the lock of processed purchases are enforced by the
+ * B1 validation rules, which reject such rows at import. The engine only stores business errors as status Error.
  */
 public inherited sharing class LoyaltyTransactionService {
     public static final String STATUS_PROCESSED = 'Processed';
@@ -10,22 +12,6 @@ public inherited sharing class LoyaltyTransactionService {
     public static final String MEMBERSHIP_ACTIVE = 'Active';
     public static final String ENTRY_TYPE_PURCHASE_BASE = 'PurchaseBase';
     public static final String ENTRY_TYPE_CAMPAIGN_BONUS = 'CampaignBonus';
-
-    private static final List<SObjectField> FIELDS_LOCKED_AFTER_PROCESSING = new List<SObjectField>{
-        Loyalty_Transaction__c.Member__c,
-        Loyalty_Transaction__c.POS_Transaction_Id__c,
-        Loyalty_Transaction__c.Purchased_At__c,
-        Loyalty_Transaction__c.Total_Amount__c,
-        Loyalty_Transaction__c.Fuel_Amount__c,
-        Loyalty_Transaction__c.Other_Amount__c,
-        Loyalty_Transaction__c.Liters__c,
-        Loyalty_Transaction__c.Processing_Status__c,
-        Loyalty_Transaction__c.Processing_Error__c,
-        Loyalty_Transaction__c.Processed_At__c,
-        Loyalty_Transaction__c.Base_Fuel_Points__c,
-        Loyalty_Transaction__c.Base_Other_Points__c,
-        Loyalty_Transaction__c.Campaign_Points__c
-    };
 
     private final AccountSelector accountSelector;
     private final LoyaltyCampaignSelector campaignSelector;
@@ -42,7 +28,8 @@ public inherited sharing class LoyaltyTransactionService {
         this.settingsSelector = settingsSelector;
     }
 
-    public void processTransactions(List<Loyalty_Transaction__c> transactions) {
+    public void processTransactions(List<Loyalty_Transaction__c> allTransactions) {
+        List<Loyalty_Transaction__c> transactions = getCalculable(allTransactions);
         if (transactions.isEmpty()) {
             return;
         }
@@ -52,7 +39,7 @@ public inherited sharing class LoyaltyTransactionService {
 
         List<Loyalty_Transaction__c> validTransactions = new List<Loyalty_Transaction__c>();
         for (Loyalty_Transaction__c loyaltyTransaction : transactions) {
-            String validationError = hasValidSettings ? validate(loyaltyTransaction, membersById.get(loyaltyTransaction.Member__c)) : Label.Loyalty_Tx_Error_Invalid_Settings;
+            String validationError = hasValidSettings ? validate(membersById.get(loyaltyTransaction.Member__c)) : Label.Loyalty_Tx_Error_Invalid_Settings;
             if (validationError == null) {
                 validTransactions.add(loyaltyTransaction);
             } else {
@@ -67,15 +54,6 @@ public inherited sharing class LoyaltyTransactionService {
         List<Loyalty_Campaign__c> campaigns = getCampaigns(validTransactions);
         for (Loyalty_Transaction__c loyaltyTransaction : validTransactions) {
             markAsProcessed(loyaltyTransaction, calculator.calculate(loyaltyTransaction, campaigns));
-        }
-    }
-
-    public void preventChangesToProcessed(List<Loyalty_Transaction__c> transactions, Map<Id, Loyalty_Transaction__c> oldTransactionsById) {
-        for (Loyalty_Transaction__c loyaltyTransaction : transactions) {
-            Loyalty_Transaction__c oldTransaction = oldTransactionsById.get(loyaltyTransaction.Id);
-            if (oldTransaction.Processing_Status__c == STATUS_PROCESSED && hasLockedFieldChanged(loyaltyTransaction, oldTransaction)) {
-                loyaltyTransaction.addError(Label.Loyalty_Tx_Error_Processed_Locked);
-            }
         }
     }
 
@@ -107,36 +85,22 @@ public inherited sharing class LoyaltyTransactionService {
         }
     }
 
-    private String validate(Loyalty_Transaction__c loyaltyTransaction, Account member) {
-        if (
-            loyaltyTransaction.Member__c == null ||
-            loyaltyTransaction.Purchased_At__c == null ||
-            loyaltyTransaction.Total_Amount__c == null ||
-            loyaltyTransaction.Fuel_Amount__c == null ||
-            loyaltyTransaction.Other_Amount__c == null ||
-            loyaltyTransaction.Liters__c == null
-        ) {
-            return Label.Loyalty_Tx_Error_Missing_Data;
-        }
-        if (loyaltyTransaction.Total_Amount__c <= 0 || loyaltyTransaction.Fuel_Amount__c < 0 || loyaltyTransaction.Other_Amount__c < 0 || loyaltyTransaction.Liters__c < 0) {
-            return Label.Loyalty_Tx_Error_Negative_Value;
-        }
-        if (loyaltyTransaction.Fuel_Amount__c + loyaltyTransaction.Other_Amount__c != loyaltyTransaction.Total_Amount__c) {
-            return Label.Loyalty_Tx_Error_Amount_Mismatch;
-        }
-        if ((loyaltyTransaction.Fuel_Amount__c > 0) != (loyaltyTransaction.Liters__c > 0)) {
-            return Label.Loyalty_Tx_Error_Fuel_Liters_Mismatch;
-        }
-        if (loyaltyTransaction.Purchased_At__c > Datetime.now()) {
-            return Label.Loyalty_Tx_Error_Future_Purchase;
-        }
-        if (member == null || !member.IsPersonAccount || String.isBlank(member.Member_Number__c)) {
-            return Label.Loyalty_Tx_Error_Member_Not_Found;
-        }
-        if (member.Membership_Status__c != MEMBERSHIP_ACTIVE) {
+    private String validate(Account member) {
+        if (member?.Membership_Status__c != MEMBERSHIP_ACTIVE) {
             return Label.Loyalty_Tx_Error_Member_Inactive;
         }
         return null;
+    }
+
+    // Rows without the inputs needed for calculation are left untouched; the B1 validation rules reject them.
+    private List<Loyalty_Transaction__c> getCalculable(List<Loyalty_Transaction__c> transactions) {
+        List<Loyalty_Transaction__c> calculable = new List<Loyalty_Transaction__c>();
+        for (Loyalty_Transaction__c loyaltyTransaction : transactions) {
+            if (loyaltyTransaction.Member__c != null && loyaltyTransaction.Purchased_At__c != null && loyaltyTransaction.Liters__c != null && loyaltyTransaction.Other_Amount__c != null) {
+                calculable.add(loyaltyTransaction);
+            }
+        }
+        return calculable;
     }
 
     private Boolean isValid(Loyalty_Settings__mdt settings) {
@@ -159,15 +123,6 @@ public inherited sharing class LoyaltyTransactionService {
         loyaltyTransaction.Base_Fuel_Points__c = result.fuelPoints;
         loyaltyTransaction.Base_Other_Points__c = result.otherPoints;
         loyaltyTransaction.Campaign_Points__c = result.getCampaignPoints();
-    }
-
-    private Boolean hasLockedFieldChanged(Loyalty_Transaction__c loyaltyTransaction, Loyalty_Transaction__c oldTransaction) {
-        for (SObjectField lockedField : FIELDS_LOCKED_AFTER_PROCESSING) {
-            if (loyaltyTransaction.get(lockedField) != oldTransaction.get(lockedField)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private Map<Id, Loyalty_Transaction__c> getNewlyProcessed(List<Loyalty_Transaction__c> transactions, Map<Id, Loyalty_Transaction__c> oldTransactionsById) {
@@ -195,9 +150,7 @@ public inherited sharing class LoyaltyTransactionService {
     private Set<Id> collectMemberIds(List<Loyalty_Transaction__c> transactions) {
         Set<Id> memberIds = new Set<Id>();
         for (Loyalty_Transaction__c loyaltyTransaction : transactions) {
-            if (loyaltyTransaction.Member__c != null) {
-                memberIds.add(loyaltyTransaction.Member__c);
-            }
+            memberIds.add(loyaltyTransaction.Member__c);
         }
         return memberIds;
     }

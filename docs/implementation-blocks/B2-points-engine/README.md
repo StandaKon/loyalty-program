@@ -96,7 +96,7 @@ Implement a bulk-safe and idempotent engine that validates loyalty transactions,
 | OP-07 | Apex via trigger-actions-framework (trigger action + service + selectors). Reason: bulk 5 000 transactions, idempotency via unique keys, full unit-test coverage of T01–T25. Campaigns and rates stay configurable as records/CMDT. | Stanislav Konopásek, 2026-11-06 |
 | Q10 | Multiple multipliers: each calculated separately from base points, results summed (order-independent). | Stanislav Konopásek, 2026-11-06 |
 | Zero bonus | A matched campaign with a 0-point result (e.g. T04) still creates a 0-point ledger entry, so campaign performance reporting (FR-34) counts every hit. | Stanislav Konopásek, 2026-11-06 |
-| Errors & retry | Statuses `Pending → Processed / Error` (names per B1). An *Error* transaction is saved with a reason, can be corrected and is reprocessed on save. A *Processed* transaction is locked; corrections go through storno or manual adjustment. | Stanislav Konopásek, 2026-11-06 |
+| Errors & retry | Statuses `Pending → Processed / Error` (names per B1). An *Error* transaction (inactive member, invalid settings) is saved with a reason and is reprocessed on its next save; invalid data is rejected at import by B1 validation rules. A *Processed* transaction is locked; corrections go through storno or manual adjustment. | Stanislav Konopásek, 2026-11-06 |
 | Campaign change | Changes to a campaign apply only to transactions processed afterwards; already awarded points are never recalculated. | Stanislav Konopásek, 2026-11-06 |
 | Backdated / future dates | Campaign eligibility by purchase date (Europe/Prague), regardless of import time; no backdating limit (historic seed data in B4). Future-dated purchase → *Error*. Simultaneous transactions: balance is a roll-up, so no shared counter is updated concurrently. | Stanislav Konopásek, 2026-11-06 |
 
@@ -122,9 +122,10 @@ Implement a bulk-safe and idempotent engine that validates loyalty transactions,
 | Custom Labels `Loyalty_Tx_Error_*` | `labels/` | Error reasons stored in `Processing_Error__c` (English base; Czech translation is follow-up) |
 | `PointsCalculatorTest`, `LoyaltyTransactionServiceTest`, `LoyaltyTestDataFactory` | `classes/` | T01–T07, T10, T20, T21, multi-multiplier, date boundaries, retry, lock, bulk 251, invalid settings |
 
-**Test execution:** not run yet – the B1 fields do not exist in the `LOYALTY` org, so the code cannot be compiled there.
+**Deviation after B1 deployment (2026-11-06):** B1 validation rules (`Amounts_Valid`, `Purchase_Not_Future`, `Member_Valid`, `Required_Program_Fields`, `Processed_Transaction_Immutable`) run after the before-save trigger and reject invalid rows at import. The engine therefore stores status *Error* only for business errors that a row-level rule cannot express: blocked/cancelled member and missing/invalid `Loyalty_Settings__mdt`. Duplicate engine checks and their labels were removed. Ledger immutability is enforced by B1 rule `Point_Ledger__c.Immutable_Entry`.
+
+**Test execution (2026-11-06, org `LOYALTY`, RunSpecifiedTests):** deploy succeeded; 16/16 tests passed (`PointsCalculatorTest`, `LoyaltyTransactionServiceTest`). Coverage: `LoyaltyTransactionService` 98 %, `PointsCalculator` 94 %, trigger, handler and selectors 100 %.
 
 **Follow-up:**
-- Point_Ledger__c immutability (block update/delete) – B1 §6, not part of this change.
-- If B1 adds a validation rule for `fuel + other = total`, an inconsistent row is rejected by the import instead of being stored as *Error*; the engine check remains as a safety net.
+- T23 (unknown member) is a B3 import-error case; T24/T25 with seed data in B4.
 - Czech translations of the error labels.

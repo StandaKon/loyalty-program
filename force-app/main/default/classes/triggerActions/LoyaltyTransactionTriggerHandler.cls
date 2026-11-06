@@ -24,7 +24,6 @@ public without sharing class LoyaltyTransactionTriggerHandler {
                 service.processTransactions(newTransactions);
             }
             when BEFORE_UPDATE {
-                service.preventChangesToProcessed(newTransactions, oldTransactionsById);
                 service.processTransactions(getNotYetProcessed(newTransactions, oldTransactionsById));
             }
             when AFTER_INSERT, AFTER_UPDATE {
