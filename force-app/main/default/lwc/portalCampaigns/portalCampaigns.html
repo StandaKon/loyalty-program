@@ -1,0 +1,16 @@
+<template>
+    <section class="page">
+        <h1 class="page__title">{labels.title}</h1>
+        <div class="card intro">{labels.intro}</div>
+        <c-portal-promo-banners></c-portal-promo-banners>
+        <template lwc:if={isLoading}>
+            <c-portal-state-message variant="loading"></c-portal-state-message>
+        </template>
+        <template lwc:elseif={hasError}>
+            <c-portal-state-message variant="error" onretry={loadCampaigns}></c-portal-state-message>
+        </template>
+        <template lwc:elseif={hasCampaigns}>
+            <c-portal-campaign-list campaigns={campaigns}></c-portal-campaign-list>
+        </template>
+    </section>
+</template>

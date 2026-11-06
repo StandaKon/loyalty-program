@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Czech registration welcome email matching the Najeto portal branding. Select in Experience Cloud welcome email settings after reviewing a real registration email.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Najeto - Welcome (CS)</name>
+    <style>none</style>
+    <subject>Vítej v najeto. Tvoje cesta za odměnami začíná.</subject>
+    <textOnly>Vítej na cestě za odměnami.
+
+Registrace je hotová. Teď už stačí otevřít členskou kartu, ukázat kód a sbírat body na další odměny.
+
+Ve svém účtu najdeš členskou kartu, přehled bodů i dostupné odměny.
+
+Otevřít můj účet: {!Community_Url}
+
+Ukaž kód, připíš body.
+1. Otevři kartu v aplikaci.
+2. Ukaž QR na pokladně.
+3. Body máš na účtu.
+
+Tak ať to jede.
+Tým najeto.
+
+Tento e-mail dostáváš jako potvrzení registrace do věrnostního programu najeto. Pokud ses neregistroval/a, můžeš tuto zprávu ignorovat.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

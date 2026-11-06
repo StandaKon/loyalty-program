@@ -1,0 +1,1131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Portal_Nav_Overview</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Overview</shortDescription>
+        <value>Overview</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_History</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav History</shortDescription>
+        <value>Points history</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_Campaigns</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Campaigns</shortDescription>
+        <value>Offers</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_EarnPoints</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav EarnPoints</shortDescription>
+        <value>Earn points</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_Rewards</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Rewards</shortDescription>
+        <value>Rewards</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_Vouchers</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Vouchers</shortDescription>
+        <value>My vouchers</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_Profile</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Profile</shortDescription>
+        <value>Profile</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_Login</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Login</shortDescription>
+        <value>Log in</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_Register</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Register</shortDescription>
+        <value>Join the club</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_Logout</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Logout</shortDescription>
+        <value>Log out</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_Menu</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Menu</shortDescription>
+        <value>Menu</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Nav_Home</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Nav Home</shortDescription>
+        <value>EneOil Klub home</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Header_LogoAlt</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Header Logo Alt</shortDescription>
+        <value>Najeto</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Footer_Terms</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Footer Terms</shortDescription>
+        <value>Terms</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Footer_Privacy</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Footer Privacy</shortDescription>
+        <value>Privacy</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Footer_Tagline</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Footer Tagline</shortDescription>
+        <value>Every stop counts.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_State_NotMember</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal State Not Member</shortDescription>
+        <value>This account is not an EneOil Klub member. Sign in with your member account to see your points.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_State_Loading</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal State Loading</shortDescription>
+        <value>Loading…</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Error_Generic</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Error Generic</shortDescription>
+        <value>Something went wrong. Please try again in a moment.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Action_Retry</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Action Retry</shortDescription>
+        <value>Try again</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_Greeting</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview Greeting</shortDescription>
+        <value>Hi {0}!</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_GreetingNoName</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview GreetingNoName</shortDescription>
+        <value>Hi!</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_BalanceTitle</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview BalanceTitle</shortDescription>
+        <value>Your balance</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_MemberNumber</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview MemberNumber</shortDescription>
+        <value>Member number {0}</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_PointsToReward</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview PointsToReward</shortDescription>
+        <value>You need {0} more for {1}.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_AllRewardsReached</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview AllRewardsReached</shortDescription>
+        <value>You have enough points for any reward.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_RecentMovements</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview RecentMovements</shortDescription>
+        <value>Recent movements</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_ShowAllHistory</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview ShowAllHistory</shortDescription>
+        <value>Show full history</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_ActiveCampaigns</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview ActiveCampaigns</shortDescription>
+        <value>Current offers</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Overview_ShowAllCampaigns</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Overview ShowAllCampaigns</shortDescription>
+        <value>All offers</value>
+    </labels>
+    <labels>
+        <fullName>Portal_History_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal History Title</shortDescription>
+        <value>Points history</value>
+    </labels>
+    <labels>
+        <fullName>Portal_History_Empty</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal History Empty</shortDescription>
+        <value>No point movements yet. Your first purchase will show up here.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_History_LoadMore</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal History LoadMore</shortDescription>
+        <value>Show more</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_PurchaseBase</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType PurchaseBase</shortDescription>
+        <value>Purchase</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_CampaignBonus</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType CampaignBonus</shortDescription>
+        <value>Offer bonus</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_ProfileBonus</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType ProfileBonus</shortDescription>
+        <value>Profile bonus</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_MarketingBonus</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType MarketingBonus</shortDescription>
+        <value>Consent bonus</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_Redemption</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType Redemption</shortDescription>
+        <value>Reward redemption</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_Refund</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType Refund</shortDescription>
+        <value>Points returned</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_Adjustment</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType Adjustment</shortDescription>
+        <value>Adjustment</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_Other</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType Other</shortDescription>
+        <value>Point movement</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Campaigns_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Campaigns Title</shortDescription>
+        <value>Offers</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Campaigns_Empty</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Campaigns Empty</shortDescription>
+        <value>No offers are running right now. Check back soon.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Campaigns_ValidTo</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Campaigns ValidTo</shortDescription>
+        <value>Valid until {0}</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Campaigns_NoEnd</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Campaigns NoEnd</shortDescription>
+        <value>Ongoing</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Points_One</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Points One</shortDescription>
+        <value>point</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Points_Few</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Points Few</shortDescription>
+        <value>points</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Points_Many</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Points Many</shortDescription>
+        <value>points</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Placeholder_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Placeholder Title</shortDescription>
+        <value>Coming soon</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Placeholder_Text</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Placeholder Text</shortDescription>
+        <value>We are working on this section. It will be available soon.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Title</shortDescription>
+        <value>Join najeto</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Subtitle</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Subtitle</shortDescription>
+        <value>Fill up. Collect. Drive.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_FirstName</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register FirstName</shortDescription>
+        <value>First name</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_LastName</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register LastName</shortDescription>
+        <value>Last name</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Email</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Email</shortDescription>
+        <value>E-mail</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Password</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Password</shortDescription>
+        <value>Password</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_PasswordHelp</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register PasswordHelp</shortDescription>
+        <value>At least 8 characters with letters and numbers.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_TermsConsent</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register TermsConsent</shortDescription>
+        <value>I agree to the EneOil Klub terms and have read the privacy notice.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_MarketingConsent</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register MarketingConsent</shortDescription>
+        <value>Send me news and offers by e-mail (+50 points).</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Submit</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Submit</shortDescription>
+        <value>Create account</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_HaveAccount</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register HaveAccount</shortDescription>
+        <value>Already a member? Log in</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Error_Required</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Error Required</shortDescription>
+        <value>Fill in all required fields.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Error_TermsRequired</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Error TermsRequired</shortDescription>
+        <value>You need to agree to the terms to join.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Error_InvalidEmail</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Error InvalidEmail</shortDescription>
+        <value>Enter a valid e-mail address.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Error_Password</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Error Password</shortDescription>
+        <value>The password does not meet the requirements. Use at least 8 characters with letters and numbers.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Error_EmailTaken</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Error EmailTaken</shortDescription>
+        <value>An account with this e-mail already exists. Log in or reset your password.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Register_Error_Generic</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Register Error Generic</shortDescription>
+        <value>Registration failed. Please try again in a moment.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Terms_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Terms Title</shortDescription>
+        <value>EneOil Klub terms</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Terms_Body</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Terms Body</shortDescription>
+        <value>[PLACEHOLDER] The full terms of EneOil Klub will be published here before launch.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Privacy_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Privacy Title</shortDescription>
+        <value>Privacy</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Privacy_Body</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Privacy Body</shortDescription>
+        <value>[PLACEHOLDER] Information on personal data processing will be published here before launch.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_EarnPoints_Intro</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal EarnPoints Intro</shortDescription>
+        <value>Earn bonus points for simple activities in the club.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Activity_Profile_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Activity Profile Title</shortDescription>
+        <value>Complete your vehicle profile</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Activity_Profile_Text</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Activity Profile Text</shortDescription>
+        <value>Fill in make, model, fuel type and year of manufacture of your vehicle.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Activity_Marketing_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Activity Marketing Title</shortDescription>
+        <value>Agree to news and offers</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Activity_Marketing_Text</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Activity Marketing Text</shortDescription>
+        <value>Receive club news and offers by e-mail.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Activity_Done</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Activity Done</shortDescription>
+        <value>Completed, points awarded</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Activity_Open</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Activity Open</shortDescription>
+        <value>Not completed yet</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Activity_GoToProfile</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Activity GoToProfile</shortDescription>
+        <value>Go to profile</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_VehicleTitle</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile VehicleTitle</shortDescription>
+        <value>Vehicle</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_Make</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile Make</shortDescription>
+        <value>Make</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_Model</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile Model</shortDescription>
+        <value>Model</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_FuelType</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile FuelType</shortDescription>
+        <value>Fuel type</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_Year</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile Year</shortDescription>
+        <value>Year of manufacture</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_Registration</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile Registration</shortDescription>
+        <value>Licence plate (optional)</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_SelectFuel</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile SelectFuel</shortDescription>
+        <value>Select fuel type</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_Save</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile Save</shortDescription>
+        <value>Save vehicle</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_Saved</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile Saved</shortDescription>
+        <value>Vehicle details saved.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_BonusHint</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile BonusHint</shortDescription>
+        <value>Fill in all required vehicle details and get {0}.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_BonusAwarded</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile BonusAwarded</shortDescription>
+        <value>You received {0} for completing your profile.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_ConsentTitle</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile ConsentTitle</shortDescription>
+        <value>Marketing consent</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_ConsentLabel</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile ConsentLabel</shortDescription>
+        <value>I want to receive news and offers by e-mail.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_ConsentBonusHint</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile ConsentBonusHint</shortDescription>
+        <value>Grant consent and get {0}.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_ConsentGranted</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile ConsentGranted</shortDescription>
+        <value>Consent granted.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_ConsentWithdrawn</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile ConsentWithdrawn</shortDescription>
+        <value>Consent withdrawn. Points you already received stay in your account.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_ConsentBonusAwarded</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile ConsentBonusAwarded</shortDescription>
+        <value>You received {0} for your consent.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Profile_Error_Invalid</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Profile Error Invalid</shortDescription>
+        <value>Check the vehicle details.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Rewards_Intro</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Rewards Intro</shortDescription>
+        <value>Exchange your points for partner rewards.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Rewards_Balance</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Rewards Balance</shortDescription>
+        <value>Your balance: {0}</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Rewards_Empty</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Rewards Empty</shortDescription>
+        <value>No rewards are available right now.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Rewards_Value</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Rewards Value</shortDescription>
+        <value>Value {0}</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Rewards_Affordable</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Rewards Affordable</shortDescription>
+        <value>You have enough points</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Rewards_PointsMissing</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Rewards PointsMissing</shortDescription>
+        <value>{0} missing</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Tier_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Tier Title</shortDescription>
+        <value>Membership tier</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Tier_RoadTitle</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Tier RoadTitle</shortDescription>
+        <value>You are on Road.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Tier_HighwayTitle</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Tier HighwayTitle</shortDescription>
+        <value>You are on Highway. You get extra points for every refuel.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Tier_PointsToHighway</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Tier PointsToHighway</shortDescription>
+        <value>{0} missing to Highway.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Tier_Progress</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Tier Progress</shortDescription>
+        <value>In {0} months you have {1} of {2} points.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Tier_HighwayBenefit</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Tier HighwayBenefit</shortDescription>
+        <value>You get {0} % more points for fuel.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Tier_HighwayKeep</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Tier HighwayKeep</shortDescription>
+        <value>You keep Highway with {0} points in the last {1} months. Now you have {2}. Next evaluation {3}.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Tier_HighwayRisk</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Tier HighwayRisk</shortDescription>
+        <value>To keep Highway you are missing {0}. We evaluate on {1}.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Tier_Rule</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Tier Rule</shortDescription>
+        <value>There are two tiers: Road and Highway. You reach Highway with {0} points from fuel and purchases in the last {1} months. Profile activity points do not count. Your balance does not change with the tier.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Expiry_Warning</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Expiry Warning</shortDescription>
+        <value>{0} will expire on {1}.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Expiry_Rule</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Expiry Rule</shortDescription>
+        <value>Points are valid for a year after crediting. We always use the oldest points for rewards first. A voucher you already have has no expiry.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_Expiration</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType Expiration</shortDescription>
+        <value>Expired points</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_Reversal</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType Reversal</shortDescription>
+        <value>Purchase reversal</value>
+    </labels>
+    <labels>
+        <fullName>Portal_MovementType_TierBonus</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal MovementType TierBonus</shortDescription>
+        <value>Highway fuel bonus</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Title</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Title</shortDescription>
+        <value>Reverse purchase</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Transaction</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Transaction</shortDescription>
+        <value>Purchase</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Points</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Points</shortDescription>
+        <value>Points to remove</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Warning</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Warning</shortDescription>
+        <value>All points of this purchase (base, campaigns and tier bonus) will be removed. A purchase can be reversed only once; a partial correction is done by manual adjustment.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Submit</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Submit</shortDescription>
+        <value>Reverse purchase</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Success</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Success</shortDescription>
+        <value>{0} points removed.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Reason_Return</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Reason Return</shortDescription>
+        <value>Return of purchase</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Reason_WrongPosting</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Reason WrongPosting</shortDescription>
+        <value>Incorrectly posted purchase</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Reason_Duplicate</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Reason Duplicate</shortDescription>
+        <value>Duplicate purchase</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Error_Already</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Error Already</shortDescription>
+        <value>The purchase has already been reversed.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Error_NotProcessed</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Error NotProcessed</shortDescription>
+        <value>Only a processed purchase can be reversed.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Error_Nothing</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Error Nothing</shortDescription>
+        <value>The purchase has no points to remove.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Error_Balance</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Error Balance</shortDescription>
+        <value>The member has only {0} points. Remove points by manual adjustment up to the balance.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_BO_Reversal_Error_Reason</fullName>
+        <categories>EneOil Back Office</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Loyalty BO Reversal Error Reason</shortDescription>
+        <value>Select a reason.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_Intro</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo Intro</shortDescription>
+        <value>Special offers that earn you even more points for refuelling and shopping on the road.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_Fuel_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo Fuel Title</shortDescription>
+        <value>Fill it up.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_Fuel_Text</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo Fuel Text</shortDescription>
+        <value>Refuel at least 40 l and get 50 bonus points.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_Fuel_Badge</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo Fuel Badge</shortDescription>
+        <value>+50 points</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_Fuel_Note</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo Fuel Note</shortDescription>
+        <value>Valid at all our filling stations.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_Shop_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo Shop Title</shortDescription>
+        <value>A stop on the road.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_Shop_Text</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo Shop Text</shortDescription>
+        <value>Spend at least CZK 150 at the checkout and the points for your whole purchase increase by 10%.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_Shop_Badge</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo Shop Badge</shortDescription>
+        <value>+10% points</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_App_Title</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo App Title</shortDescription>
+        <value>Collect points easily.</value>
+    </labels>
+    <labels>
+        <fullName>Portal_Promo_App_Text</fullName>
+        <categories>EneOil Portal</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Portal Promo App Text</shortDescription>
+        <value>Show the code in the app when paying and the points are added to your account automatically.</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,25 @@
+<template>
+    <section class="page">
+        <h1 class="page__title">{labels.title}</h1>
+        <div class="card">
+            <template lwc:if={hasMovements}>
+                <c-portal-movement-list movements={movements}></c-portal-movement-list>
+            </template>
+            <template lwc:if={isLoading}>
+                <c-portal-state-message variant="loading"></c-portal-state-message>
+            </template>
+            <template lwc:elseif={isNotMember}>
+                <c-portal-state-message variant="empty" message={labels.notMember}></c-portal-state-message>
+            </template>
+            <template lwc:elseif={hasError}>
+                <c-portal-state-message variant="error" onretry={handleRetry}></c-portal-state-message>
+            </template>
+            <template lwc:elseif={isEmpty}>
+                <c-portal-state-message variant="empty" message={labels.empty}></c-portal-state-message>
+            </template>
+            <template lwc:elseif={hasMore}>
+                <button class="button-secondary" type="button" onclick={handleLoadMore}>{labels.loadMore}</button>
+            </template>
+        </div>
+    </section>
+</template>

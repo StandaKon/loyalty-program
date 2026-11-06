@@ -8,7 +8,7 @@ Dokument pokrývá pouze datový model, jeho omezení a potřebný přístup k d
 
 ## 1. Podklady a hranice návrhu
 
-Východiskem je [zadání B1](../../implementation-blocks/B1-data-model-config/README.md) a [přiložený solution design](../../main/EneOil-Klub-Solution-Design.docx), především kapitoly 5 až 7, 10 a 11. Kopie DOCX v repozitáři je obsahově totožná s přílohou v Downloads, ověřeno SHA-256. Potřeby návazných bloků B2 a B5 až B9 slouží jako kontrola úplnosti modelu.
+Východiskem je [zadání B1](../../implementation-blocks/B1-data-model-config/README.md) a [přiložený solution design](../../main/EneOil-Klub-Solution-Design.docx), především kapitoly 5 až 7, 10 a 11. Kopie DOCX v repozitáři je obsahově totožná s přílohou v Downloads, ověřeno SHA-256. Potřeby návazných bloků B2 a B5 až B9 slouží jako kontrola úplnosti modelu
 
 Starší [stručný návrh řešení](2026-11-06-eneoil-solution-design.md) doporučuje Contact a samostatné členství. Pro tento B1 návrh má přednost přiložený solution design a README B1, které již určují Person Account. Starší variantu proto nepřebírám.
 

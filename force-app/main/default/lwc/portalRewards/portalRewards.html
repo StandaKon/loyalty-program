@@ -1,0 +1,46 @@
+<template>
+    <section class="page">
+        <h1 class="page__title">{labels.title}</h1>
+        <template lwc:if={isLoading}>
+            <c-portal-state-message variant="loading"></c-portal-state-message>
+        </template>
+        <template lwc:elseif={isNotMember}>
+            <c-portal-state-message variant="empty" message={labels.notMember}></c-portal-state-message>
+        </template>
+        <template lwc:elseif={hasError}>
+            <c-portal-state-message variant="error" onretry={loadCatalog}></c-portal-state-message>
+        </template>
+        <template lwc:else>
+            <p class="page__intro">{labels.intro}</p>
+            <p class="balance">{balanceLabel}</p>
+            <template lwc:if={hasRewards}>
+                <ul class="rewards">
+                    <template for:each={rewardItems} for:item="reward">
+                        <li key={reward.id} class="card reward">
+                            <div class="reward__header">
+                                <h2 class="reward__name">{reward.name}</h2>
+                                <span class="reward__cost">{reward.costLabel}</span>
+                            </div>
+                            <p lwc:if={reward.valueLabel} class="reward__value">{reward.valueLabel}</p>
+                            <p lwc:if={reward.description} class="reward__description">{reward.description}</p>
+                            <div
+                                class="progress"
+                                role="progressbar"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow={reward.progressPercent}
+                                aria-label={reward.statusLabel}
+                            >
+                                <div class="progress__bar" style={reward.progressStyle}></div>
+                            </div>
+                            <p class={reward.statusClass}>{reward.statusLabel}</p>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template lwc:else>
+                <c-portal-state-message variant="empty" message={labels.empty}></c-portal-state-message>
+            </template>
+        </template>
+    </section>
+</template>

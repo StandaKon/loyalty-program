@@ -1,0 +1,32 @@
+<template>
+    <template lwc:if={status}>
+        <div lwc:if={hasExpiry} class="card card_expiry" role="status">
+            <p class="expiry__warning">{expiryText}</p>
+            <p class="expiry__rule">{labels.expiryRule}</p>
+        </div>
+
+        <div class={tierCardClass}>
+            <p class="tier__label">{labels.title}</p>
+            <h2 class="tier__title">{tierTitle}</h2>
+            <template lwc:if={status.isHighway}>
+                <p class="tier__text">{highwayBenefitText}</p>
+                <p class="tier__text">{highwayStatusText}</p>
+            </template>
+            <template lwc:else>
+                <div
+                    class="progress"
+                    role="progressbar"
+                    aria-valuemin="0"
+                    aria-valuemax="100"
+                    aria-valuenow={status.progressPercent}
+                    aria-label={pointsToHighwayText}
+                >
+                    <div class="progress__bar" style={progressStyle}></div>
+                </div>
+                <p class="tier__text tier__text_strong">{pointsToHighwayText}</p>
+                <p class="tier__text">{progressText}</p>
+            </template>
+            <p class="tier__rule">{ruleText}</p>
+        </div>
+    </template>
+</template>

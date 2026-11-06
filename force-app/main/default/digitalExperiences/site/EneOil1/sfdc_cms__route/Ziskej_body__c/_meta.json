@@ -1,0 +1,5 @@
+{
+  "apiName" : "Ziskej_body__c",
+  "type" : "sfdc_cms__route",
+  "path" : "routes"
+}

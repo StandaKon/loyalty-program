@@ -1,0 +1,78 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Home",
+  "contentBody" : {
+    "component" : {
+      "children" : [
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"c10f0f2d-1d04-4abc-a131-b51334edc201\",\"columns\":[{\"UUID\":\"a6c93e4b-a57f-4125-a19a-d6cb476dce58\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "attributes" : {},
+                      "definition" : "c:portalOverview",
+                      "id" : "7241171d-f362-4c96-9a0e-1a207453988e",
+                      "type" : "component"
+                    }
+                  ],
+                  "id" : "a6c93e4b-a57f-4125-a19a-d6cb476dce58",
+                  "name" : "col1",
+                  "title" : "Column 1",
+                  "type" : "region"
+                }
+              ],
+              "definition" : "community_layout:section",
+              "id" : "c10f0f2d-1d04-4abc-a131-b51334edc201",
+              "type" : "component"
+            }
+          ],
+          "id" : "b0b99076-5863-4ba5-9307-cf5843afa8fd",
+          "name" : "content",
+          "title" : "Content",
+          "type" : "region"
+        },
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "customHeadTags" : "",
+                "description" : "",
+                "pageTitle" : "Přehled",
+                "recordId" : "{!recordId}"
+              },
+              "definition" : "community_builder:seoAssistant",
+              "id" : "27e46938-476d-43e4-b741-f4b402bdd4c6",
+              "type" : "component"
+            }
+          ],
+          "id" : "667cbb11-94e8-4e39-b050-1878e4dc8a39",
+          "name" : "sfdcHiddenRegion",
+          "title" : "sfdcHiddenRegion",
+          "type" : "region"
+        }
+      ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "8eb85d10-70f1-4b77-8ba5-f11490566e58",
+      "type" : "component"
+    },
+    "dataProviders" : [],
+    "themeLayoutType" : "Inner",
+    "viewType" : "home"
+  },
+  "urlName" : "home"
+}

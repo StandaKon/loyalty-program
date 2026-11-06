@@ -1,0 +1,106 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Login",
+  "contentBody" : {
+    "component" : {
+      "children" : [
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"626eff88-8b59-4a96-94a3-36695f4e4ef5\",\"columns\":[{\"UUID\":\"705c9cd1-eed4-471e-ba02-a5cdbc63b0e7\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "attributes" : {
+                        "alignment" : "left",
+                        "imageInfo" : "",
+                        "imageInfoMobile" : "",
+                        "logoWidth" : 250
+                      },
+                      "definition" : "dxp_content_layout:siteLogo",
+                      "id" : "9b8d5a00-82d4-4760-87b2-3c4246855a12",
+                      "type" : "component"
+                    },
+                    {
+                      "attributes" : {
+                        "forgotPasswordLabel" : "Zapomněl/a jsi heslo?",
+                        "forgotPasswordUrl" : "/ForgotPassword",
+                        "loginButtonLabel" : "Přihlásit se",
+                        "passwordLabel" : "Heslo",
+                        "selfRegisterLabel" : "Ještě nejsi členem? Přidej se",
+                        "selfRegisterUrl" : "/SelfRegister",
+                        "startUrl" : "",
+                        "usernameLabel" : "E-mail"
+                      },
+                      "definition" : "community_login:loginForm",
+                      "id" : "33f82535-4159-4c6a-8a49-5d030c239ee4",
+                      "type" : "component"
+                    },
+                    {
+                      "attributes" : {
+                        "employeeLoginLinkLabel" : "Jsi zaměstnanec? Přihlas se"
+                      },
+                      "definition" : "community_login:employeeLoginLink",
+                      "id" : "3a525fce-1f38-4209-8d64-e5bbd0a002e1",
+                      "type" : "component"
+                    }
+                  ],
+                  "id" : "705c9cd1-eed4-471e-ba02-a5cdbc63b0e7",
+                  "name" : "col1",
+                  "title" : "Column 1",
+                  "type" : "region"
+                }
+              ],
+              "definition" : "community_layout:section",
+              "id" : "626eff88-8b59-4a96-94a3-36695f4e4ef5",
+              "type" : "component"
+            }
+          ],
+          "id" : "3511c98e-04e6-47ea-a0c1-ddd764021d79",
+          "name" : "content",
+          "title" : "Content",
+          "type" : "region"
+        },
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "customHeadTags" : "",
+                "description" : "",
+                "pageTitle" : "Přihlášení",
+                "recordId" : "{!recordId}"
+              },
+              "definition" : "community_builder:seoAssistant",
+              "id" : "1efb14c1-341d-442c-949c-30b518988eec",
+              "type" : "component"
+            }
+          ],
+          "id" : "7cd08240-6589-40ee-bed1-21604b5a6b38",
+          "name" : "sfdcHiddenRegion",
+          "title" : "sfdcHiddenRegion",
+          "type" : "region"
+        }
+      ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "3cea46ee-ab2d-444b-9938-8280a98b4976",
+      "type" : "component"
+    },
+    "dataProviders" : [],
+    "themeLayoutType" : "Inner",
+    "viewType" : "login-main"
+  },
+  "urlName" : "login"
+}

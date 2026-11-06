@@ -1,0 +1,78 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Profil",
+  "contentBody" : {
+    "component" : {
+      "children" : [
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "backgroundImageConfig" : "",
+                "backgroundImageOverlay" : "rgba(0,0,0,0)",
+                "componentSpacerSize" : "",
+                "layoutDirectionDesktop" : "row",
+                "layoutDirectionMobile" : "column",
+                "layoutDirectionTablet" : "column",
+                "maxContentWidth" : "",
+                "sectionColumnGutterWidth" : "",
+                "sectionConfig" : "{\"UUID\":\"8eefc4b3-5c62-444f-8615-5ff6540b1df6\",\"columns\":[{\"UUID\":\"b3cc31b0-9605-40ce-b029-2a81b62dcd19\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight" : "",
+                "sectionVerticalAlign" : "flex-start"
+              },
+              "children" : [
+                {
+                  "children" : [
+                    {
+                      "attributes" : { },
+                      "definition" : "c:portalProfile",
+                      "id" : "58ef9af0-f55f-4ec8-9e2d-30b2375847d1",
+                      "type" : "component"
+                    }
+                  ],
+                  "id" : "b3cc31b0-9605-40ce-b029-2a81b62dcd19",
+                  "name" : "col1",
+                  "title" : "Column 1",
+                  "type" : "region"
+                }
+              ],
+              "definition" : "community_layout:section",
+              "id" : "8eefc4b3-5c62-444f-8615-5ff6540b1df6",
+              "type" : "component"
+            }
+          ],
+          "id" : "12806d6f-15e0-4a1d-a7be-33347b61ce8d",
+          "name" : "content",
+          "title" : "Content",
+          "type" : "region"
+        },
+        {
+          "children" : [
+            {
+              "attributes" : {
+                "customHeadTags" : "",
+                "description" : "",
+                "pageTitle" : "Profil",
+                "recordId" : "{!recordId}"
+              },
+              "definition" : "community_builder:seoAssistant",
+              "id" : "5524728f-9a55-467e-b2f0-f7bc0b2f3c9c",
+              "type" : "component"
+            }
+          ],
+          "id" : "d0dca970-56fc-42ff-aa3b-88464caa3e78",
+          "name" : "sfdcHiddenRegion",
+          "title" : "sfdcHiddenRegion",
+          "type" : "region"
+        }
+      ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "1f1186a1-0af1-458d-954c-72f0626cd6d3",
+      "type" : "component"
+    },
+    "dataProviders" : [],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-profil"
+  },
+  "urlName" : "profil"
+}

@@ -1,0 +1,132 @@
+.header {
+    background: #ffffff;
+    border-bottom: 3px solid var(--eneoil-brand, #ffa41b);
+    font-family: var(--eneoil-font-body, 'Noto Sans', sans-serif);
+    color: var(--eneoil-ink, #1d2c38);
+}
+
+.header__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+}
+
+.header__logo {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+.header__logo img {
+    height: 36px;
+    width: auto;
+}
+
+.header__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background: var(--eneoil-brand-soft, #fff1db);
+    color: var(--eneoil-ink, #1d2c38);
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.header__toggle-icon,
+.header__toggle-icon::before,
+.header__toggle-icon::after {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    position: relative;
+}
+
+.header__toggle-icon::before,
+.header__toggle-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.header__toggle-icon::before {
+    top: -6px;
+}
+
+.header__toggle-icon::after {
+    top: 6px;
+}
+
+.nav {
+    display: none;
+    border-top: 1px solid #e3e6e9;
+}
+
+.nav_open {
+    display: block;
+}
+
+.nav__list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0.5rem 1rem;
+    max-width: 1100px;
+    box-sizing: border-box;
+}
+
+.nav__link {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 0.5rem;
+    border-radius: 8px;
+    color: var(--eneoil-ink, #1d2c38);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav__link:hover,
+.nav__link:focus-visible {
+    background: var(--eneoil-surface, #f6f7f8);
+}
+
+.nav__link_active {
+    background: var(--eneoil-brand-soft, #fff1db);
+    box-shadow: inset 3px 0 0 var(--eneoil-brand, #ffa41b);
+}
+
+.nav__link_logout {
+    color: var(--eneoil-minus, #b4382a);
+}
+
+@media (min-width: 1024px) {
+    .header__toggle {
+        display: none;
+    }
+
+    .nav {
+        display: block;
+        border-top: none;
+    }
+
+    .nav__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        padding-top: 0;
+    }
+
+    .nav__link_active {
+        box-shadow: inset 0 -3px 0 var(--eneoil-brand, #ffa41b);
+    }
+}

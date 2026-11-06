@@ -1,0 +1,106 @@
+.page {
+    display: grid;
+    gap: 1rem;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: var(--eneoil-ink, #1d2c38);
+    font-family: var(--eneoil-font-body, 'Noto Sans', sans-serif);
+}
+
+.page__title {
+    margin: 0;
+    font-family: var(--eneoil-font-heading, 'Archivo', sans-serif);
+    font-weight: 800;
+    font-size: 1.75rem;
+}
+
+.page__intro,
+.balance {
+    margin: 0;
+}
+
+.page__intro {
+    color: var(--eneoil-steel, #243746);
+}
+
+.balance {
+    font-weight: 700;
+}
+
+.rewards {
+    display: grid;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card {
+    padding: 1rem;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(29, 44, 56, 0.12);
+}
+
+.reward {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.reward__header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.reward__name {
+    margin: 0;
+    font-family: var(--eneoil-font-heading, 'Archivo', sans-serif);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.reward__cost {
+    font-family: var(--eneoil-font-mono, 'Noto Sans Mono', monospace);
+    font-weight: 700;
+}
+
+.reward__value,
+.reward__description,
+.reward__status {
+    margin: 0;
+}
+
+.reward__value {
+    color: var(--eneoil-steel, #243746);
+}
+
+.reward__description {
+    white-space: pre-line;
+}
+
+.progress {
+    height: 0.5rem;
+    border-radius: 999px;
+    background: var(--eneoil-surface, #f6f7f8);
+    overflow: hidden;
+}
+
+.progress__bar {
+    height: 100%;
+    border-radius: 999px;
+    background: var(--eneoil-brand, #ffa41b);
+}
+
+.reward__status {
+    font-weight: 600;
+    color: var(--eneoil-steel, #243746);
+}
+
+.reward__status_affordable {
+    color: var(--eneoil-plus, #2d6e22);
+}

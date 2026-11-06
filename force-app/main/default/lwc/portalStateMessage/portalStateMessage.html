@@ -1,0 +1,19 @@
+<template>
+    <template lwc:if={isLoading}>
+        <div class="state state_loading" role="status" aria-live="polite">
+            <span class="spinner" aria-hidden="true"></span>
+            <span>{loadingText}</span>
+        </div>
+    </template>
+    <template lwc:elseif={isError}>
+        <div class="state state_error" role="alert">
+            <p>{errorText}</p>
+            <button class="button-secondary" type="button" onclick={handleRetry}>{labels.retry}</button>
+        </div>
+    </template>
+    <template lwc:else>
+        <div class="state state_empty">
+            <p>{message}</p>
+        </div>
+    </template>
+</template>

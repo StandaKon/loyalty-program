@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-<fullName>Signs_Valid</fullName><active>true</active><description>The points sign must match the entry type.</description><errorMessage>The points sign must match the entry type.</errorMessage><errorConditionFormula><![CDATA[OR(AND(OR(ISPICKVAL(Entry_Type__c, "PurchaseBase"), ISPICKVAL(Entry_Type__c, "CampaignBonus")), Points__c < 0), AND(OR(ISPICKVAL(Entry_Type__c, "ProfileBonus"), ISPICKVAL(Entry_Type__c, "MarketingBonus"), ISPICKVAL(Entry_Type__c, "Refund")), Points__c <= 0), AND(ISPICKVAL(Entry_Type__c, "Redemption"), Points__c >= 0), AND(ISPICKVAL(Entry_Type__c, "Adjustment"), Points__c = 0))]]></errorConditionFormula>
+    <fullName>Signs_Valid</fullName>
+    <active>true</active>
+    <description>The points sign must match the entry type.</description>
+    <errorConditionFormula>OR(AND(OR(ISPICKVAL(Entry_Type__c, &quot;PurchaseBase&quot;), ISPICKVAL(Entry_Type__c, &quot;CampaignBonus&quot;)), Points__c &lt; 0), AND(OR(ISPICKVAL(Entry_Type__c, &quot;ProfileBonus&quot;), ISPICKVAL(Entry_Type__c, &quot;MarketingBonus&quot;), ISPICKVAL(Entry_Type__c, &quot;Refund&quot;)), Points__c &lt;= 0), AND(ISPICKVAL(Entry_Type__c, &quot;Redemption&quot;), Points__c &gt;= 0), AND(ISPICKVAL(Entry_Type__c, &quot;Adjustment&quot;), Points__c = 0), AND(ISPICKVAL(Entry_Type__c, &quot;TierBonus&quot;), Points__c &lt;= 0), AND(OR(ISPICKVAL(Entry_Type__c, &quot;Expiration&quot;), ISPICKVAL(Entry_Type__c, &quot;Reversal&quot;)), Points__c &gt;= 0))</errorConditionFormula>
+    <errorMessage>The points sign must match the entry type.</errorMessage>
 </ValidationRule>

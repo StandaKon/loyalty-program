@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Loyalty Consent Setup</label>
+    <description>Admin only: maintain EneOil Klub consent text versions (AuthorizationForm.Consent_Type__c) and run scripts/apex/seed-consent-forms.apex. B1 grants this field read-only to Loyalty_Manager.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>AuthorizationForm.Consent_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>AuthorizationFormConsent.Consent_Action__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+</PermissionSet>

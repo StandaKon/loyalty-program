@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customLabels>
+        <label>Přehled</label>
+        <name>Portal_Nav_Overview</name>
+    </customLabels>
+    <customLabels>
+        <label>Historie bodů</label>
+        <name>Portal_Nav_History</name>
+    </customLabels>
+    <customLabels>
+        <label>Akce</label>
+        <name>Portal_Nav_Campaigns</name>
+    </customLabels>
+    <customLabels>
+        <label>Získej body</label>
+        <name>Portal_Nav_EarnPoints</name>
+    </customLabels>
+    <customLabels>
+        <label>Odměny</label>
+        <name>Portal_Nav_Rewards</name>
+    </customLabels>
+    <customLabels>
+        <label>Moje vouchery</label>
+        <name>Portal_Nav_Vouchers</name>
+    </customLabels>
+    <customLabels>
+        <label>Profil</label>
+        <name>Portal_Nav_Profile</name>
+    </customLabels>
+    <customLabels>
+        <label>Přihlásit se</label>
+        <name>Portal_Nav_Login</name>
+    </customLabels>
+    <customLabels>
+        <label>Přidej se</label>
+        <name>Portal_Nav_Register</name>
+    </customLabels>
+    <customLabels>
+        <label>Odhlásit se</label>
+        <name>Portal_Nav_Logout</name>
+    </customLabels>
+    <customLabels>
+        <label>Menu</label>
+        <name>Portal_Nav_Menu</name>
+    </customLabels>
+    <customLabels>
+        <label>Domů – EneOil Klub</label>
+        <name>Portal_Nav_Home</name>
+    </customLabels>
+    <customLabels>
+        <label>Najeto</label>
+        <name>Portal_Header_LogoAlt</name>
+    </customLabels>
+    <customLabels>
+        <label>Podmínky</label>
+        <name>Portal_Footer_Terms</name>
+    </customLabels>
+    <customLabels>
+        <label>Ochrana osobních údajů</label>
+        <name>Portal_Footer_Privacy</name>
+    </customLabels>
+    <customLabels>
+        <label>Každá zastávka se počítá.</label>
+        <name>Portal_Footer_Tagline</name>
+    </customLabels>
+    <customLabels>
+        <label>Tento účet není členem EneOil Klubu. Přihlas se svým členským účtem a uvidíš své body.</label>
+        <name>Portal_State_NotMember</name>
+    </customLabels>
+    <customLabels>
+        <label>Načítám…</label>
+        <name>Portal_State_Loading</name>
+    </customLabels>
+    <customLabels>
+        <label>Něco se pokazilo. Zkus to prosím za chvíli znovu.</label>
+        <name>Portal_Error_Generic</name>
+    </customLabels>
+    <customLabels>
+        <label>Zkusit znovu</label>
+        <name>Portal_Action_Retry</name>
+    </customLabels>
+    <customLabels>
+        <label>Ahoj, {0}!</label>
+        <name>Portal_Overview_Greeting</name>
+    </customLabels>
+    <customLabels>
+        <label>Ahoj!</label>
+        <name>Portal_Overview_GreetingNoName</name>
+    </customLabels>
+    <customLabels>
+        <label>Tvůj zůstatek</label>
+        <name>Portal_Overview_BalanceTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Číslo člena {0}</label>
+        <name>Portal_Overview_MemberNumber</name>
+    </customLabels>
+    <customLabels>
+        <label>Do odměny „{1}“ ti chybí {0}.</label>
+        <name>Portal_Overview_PointsToReward</name>
+    </customLabels>
+    <customLabels>
+        <label>Máš dost bodů na kteroukoli odměnu.</label>
+        <name>Portal_Overview_AllRewardsReached</name>
+    </customLabels>
+    <customLabels>
+        <label>Poslední pohyby</label>
+        <name>Portal_Overview_RecentMovements</name>
+    </customLabels>
+    <customLabels>
+        <label>Zobrazit celou historii</label>
+        <name>Portal_Overview_ShowAllHistory</name>
+    </customLabels>
+    <customLabels>
+        <label>Aktuální akce</label>
+        <name>Portal_Overview_ActiveCampaigns</name>
+    </customLabels>
+    <customLabels>
+        <label>Všechny akce</label>
+        <name>Portal_Overview_ShowAllCampaigns</name>
+    </customLabels>
+    <customLabels>
+        <label>Historie bodů</label>
+        <name>Portal_History_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Zatím tu nemáš žádné pohyby bodů. Po prvním nákupu se tu objeví.</label>
+        <name>Portal_History_Empty</name>
+    </customLabels>
+    <customLabels>
+        <label>Načíst další</label>
+        <name>Portal_History_LoadMore</name>
+    </customLabels>
+    <customLabels>
+        <label>Nákup</label>
+        <name>Portal_MovementType_PurchaseBase</name>
+    </customLabels>
+    <customLabels>
+        <label>Bonus z akce</label>
+        <name>Portal_MovementType_CampaignBonus</name>
+    </customLabels>
+    <customLabels>
+        <label>Bonus za vyplněný profil</label>
+        <name>Portal_MovementType_ProfileBonus</name>
+    </customLabels>
+    <customLabels>
+        <label>Bonus za souhlas s novinkami</label>
+        <name>Portal_MovementType_MarketingBonus</name>
+    </customLabels>
+    <customLabels>
+        <label>Uplatnění odměny</label>
+        <name>Portal_MovementType_Redemption</name>
+    </customLabels>
+    <customLabels>
+        <label>Vrácení bodů</label>
+        <name>Portal_MovementType_Refund</name>
+    </customLabels>
+    <customLabels>
+        <label>Úprava bodů</label>
+        <name>Portal_MovementType_Adjustment</name>
+    </customLabels>
+    <customLabels>
+        <label>Pohyb bodů</label>
+        <name>Portal_MovementType_Other</name>
+    </customLabels>
+    <customLabels>
+        <label>Akce</label>
+        <name>Portal_Campaigns_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Právě neběží žádná akce. Mrkni sem zase brzy.</label>
+        <name>Portal_Campaigns_Empty</name>
+    </customLabels>
+    <customLabels>
+        <label>Platí do {0}</label>
+        <name>Portal_Campaigns_ValidTo</name>
+    </customLabels>
+    <customLabels>
+        <label>Bez časového omezení</label>
+        <name>Portal_Campaigns_NoEnd</name>
+    </customLabels>
+    <customLabels>
+        <label>bod</label>
+        <name>Portal_Points_One</name>
+    </customLabels>
+    <customLabels>
+        <label>body</label>
+        <name>Portal_Points_Few</name>
+    </customLabels>
+    <customLabels>
+        <label>bodů</label>
+        <name>Portal_Points_Many</name>
+    </customLabels>
+    <customLabels>
+        <label>Připravujeme</label>
+        <name>Portal_Placeholder_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Na této sekci pracujeme. Brzy tu bude.</label>
+        <name>Portal_Placeholder_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Přidej se do najeto</label>
+        <name>Portal_Register_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Natankuj. Nasbírej. Jeď.</label>
+        <name>Portal_Register_Subtitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Jméno</label>
+        <name>Portal_Register_FirstName</name>
+    </customLabels>
+    <customLabels>
+        <label>Příjmení</label>
+        <name>Portal_Register_LastName</name>
+    </customLabels>
+    <customLabels>
+        <label>E-mail</label>
+        <name>Portal_Register_Email</name>
+    </customLabels>
+    <customLabels>
+        <label>Heslo</label>
+        <name>Portal_Register_Password</name>
+    </customLabels>
+    <customLabels>
+        <label>Aspoň 8 znaků, písmena i číslice.</label>
+        <name>Portal_Register_PasswordHelp</name>
+    </customLabels>
+    <customLabels>
+        <label>Souhlasím s podmínkami EneOil Klubu a četl/a jsem informace o ochraně osobních údajů.</label>
+        <name>Portal_Register_TermsConsent</name>
+    </customLabels>
+    <customLabels>
+        <label>Chci dostávat novinky a akce e-mailem (+50 bodů).</label>
+        <name>Portal_Register_MarketingConsent</name>
+    </customLabels>
+    <customLabels>
+        <label>Založit účet</label>
+        <name>Portal_Register_Submit</name>
+    </customLabels>
+    <customLabels>
+        <label>Už jsi členem? Přihlas se</label>
+        <name>Portal_Register_HaveAccount</name>
+    </customLabels>
+    <customLabels>
+        <label>Vyplň prosím všechna povinná pole.</label>
+        <name>Portal_Register_Error_Required</name>
+    </customLabels>
+    <customLabels>
+        <label>Bez souhlasu s podmínkami se do Klubu nepřidáš.</label>
+        <name>Portal_Register_Error_TermsRequired</name>
+    </customLabels>
+    <customLabels>
+        <label>Zadej platnou e-mailovou adresu.</label>
+        <name>Portal_Register_Error_InvalidEmail</name>
+    </customLabels>
+    <customLabels>
+        <label>Heslo nesplňuje požadavky. Použij aspoň 8 znaků, písmena i číslice.</label>
+        <name>Portal_Register_Error_Password</name>
+    </customLabels>
+    <customLabels>
+        <label>Účet s tímto e-mailem už existuje. Přihlas se, nebo si obnov heslo.</label>
+        <name>Portal_Register_Error_EmailTaken</name>
+    </customLabels>
+    <customLabels>
+        <label>Registrace se nepovedla. Zkus to prosím za chvíli znovu.</label>
+        <name>Portal_Register_Error_Generic</name>
+    </customLabels>
+    <customLabels>
+        <label>Podmínky EneOil Klubu</label>
+        <name>Portal_Terms_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>[PLACEHOLDER] Úplné podmínky EneOil Klubu zde zveřejníme před spuštěním.</label>
+        <name>Portal_Terms_Body</name>
+    </customLabels>
+    <customLabels>
+        <label>Ochrana osobních údajů</label>
+        <name>Portal_Privacy_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>[PLACEHOLDER] Informace o zpracování osobních údajů zde zveřejníme před spuštěním.</label>
+        <name>Portal_Privacy_Body</name>
+    </customLabels>
+    <customLabels>
+        <label>Za jednoduché aktivity v klubu získáte bonusové body.</label>
+        <name>Portal_EarnPoints_Intro</name>
+    </customLabels>
+    <customLabels>
+        <label>Doplňte profil vozidla</label>
+        <name>Portal_Activity_Profile_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Vyplňte značku, model, typ paliva a rok výroby svého vozidla.</label>
+        <name>Portal_Activity_Profile_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Udělte souhlas se zasíláním novinek</label>
+        <name>Portal_Activity_Marketing_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Dostávejte novinky a nabídky klubu e-mailem.</label>
+        <name>Portal_Activity_Marketing_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>Splněno, body připsány</label>
+        <name>Portal_Activity_Done</name>
+    </customLabels>
+    <customLabels>
+        <label>Zatím nesplněno</label>
+        <name>Portal_Activity_Open</name>
+    </customLabels>
+    <customLabels>
+        <label>Přejít do profilu</label>
+        <name>Portal_Activity_GoToProfile</name>
+    </customLabels>
+    <customLabels>
+        <label>Vozidlo</label>
+        <name>Portal_Profile_VehicleTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Značka</label>
+        <name>Portal_Profile_Make</name>
+    </customLabels>
+    <customLabels>
+        <label>Model</label>
+        <name>Portal_Profile_Model</name>
+    </customLabels>
+    <customLabels>
+        <label>Typ paliva</label>
+        <name>Portal_Profile_FuelType</name>
+    </customLabels>
+    <customLabels>
+        <label>Rok výroby</label>
+        <name>Portal_Profile_Year</name>
+    </customLabels>
+    <customLabels>
+        <label>SPZ (nepovinné)</label>
+        <name>Portal_Profile_Registration</name>
+    </customLabels>
+    <customLabels>
+        <label>Vyberte typ paliva</label>
+        <name>Portal_Profile_SelectFuel</name>
+    </customLabels>
+    <customLabels>
+        <label>Uložit vozidlo</label>
+        <name>Portal_Profile_Save</name>
+    </customLabels>
+    <customLabels>
+        <label>Údaje o vozidle byly uloženy.</label>
+        <name>Portal_Profile_Saved</name>
+    </customLabels>
+    <customLabels>
+        <label>Vyplňte všechny povinné údaje o vozidle a získejte {0}.</label>
+        <name>Portal_Profile_BonusHint</name>
+    </customLabels>
+    <customLabels>
+        <label>Za dokončení profilu jste získali {0}.</label>
+        <name>Portal_Profile_BonusAwarded</name>
+    </customLabels>
+    <customLabels>
+        <label>Marketingový souhlas</label>
+        <name>Portal_Profile_ConsentTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Chci dostávat novinky a akce e-mailem.</label>
+        <name>Portal_Profile_ConsentLabel</name>
+    </customLabels>
+    <customLabels>
+        <label>Udělte souhlas a získejte {0}.</label>
+        <name>Portal_Profile_ConsentBonusHint</name>
+    </customLabels>
+    <customLabels>
+        <label>Souhlas byl udělen.</label>
+        <name>Portal_Profile_ConsentGranted</name>
+    </customLabels>
+    <customLabels>
+        <label>Souhlas byl odvolán. Již připsané body vám zůstávají.</label>
+        <name>Portal_Profile_ConsentWithdrawn</name>
+    </customLabels>
+    <customLabels>
+        <label>Za udělení souhlasu jste získali {0}.</label>
+        <name>Portal_Profile_ConsentBonusAwarded</name>
+    </customLabels>
+    <customLabels>
+        <label>Zkontrolujte údaje o vozidle.</label>
+        <name>Portal_Profile_Error_Invalid</name>
+    </customLabels>
+    <customLabels>
+        <label>Vyměňte body za odměny od partnerů.</label>
+        <name>Portal_Rewards_Intro</name>
+    </customLabels>
+    <customLabels>
+        <label>Váš zůstatek: {0}</label>
+        <name>Portal_Rewards_Balance</name>
+    </customLabels>
+    <customLabels>
+        <label>Momentálně nejsou k dispozici žádné odměny.</label>
+        <name>Portal_Rewards_Empty</name>
+    </customLabels>
+    <customLabels>
+        <label>Hodnota {0}</label>
+        <name>Portal_Rewards_Value</name>
+    </customLabels>
+    <customLabels>
+        <label>Máte dostatek bodů</label>
+        <name>Portal_Rewards_Affordable</name>
+    </customLabels>
+    <customLabels>
+        <label>Chybí vám {0}</label>
+        <name>Portal_Rewards_PointsMissing</name>
+    </customLabels>
+    <customLabels>
+        <label>Úroveň členství</label>
+        <name>Portal_Tier_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Jsi na Okresce.</label>
+        <name>Portal_Tier_RoadTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Jsi na Dálnici. Za každé tankování máš body navíc.</label>
+        <name>Portal_Tier_HighwayTitle</name>
+    </customLabels>
+    <customLabels>
+        <label>Do Dálnice ti chybí {0}.</label>
+        <name>Portal_Tier_PointsToHighway</name>
+    </customLabels>
+    <customLabels>
+        <label>Za {0} měsíců máš {1} z {2} bodů.</label>
+        <name>Portal_Tier_Progress</name>
+    </customLabels>
+    <customLabels>
+        <label>Za palivo dostáváš o {0} % bodů víc.</label>
+        <name>Portal_Tier_HighwayBenefit</name>
+    </customLabels>
+    <customLabels>
+        <label>Dálnici si udržíš s {0} body za posledních {1} měsíců. Teď máš {2}. Další hodnocení {3}.</label>
+        <name>Portal_Tier_HighwayKeep</name>
+    </customLabels>
+    <customLabels>
+        <label>Na udržení Dálnice ti teď chybí {0}. Hodnotíme {1}.</label>
+        <name>Portal_Tier_HighwayRisk</name>
+    </customLabels>
+    <customLabels>
+        <label>Úrovně jsou dvě: Okreska a Dálnice. Na Dálnici se dostaneš s {0} body z tankování a nákupů za posledních {1} měsíců. Body za aktivity v profilu se nepočítají. Tvůj zůstatek úroveň nemění.</label>
+        <name>Portal_Tier_Rule</name>
+    </customLabels>
+    <customLabels>
+        <label>{0} ti propadne {1}.</label>
+        <name>Portal_Expiry_Warning</name>
+    </customLabels>
+    <customLabels>
+        <label>Body platí rok od připsání. Na odměny použijeme vždy nejdřív ty nejstarší. Voucher, který už máš, platí bez omezení.</label>
+        <name>Portal_Expiry_Rule</name>
+    </customLabels>
+    <customLabels>
+        <label>Propadlé body</label>
+        <name>Portal_MovementType_Expiration</name>
+    </customLabels>
+    <customLabels>
+        <label>Storno nákupu</label>
+        <name>Portal_MovementType_Reversal</name>
+    </customLabels>
+    <customLabels>
+        <label>Dálnice – bonus za palivo</label>
+        <name>Portal_MovementType_TierBonus</name>
+    </customLabels>
+    <customLabels>
+        <label>Storno nákupu</label>
+        <name>Loyalty_BO_Reversal_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Nákup</label>
+        <name>Loyalty_BO_Reversal_Transaction</name>
+    </customLabels>
+    <customLabels>
+        <label>Odebrané body</label>
+        <name>Loyalty_BO_Reversal_Points</name>
+    </customLabels>
+    <customLabels>
+        <label>Odeberou se všechny body za tento nákup (základ, kampaně i bonus úrovně). Nákup lze stornovat jen jednou, částečnou opravu řešte ruční úpravou bodů.</label>
+        <name>Loyalty_BO_Reversal_Warning</name>
+    </customLabels>
+    <customLabels>
+        <label>Stornovat nákup</label>
+        <name>Loyalty_BO_Reversal_Submit</name>
+    </customLabels>
+    <customLabels>
+        <label>Odebráno {0} bodů.</label>
+        <name>Loyalty_BO_Reversal_Success</name>
+    </customLabels>
+    <customLabels>
+        <label>Vrácení nákupu</label>
+        <name>Loyalty_BO_Reversal_Reason_Return</name>
+    </customLabels>
+    <customLabels>
+        <label>Chybně zaúčtovaný nákup</label>
+        <name>Loyalty_BO_Reversal_Reason_WrongPosting</name>
+    </customLabels>
+    <customLabels>
+        <label>Duplicitní nákup</label>
+        <name>Loyalty_BO_Reversal_Reason_Duplicate</name>
+    </customLabels>
+    <customLabels>
+        <label>Nákup už byl stornován.</label>
+        <name>Loyalty_BO_Reversal_Error_Already</name>
+    </customLabels>
+    <customLabels>
+        <label>Stornovat lze jen zpracovaný nákup.</label>
+        <name>Loyalty_BO_Reversal_Error_NotProcessed</name>
+    </customLabels>
+    <customLabels>
+        <label>Nákup nemá žádné body k odebrání.</label>
+        <name>Loyalty_BO_Reversal_Error_Nothing</name>
+    </customLabels>
+    <customLabels>
+        <label>Člen má jen {0} bodů. Body odeberte ruční úpravou maximálně do výše zůstatku.</label>
+        <name>Loyalty_BO_Reversal_Error_Balance</name>
+    </customLabels>
+    <customLabels>
+        <label>Vyberte důvod.</label>
+        <name>Loyalty_BO_Reversal_Error_Reason</name>
+    </customLabels>
+    <customLabels>
+        <label>Speciální akce, se kterými získáš ještě více bodů za tankování i nákupy na cestách.</label>
+        <name>Portal_Promo_Intro</name>
+    </customLabels>
+    <customLabels>
+        <label>Natankuj plnou.</label>
+        <name>Portal_Promo_Fuel_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Natankuj aspoň 40 l a dostaneš +50 bodů navíc.</label>
+        <name>Portal_Promo_Fuel_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>+50 bodů</label>
+        <name>Portal_Promo_Fuel_Badge</name>
+    </customLabels>
+    <customLabels>
+        <label>Platí na všech našich čerpacích stanicích.</label>
+        <name>Portal_Promo_Fuel_Note</name>
+    </customLabels>
+    <customLabels>
+        <label>Zastávka na cestě.</label>
+        <name>Portal_Promo_Shop_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Nakup na pokladně aspoň za 150 Kč a body z celého nákupu se navýší o 10 %.</label>
+        <name>Portal_Promo_Shop_Text</name>
+    </customLabels>
+    <customLabels>
+        <label>+10 % bodů</label>
+        <name>Portal_Promo_Shop_Badge</name>
+    </customLabels>
+    <customLabels>
+        <label>Sbírej body snadno.</label>
+        <name>Portal_Promo_App_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Ukaž kód v aplikaci při placení a body se ti automaticky připíšou na účet.</label>
+        <name>Portal_Promo_App_Text</name>
+    </customLabels>
+</Translations>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Loyalty Member Portal</label>
+    <description>B6/B7 portal Apex access for EneOil Klub members. Assign together with the B1 permission set Loyalty_Member, which grants the object and field read access.</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <classAccesses>
+        <apexClass>PortalActivityController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>PortalMemberController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+</PermissionSet>
