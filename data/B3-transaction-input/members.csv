@@ -1,0 +1,4 @@
+Member_Number__c,FirstName,LastName,PersonEmail,Membership_Status__c,Joined_At__c
+B3-MEMBER-001,B3 Test,Alfa,b3-member-001@example.invalid,Active,2026-09-01T08:00:00Z
+B3-MEMBER-002,B3 Test,Beta,b3-member-002@example.invalid,Active,2026-09-01T08:00:00Z
+B3-MEMBER-003,B3 Test,Blocked,b3-member-003@example.invalid,Blocked,2026-09-01T08:00:00Z

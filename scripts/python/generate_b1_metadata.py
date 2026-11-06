@@ -137,6 +137,8 @@ def permissions(name, title, objects, field_access, *, view_all=False, tabs=Fals
         body += tag('allowEdit', 'U' in access) + tag('allowRead', True)
         body += tag('modifyAllRecords', False) + tag('object', obj)
         body += tag('viewAllRecords', view_all and obj != 'Point_Ledger__c') + '</objectPermissions>'
+    if name == 'Loyalty_Manager':
+        body += '<recordTypeVisibilities>' + tag('recordType', 'PersonAccount.PersonAccount') + tag('visible', True) + '</recordTypeVisibilities>'
     if tabs:
         for obj in sorted(set(objects) & set(CUSTOM)):
             body += '<tabSettings>' + tag('tab', obj) + tag('visibility', 'Visible') + '</tabSettings>'
