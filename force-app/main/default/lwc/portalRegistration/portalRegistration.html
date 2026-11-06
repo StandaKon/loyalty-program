@@ -1,0 +1,40 @@
+<template>
+    <section class="register">
+        <h1 class="register__title">{labels.title}</h1>
+        <p class="register__subtitle">{labels.subtitle}</p>
+
+        <form class="card" novalidate onsubmit={handleSubmit}>
+            <lightning-input class="field" name="firstName" label={labels.firstName} required max-length="40" autocomplete="given-name" onchange={handleChange}></lightning-input>
+            <lightning-input class="field" name="lastName" label={labels.lastName} required max-length="80" autocomplete="family-name" onchange={handleChange}></lightning-input>
+            <lightning-input class="field" type="email" name="email" label={labels.email} required max-length="80" autocomplete="email" onchange={handleChange}></lightning-input>
+            <lightning-input
+                class="field"
+                type="password"
+                name="password"
+                label={labels.password}
+                field-level-help={labels.passwordHelp}
+                required
+                min-length="8"
+                autocomplete="new-password"
+                onchange={handleChange}
+            ></lightning-input>
+
+            <lightning-input class="field" type="checkbox" name="termsAccepted" label={labels.termsConsent} required onchange={handleChange}></lightning-input>
+            <p class="legal-links">
+                <a href={termsUrl} target="_blank" rel="noopener">{labels.terms}</a>
+                <span aria-hidden="true">·</span>
+                <a href={privacyUrl} target="_blank" rel="noopener">{labels.privacy}</a>
+            </p>
+            <lightning-input class="field" type="checkbox" name="marketingConsent" label={labels.marketingConsent} onchange={handleChange}></lightning-input>
+
+            <p lwc:if={errorMessage} class="form-error" role="alert">{errorMessage}</p>
+
+            <button class="button-primary" type="submit" disabled={isSubmitting}>{labels.submit}</button>
+            <template lwc:if={isSubmitting}>
+                <c-portal-state-message variant="loading"></c-portal-state-message>
+            </template>
+        </form>
+
+        <button class="link" type="button" onclick={handleGoToLogin}>{labels.haveAccount}</button>
+    </section>
+</template>

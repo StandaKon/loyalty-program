@@ -1,0 +1,14 @@
+<template>
+    <ul class="movements">
+        <template for:each={rows} for:item="row">
+            <li key={row.id} class="movement">
+                <div class="movement__main">
+                    <span class="movement__type">{row.typeLabel}</span>
+                    <span class="movement__description">{row.description}</span>
+                    <span class="movement__date">{row.dateLabel}</span>
+                </div>
+                <span class={row.pointsClass}>{row.pointsLabel}</span>
+            </li>
+        </template>
+    </ul>
+</template>

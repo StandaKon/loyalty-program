@@ -1,0 +1,32 @@
+.campaigns {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.campaign {
+    padding: 1rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--eneoil-brand, #ffa41b);
+    background: var(--eneoil-brand-soft, #fff1db);
+    color: var(--eneoil-ink, #1d2c38);
+}
+
+.campaign__name {
+    margin: 0 0 0.25rem;
+    font-family: var(--eneoil-font-heading, 'Archivo', sans-serif);
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.campaign__text {
+    margin: 0 0 0.5rem;
+}
+
+.campaign__validity {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--eneoil-steel, #243746);
+}

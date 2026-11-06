@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>EneOil Portal - Coming Soon</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="section" type="String" label="Section" datasource="earnPoints,rewards,vouchers,profile" default="earnPoints" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

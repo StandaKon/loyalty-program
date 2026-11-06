@@ -1,0 +1,31 @@
+<template>
+    <header class="header">
+        <div class="header__bar">
+            <a class="header__logo" href={homeUrl} aria-label={labels.home} data-page="overview" onclick={handleNavigate}>
+                <img lwc:if={logoSrc} src={logoSrc} alt={labels.logoAlt} />
+            </a>
+            <button
+                class="header__toggle"
+                type="button"
+                aria-controls="portal-navigation"
+                aria-expanded={menuExpanded}
+                onclick={handleToggleMenu}
+            >
+                <span class="header__toggle-icon" aria-hidden="true"></span>
+                <span class="header__toggle-label">{labels.menu}</span>
+            </button>
+        </div>
+        <nav id="portal-navigation" class={navClass}>
+            <ul class="nav__list">
+                <template for:each={navItems} for:item="item">
+                    <li key={item.key}>
+                        <a class={item.cssClass} href="#" aria-current={item.ariaCurrent} data-page={item.key} onclick={handleNavigate}>{item.label}</a>
+                    </li>
+                </template>
+                <li lwc:if={isMember}>
+                    <a class="nav__link nav__link_logout" href={logoutUrl}>{labels.logout}</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</template>

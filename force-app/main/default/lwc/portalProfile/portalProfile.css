@@ -1,0 +1,67 @@
+.page {
+    display: grid;
+    gap: 1rem;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    color: var(--eneoil-ink, #1d2c38);
+    font-family: var(--eneoil-font-body, 'Noto Sans', sans-serif);
+}
+
+.page__title {
+    margin: 0;
+    font-family: var(--eneoil-font-heading, 'Archivo', sans-serif);
+    font-weight: 800;
+    font-size: 1.75rem;
+}
+
+.card {
+    display: grid;
+    gap: 0.75rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(29, 44, 56, 0.12);
+}
+
+.card__title {
+    margin: 0;
+    font-family: var(--eneoil-font-heading, 'Archivo', sans-serif);
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.hint {
+    margin: 0;
+    color: var(--eneoil-plus, #2d6e22);
+    font-weight: 600;
+}
+
+.form-error {
+    margin: 0;
+    color: var(--eneoil-minus, #b4382a);
+    font-weight: 600;
+}
+
+.form-success {
+    margin: 0;
+    color: var(--eneoil-plus, #2d6e22);
+    font-weight: 600;
+}
+
+.button-primary {
+    min-height: 48px;
+    border: none;
+    border-radius: 8px;
+    background: var(--eneoil-brand, #ffa41b);
+    color: var(--eneoil-ink, #1d2c38);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.button-primary:disabled {
+    opacity: 0.6;
+    cursor: default;
+}

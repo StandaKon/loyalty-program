@@ -1,0 +1,51 @@
+.movements {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.movement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    min-height: 44px;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e3e6e9;
+}
+
+.movement:last-child {
+    border-bottom: none;
+}
+
+.movement__main {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.movement__type {
+    font-weight: 600;
+}
+
+.movement__description,
+.movement__date {
+    font-size: 0.875rem;
+    color: var(--eneoil-steel, #243746);
+    overflow-wrap: anywhere;
+}
+
+.movement__points {
+    flex-shrink: 0;
+    font-family: var(--eneoil-font-mono, 'Noto Sans Mono', monospace);
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.movement__points_plus {
+    color: var(--eneoil-plus, #2d6e22);
+}
+
+.movement__points_minus {
+    color: var(--eneoil-minus, #b4382a);
+}

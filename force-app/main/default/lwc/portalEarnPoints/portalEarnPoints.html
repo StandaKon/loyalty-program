@@ -1,0 +1,30 @@
+<template>
+    <section class="page">
+        <h1 class="page__title">{labels.title}</h1>
+        <template lwc:if={isLoading}>
+            <c-portal-state-message variant="loading"></c-portal-state-message>
+        </template>
+        <template lwc:elseif={isNotMember}>
+            <c-portal-state-message variant="empty" message={labels.notMember}></c-portal-state-message>
+        </template>
+        <template lwc:elseif={hasError}>
+            <c-portal-state-message variant="error" onretry={loadActivities}></c-portal-state-message>
+        </template>
+        <template lwc:else>
+            <p class="page__intro">{labels.intro}</p>
+            <ul class="activities">
+                <template for:each={activityItems} for:item="activity">
+                    <li key={activity.key} class="card activity">
+                        <div class="activity__header">
+                            <h2 class="activity__title">{activity.title}</h2>
+                            <span class="activity__points">{activity.pointsLabel}</span>
+                        </div>
+                        <p class="activity__text">{activity.text}</p>
+                        <p class={activity.statusClass}>{activity.statusLabel}</p>
+                        <button lwc:if={activity.isOpen} class="button-primary" type="button" onclick={handleGoToProfile}>{labels.goToProfile}</button>
+                    </li>
+                </template>
+            </ul>
+        </template>
+    </section>
+</template>

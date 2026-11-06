@@ -1,0 +1,77 @@
+:host {
+    display: grid;
+    gap: 1rem;
+}
+
+.card {
+    display: grid;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(29, 44, 56, 0.12);
+    color: var(--eneoil-ink, #1d2c38);
+    font-family: var(--eneoil-font-body, 'Noto Sans', sans-serif);
+}
+
+.card_expiry {
+    border-left: 4px solid var(--eneoil-minus, #b4382a);
+}
+
+.expiry__warning {
+    margin: 0;
+    font-weight: 700;
+    color: var(--eneoil-minus, #b4382a);
+}
+
+.card_road {
+    border: 2px solid var(--eneoil-green, #2d6e22);
+}
+
+.card_highway {
+    background: var(--eneoil-brand, #ffa41b);
+    color: var(--eneoil-ink, #1d2c38);
+}
+
+.tier__label,
+.tier__title,
+.tier__text,
+.tier__rule,
+.expiry__rule {
+    margin: 0;
+}
+
+.tier__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.tier__title {
+    font-family: var(--eneoil-font-heading, 'Archivo', sans-serif);
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.tier__text_strong {
+    font-weight: 700;
+}
+
+.tier__rule,
+.expiry__rule {
+    font-size: 0.875rem;
+}
+
+.progress {
+    height: 0.75rem;
+    border-radius: 999px;
+    background: var(--eneoil-brand-soft, #fff1db);
+    overflow: hidden;
+}
+
+.progress__bar {
+    height: 100%;
+    border-radius: 999px;
+    background: var(--eneoil-brand, #ffa41b);
+}

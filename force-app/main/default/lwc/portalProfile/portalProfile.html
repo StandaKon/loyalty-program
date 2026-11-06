@@ -1,0 +1,68 @@
+<template>
+    <section class="page">
+        <h1 class="page__title">{labels.title}</h1>
+        <template lwc:if={isLoading}>
+            <c-portal-state-message variant="loading"></c-portal-state-message>
+        </template>
+        <template lwc:elseif={isNotMember}>
+            <c-portal-state-message variant="empty" message={labels.notMember}></c-portal-state-message>
+        </template>
+        <template lwc:elseif={hasError}>
+            <c-portal-state-message variant="error" onretry={loadActivities}></c-portal-state-message>
+        </template>
+        <template lwc:else>
+            <form class="card" novalidate onsubmit={handleSaveVehicle}>
+                <h2 class="card__title">{labels.vehicleTitle}</h2>
+                <p lwc:if={profileBonusHint} class="hint">{profileBonusHint}</p>
+                <lightning-input class="field" name="make" label={labels.make} value={vehicle.make} max-length="80" onchange={handleVehicleChange}></lightning-input>
+                <lightning-input class="field" name="model" label={labels.model} value={vehicle.model} max-length="80" onchange={handleVehicleChange}></lightning-input>
+                <lightning-combobox
+                    class="field"
+                    name="fuelType"
+                    label={labels.fuelType}
+                    placeholder={labels.selectFuel}
+                    value={vehicle.fuelType}
+                    options={fuelTypeOptions}
+                    onchange={handleVehicleChange}
+                ></lightning-combobox>
+                <lightning-input
+                    class="field"
+                    type="number"
+                    name="year"
+                    label={labels.year}
+                    value={vehicle.year}
+                    min="1900"
+                    max={maxVehicleYear}
+                    step="1"
+                    onchange={handleVehicleChange}
+                ></lightning-input>
+                <lightning-input class="field" name="registration" label={labels.registration} value={vehicle.registration} max-length="20" onchange={handleVehicleChange}></lightning-input>
+
+                <p lwc:if={vehicleError} class="form-error" role="alert">{vehicleError}</p>
+                <p lwc:if={vehicleMessage} class="form-success" role="status">{vehicleMessage}</p>
+
+                <button class="button-primary" type="submit" disabled={isSaving}>{labels.save}</button>
+            </form>
+
+            <div class="card">
+                <h2 class="card__title">{labels.consentTitle}</h2>
+                <p lwc:if={marketingBonusHint} class="hint">{marketingBonusHint}</p>
+                <lightning-input
+                    class="field"
+                    type="checkbox"
+                    name="marketingConsent"
+                    label={labels.consentLabel}
+                    checked={activities.hasMarketingConsent}
+                    disabled={isSaving}
+                    onchange={handleConsentChange}
+                ></lightning-input>
+                <p lwc:if={consentError} class="form-error" role="alert">{consentError}</p>
+                <p lwc:if={consentMessage} class="form-success" role="status">{consentMessage}</p>
+            </div>
+
+            <template lwc:if={isSaving}>
+                <c-portal-state-message variant="loading"></c-portal-state-message>
+            </template>
+        </template>
+    </section>
+</template>

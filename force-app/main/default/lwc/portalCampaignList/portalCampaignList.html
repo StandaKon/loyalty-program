@@ -1,0 +1,11 @@
+<template>
+    <ul class="campaigns">
+        <template for:each={rows} for:item="row">
+            <li key={row.id} class="campaign">
+                <h3 class="campaign__name">{row.name}</h3>
+                <p lwc:if={row.memberText} class="campaign__text">{row.memberText}</p>
+                <p class="campaign__validity">{row.validityLabel}</p>
+            </li>
+        </template>
+    </ul>
+</template>

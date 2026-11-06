@@ -1,0 +1,64 @@
+<template>
+    <section class="overview">
+        <template lwc:if={isLoading}>
+            <c-portal-state-message variant="loading"></c-portal-state-message>
+        </template>
+        <template lwc:elseif={isNotMember}>
+            <c-portal-state-message variant="empty" message={labels.notMember}></c-portal-state-message>
+        </template>
+        <template lwc:elseif={hasError}>
+            <c-portal-state-message variant="error" onretry={loadOverview}></c-portal-state-message>
+        </template>
+        <template lwc:else>
+            <h1 class="greeting">{greeting}</h1>
+
+            <div class="card card_balance">
+                <p class="balance__label">{labels.balanceTitle}</p>
+                <p class="balance__value">{balanceLabel}</p>
+                <p lwc:if={memberNumberLabel} class="balance__member">{memberNumberLabel}</p>
+                <template lwc:if={hasNextReward}>
+                    <div
+                        class="progress"
+                        role="progressbar"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        aria-valuenow={progressPercent}
+                        aria-label={nextRewardText}
+                    >
+                        <div class="progress__bar" style={progressStyle}></div>
+                    </div>
+                    <p class="balance__next">{nextRewardText}</p>
+                </template>
+                <p lwc:elseif={hasReachedAllRewards} class="balance__next">{labels.allRewardsReached}</p>
+            </div>
+
+            <c-portal-loyalty-status></c-portal-loyalty-status>
+
+            <div class="card">
+                <div class="card__header">
+                    <h2 class="card__title">{labels.recentMovements}</h2>
+                    <button class="link" type="button" data-page="history" onclick={handleNavigate}>{labels.showAllHistory}</button>
+                </div>
+                <template lwc:if={hasMovements}>
+                    <c-portal-movement-list movements={overview.recentMovements}></c-portal-movement-list>
+                </template>
+                <template lwc:else>
+                    <c-portal-state-message variant="empty" message={labels.historyEmpty}></c-portal-state-message>
+                </template>
+            </div>
+
+            <div class="card">
+                <div class="card__header">
+                    <h2 class="card__title">{labels.activeCampaigns}</h2>
+                    <button class="link" type="button" data-page="campaigns" onclick={handleNavigate}>{labels.showAllCampaigns}</button>
+                </div>
+                <template lwc:if={hasCampaigns}>
+                    <c-portal-campaign-list campaigns={overview.activeCampaigns}></c-portal-campaign-list>
+                </template>
+                <template lwc:else>
+                    <c-portal-state-message variant="empty" message={labels.campaignsEmpty}></c-portal-state-message>
+                </template>
+            </div>
+        </template>
+    </section>
+</template>
