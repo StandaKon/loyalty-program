@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Purchase_Not_Future</fullName><active>true</active><description>The purchase date cannot be in the future.</description><errorMessage>The purchase date cannot be in the future.</errorMessage><errorConditionFormula><![CDATA[Purchased_At__c > NOW()]]></errorConditionFormula>
+</ValidationRule>

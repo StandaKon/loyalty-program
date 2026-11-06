@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Reverses_Entry__c</fullName><deleteConstraint>SetNull</deleteConstraint><description>Reverses Entry for the EneOil loyalty program.</description><label>Reverses Entry</label><referenceTo>Point_Ledger__c</referenceTo><relationshipLabel>Reversal Entries</relationshipLabel><relationshipName>Reversal_Entries</relationshipName><type>Lookup</type>
+</CustomField>

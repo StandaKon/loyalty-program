@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Voucher_Values_Valid</fullName><active>true</active><description>Use a registered member, a Business Account partner, positive points, and a valid ENE voucher code.</description><errorMessage>Use a registered member, a Business Account partner, positive points, and a valid ENE voucher code.</errorMessage><errorConditionFormula><![CDATA[OR(Points_Spent__c <= 0, Value_CZK__c < 0, NOT(Member__r.IsPersonAccount), ISBLANK(Member__r.Member_Number__c), Partner__r.IsPersonAccount, NOT(REGEX(Code__c, "ENE-[ABCDEFGHJKMNPQRSTUVWXYZ23456789]{4}-[ABCDEFGHJKMNPQRSTUVWXYZ23456789]{4}")))]]></errorConditionFormula>
+</ValidationRule>

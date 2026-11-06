@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Budget_Valid</fullName><active>true</active><description>Enter a nonnegative budget and its year on a Business Account.</description><errorMessage>Enter a nonnegative budget and its year on a Business Account.</errorMessage><errorConditionFormula><![CDATA[OR(Voucher_Budget_CZK__c < 0, AND(ISBLANK(Voucher_Budget_Year__c), NOT(ISBLANK(Voucher_Budget_CZK__c))), AND(NOT(ISBLANK(Voucher_Budget_Year__c)), ISBLANK(Voucher_Budget_CZK__c)), AND(NOT(ISBLANK(Voucher_Budget_Year__c)), OR(IsPersonAccount, Voucher_Budget_Year__c < 1900, Voucher_Budget_Year__c > 9999)))]]></errorConditionFormula>
+</ValidationRule>

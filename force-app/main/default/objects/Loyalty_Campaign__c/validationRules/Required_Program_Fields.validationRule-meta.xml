@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Required_Program_Fields</fullName><active>true</active><description>Complete all required program fields.</description><errorMessage>Complete all required program fields.</errorMessage><errorConditionFormula><![CDATA[AND(TRUE, OR(ISBLANK(Start_Date__c), ISBLANK(End_Date__c), ISBLANK(TEXT(Condition_Field__c)), ISBLANK(Threshold__c), ISBLANK(TEXT(Reward_Type__c)), ISBLANK(Reward_Value__c)))]]></errorConditionFormula>
+</ValidationRule>

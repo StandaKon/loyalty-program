@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Required_Program_Fields</fullName><active>true</active><description>Complete all required program fields.</description><errorMessage>Complete all required program fields.</errorMessage><errorConditionFormula><![CDATA[AND(TRUE, OR(ISBLANK(Member__c), ISBLANK(POS_Transaction_Id__c), ISBLANK(Purchased_At__c), ISBLANK(Total_Amount__c), ISBLANK(Fuel_Amount__c), ISBLANK(Other_Amount__c), ISBLANK(Liters__c), ISBLANK(TEXT(Processing_Status__c))))]]></errorConditionFormula>
+</ValidationRule>

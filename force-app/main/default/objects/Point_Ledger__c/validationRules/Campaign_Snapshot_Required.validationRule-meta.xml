@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Campaign_Snapshot_Required</fullName><active>true</active><description>Store the applied campaign condition and reward values.</description><errorMessage>Store the applied campaign condition and reward values.</errorMessage><errorConditionFormula><![CDATA[AND(ISPICKVAL(Entry_Type__c, "CampaignBonus"), OR(ISBLANK(TEXT(Applied_Condition_Field__c)), ISBLANK(Applied_Threshold__c), ISBLANK(TEXT(Applied_Reward_Type__c)), ISBLANK(Applied_Reward_Value__c)))]]></errorConditionFormula>
+</ValidationRule>

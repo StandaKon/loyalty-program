@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Profile_Complete__c</fullName><description>Profile Complete for the EneOil loyalty program.</description><formula><![CDATA[AND(NOT(ISBLANK(Vehicle_Make__c)), NOT(ISBLANK(Vehicle_Model__c)), NOT(ISBLANK(TEXT(Vehicle_Fuel_Type__c))), NOT(ISBLANK(Vehicle_Year__c)), Vehicle_Year__c >= 1900, Vehicle_Year__c <= YEAR(TODAY()) + 1)]]></formula><formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs><label>Profile Complete</label><type>Checkbox</type>
+</CustomField>

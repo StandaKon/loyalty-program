@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Source_Member_Matches</fullName><active>true</active><description>The source must belong to the same member and a refund must reverse the original redemption.</description><errorMessage>The source must belong to the same member and a refund must reverse the original redemption.</errorMessage><errorConditionFormula><![CDATA[OR(AND(NOT(ISBLANK(Transaction__c)), Member__c <> Transaction__r.Member__c), AND(NOT(ISBLANK(Voucher__c)), Member__c <> Voucher__r.Member__c), AND(NOT(ISBLANK(Reverses_Entry__c)), OR(Member__c <> Reverses_Entry__r.Member__c, NOT(ISPICKVAL(Reverses_Entry__r.Entry_Type__c, "Redemption")), Voucher__c <> Reverses_Entry__r.Voucher__c, Points__c <> -Reverses_Entry__r.Points__c)))]]></errorConditionFormula>
+</ValidationRule>
