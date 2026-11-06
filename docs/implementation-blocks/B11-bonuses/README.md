@@ -6,6 +6,8 @@
 **Solution design reference:** Chapter 2, E10  
 **Open points:** OP-13, OP-14, Q8, Q9
 
+**Marketing input:** [Zadání pro volitelné funkce programu](OPTIONAL_FEATURES_MARKETING_BRIEF.md)
+
 ## Objective
 
 Evaluate and, only after explicit approval, implement optional loyalty features without destabilizing the required solution.

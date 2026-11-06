@@ -1,0 +1,74 @@
+<template
+  ><section class="page" aria-labelledby="vouchers-title">
+    <header class="page__header">
+      <h1 id="vouchers-title" class="page__title">{labels.title}</h1>
+      <p class="page__intro">{labels.intro}</p>
+    </header>
+    <template lwc:if={isLoading}
+      ><lightning-spinner
+        alternative-text={labels.title}
+        size="medium"
+      ></lightning-spinner
+    ></template>
+    <template lwc:if={errorMessage}
+      ><p class="error" role="alert">{errorMessage}</p></template
+    >
+    <template lwc:if={hasVouchers}
+      ><div class="list">
+        <template for:each={displayVouchers} for:item="voucher"
+          ><article key={voucher.id} class={voucher.cssClass}>
+            <div class="voucher-heading">
+              <div>
+                <p class="partner">{voucher.partnerName}</p>
+                <h3>{voucher.rewardName}</h3>
+              </div>
+              <span class="status">{voucher.statusLabel}</span>
+            </div>
+            <div class="code-row">
+              <code>{voucher.code}</code
+              ><template lwc:if={voucher.isActive}
+                ><lightning-button-icon
+                  icon-name="utility:copy"
+                  alternative-text={labels.copy}
+                  title={labels.copy}
+                  data-code={voucher.code}
+                  onclick={handleCopy}
+                ></lightning-button-icon
+              ></template>
+            </div>
+            <p class="description">{voucher.description}</p>
+            <p class="meta">
+              <lightning-formatted-date-time
+                value={voucher.issuedAt}
+                year="numeric"
+                month="numeric"
+                day="numeric"
+              ></lightning-formatted-date-time>
+            </p>
+            <template lwc:if={voucher.redeemedAt}
+              ><p class="meta">
+                {voucher.statusLabel}
+                <lightning-formatted-date-time
+                  value={voucher.redeemedAt}
+                  year="numeric"
+                  month="numeric"
+                  day="numeric"
+                ></lightning-formatted-date-time>
+                · {voucher.serviceLocation}
+              </p></template
+            >
+            <template lwc:if={voucher.cancelledAt}
+              ><p class="meta">
+                {voucher.statusLabel}
+                <lightning-formatted-date-time
+                  value={voucher.cancelledAt}
+                  year="numeric"
+                  month="numeric"
+                  day="numeric"
+                ></lightning-formatted-date-time></p
+            ></template></article
+        ></template></div
+    ></template>
+    <template lwc:if={isEmpty}><p class="empty">{labels.empty}</p></template>
+  </section></template
+>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Transakce</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Transakce</value>
+    </caseValues>
+    <gender>Feminine</gender>
+    <validationRules>
+        <errorMessage>Částky nesmí být záporné, musí dát dohromady celkovou částku a částka za palivo musí odpovídat litrům.</errorMessage>
+        <name>Amounts_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vyberte registrovaného člena (osobní účet).</errorMessage>
+        <name>Member_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Zpracovaný nákup nelze upravit. Vytvořte opravu.</errorMessage>
+        <name>Processed_Transaction_Immutable</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Doplňte výsledek zpracování nebo popis chyby; součty bodů nesmí být záporné.</errorMessage>
+        <name>Processing_State_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Datum nákupu nesmí být v budoucnosti.</errorMessage>
+        <name>Purchase_Not_Future</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vyplňte všechna povinná pole programu.</errorMessage>
+        <name>Required_Program_Fields</name>
+    </validationRules>
+</CustomObjectTranslation>

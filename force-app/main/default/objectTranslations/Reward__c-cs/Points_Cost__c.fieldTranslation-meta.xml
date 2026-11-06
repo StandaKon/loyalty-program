@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Počet bodů, které člen zaplatí za jeden voucher; musí být větší než nula. Změna platí jen pro budoucí vouchery.</help>
+    <label>Cena v bodech</label>
+    <name>Points_Cost__c</name>
+</CustomFieldTranslation>

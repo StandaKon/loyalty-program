@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_Blocked_Members</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Member_Number__c</columns>
+    <columns>Membership_Status__c</columns>
+    <columns>Joined_At__c</columns>
+    <columns>Points_Balance__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Membership_Status__c</field>
+        <operation>equals</operation>
+        <value>Blocked</value>
+    </filters>
+    <label>Blokovaní členové</label>
+</ListView>

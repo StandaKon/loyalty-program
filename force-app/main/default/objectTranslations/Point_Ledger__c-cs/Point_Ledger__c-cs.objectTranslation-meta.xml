@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Pohyb bodů</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Pohyby bodů</value>
+    </caseValues>
+    <gender>Masculine</gender>
+    <validationRules>
+        <errorMessage>Uložte použitou podmínku a odměnu kampaně.</errorMessage>
+        <name>Campaign_Snapshot_Required</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Pohyb bodů nelze upravit. Vytvořte opravný pohyb.</errorMessage>
+        <name>Immutable_Entry</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vyberte registrovaného člena (osobní účet).</errorMessage>
+        <name>Member_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Čerpání musí odpovídat ceně voucheru v bodech.</errorMessage>
+        <name>Redemption_Amount_Matches</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vyplňte všechna povinná pole programu.</errorMessage>
+        <name>Required_Program_Fields</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Znaménko bodů neodpovídá typu pohybu.</errorMessage>
+        <name>Signs_Valid</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Zdroj musí patřit stejnému členovi a vrácení musí stornovat původní čerpání.</errorMessage>
+        <name>Source_Member_Matches</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage>Vazby na zdroj a důvod musí odpovídat typu pohybu.</errorMessage>
+        <name>Source_Required</name>
+    </validationRules>
+</CustomObjectTranslation>

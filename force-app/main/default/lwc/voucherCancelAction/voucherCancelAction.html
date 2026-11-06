@@ -1,0 +1,67 @@
+<template>
+    <lightning-quick-action-panel header={labels.TITLE}>
+        <template lwc:if={isLoading}>
+            <lightning-spinner alternative-text={labels.TITLE} size="small"></lightning-spinner>
+        </template>
+        <template lwc:elseif={context}>
+            <div class="loyalty-summary slds-grid slds-wrap slds-m-bottom_medium">
+                <div class="slds-col slds-size_1-of-2 slds-p-bottom_x-small">
+                    <p class="loyalty-label">{labels.CODE}</p>
+                    <p class="loyalty-value">{context.code}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-2 slds-p-bottom_x-small">
+                    <p class="loyalty-label">{labels.STATUS}</p>
+                    <p class="loyalty-value">{context.statusLabel}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="loyalty-label">{labels.REWARD}</p>
+                    <p class="loyalty-value">{context.rewardName}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <p class="loyalty-label">{labels.REFUND}</p>
+                    <p class="loyalty-plus">{refundText}</p>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-p-top_x-small">
+                    <p class="loyalty-label">{labels.MEMBER}</p>
+                    <p class="loyalty-value">{context.memberName}</p>
+                </div>
+            </div>
+            <template lwc:if={canCancel}>
+                <p class="slds-m-bottom_small">{labels.WARNING}</p>
+                <lightning-combobox
+                    data-validate
+                    required
+                    label={labels.CATEGORY}
+                    placeholder={labels.SELECT_PLACEHOLDER}
+                    options={context.categories}
+                    value={category}
+                    onchange={handleCategoryChange}
+                ></lightning-combobox>
+                <lightning-textarea
+                    data-validate
+                    class="slds-m-top_small"
+                    max-length={maxCommentLength}
+                    label={labels.COMMENT_OPTIONAL}
+                    value={comment}
+                    onchange={handleCommentChange}
+                ></lightning-textarea>
+            </template>
+            <template lwc:else>
+                <p class="loyalty-error">{infoMessage}</p>
+            </template>
+        </template>
+        <template lwc:if={errorMessage}>
+            <p class="loyalty-error slds-m-top_small" role="alert">{errorMessage}</p>
+        </template>
+        <div slot="footer">
+            <lightning-button label={labels.CLOSE} onclick={handleClose}></lightning-button>
+            <lightning-button
+                class="slds-m-left_x-small"
+                variant="brand"
+                label={labels.SUBMIT}
+                disabled={isSubmitDisabled}
+                onclick={handleSubmit}
+            ></lightning-button>
+        </div>
+    </lightning-quick-action-panel>
+</template>

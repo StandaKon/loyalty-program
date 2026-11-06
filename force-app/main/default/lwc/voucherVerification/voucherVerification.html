@@ -1,0 +1,66 @@
+<template
+  ><lightning-card title={labels.title} icon-name="standard:service_appointment"
+    ><div class="slds-p-around_medium">
+      <div class="search">
+        <lightning-input
+          label={labels.code}
+          value={code}
+          onchange={handleCode}
+        ></lightning-input
+        ><lightning-button
+          variant="brand"
+          label={labels.search}
+          disabled={isLoading}
+          onclick={handleSearch}
+        ></lightning-button>
+      </div>
+      <template lwc:if={isLoading}
+        ><lightning-spinner
+          alternative-text={labels.search}
+          size="small"
+        ></lightning-spinner
+      ></template>
+      <template lwc:if={errorMessage}
+        ><p class="error slds-m-top_small" role="alert">
+          {errorMessage}
+        </p></template
+      >
+      <template lwc:if={voucher}
+        ><section class="result slds-m-top_medium">
+          <div class="summary">
+            <div><span>{labels.code}</span><strong>{voucher.code}</strong></div>
+            <div>
+              <span>{labels.status}</span><strong>{voucher.statusLabel}</strong>
+            </div>
+            <div>
+              <span>{labels.reward}</span><strong>{voucher.rewardName}</strong>
+            </div>
+          </div>
+          <template lwc:if={voucher.canRedeem}
+            ><p class="valid">{labels.valid}</p>
+            <lightning-input
+              data-validate
+              required
+              max-length="80"
+              label={labels.location}
+              value={serviceLocation}
+              onchange={handleLocation}
+            ></lightning-input
+            ><lightning-input
+              data-validate
+              required
+              max-length="80"
+              label={labels.order}
+              value={serviceOrderNumber}
+              onchange={handleOrder}
+            ></lightning-input
+            ><lightning-button
+              class="slds-m-top_medium"
+              variant="brand"
+              label={labels.redeem}
+              disabled={isSaving}
+              onclick={handleRedeem}
+            ></lightning-button
+          ></template></section
+      ></template></div></lightning-card
+></template>

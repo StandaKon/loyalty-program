@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Vyhodnocují se jen povolené kampaně. Vypnutí zastaví kampaň pro všechny další nákupy včetně opožděných; připsané body zůstávají.</help>
+    <label>Povolena</label>
+    <name>Is_Enabled__c</name>
+</CustomFieldTranslation>

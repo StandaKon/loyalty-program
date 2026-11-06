@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BrandingSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brandingSetProperty>
+        <propertyName>BRAND_COLOR</propertyName>
+        <propertyValue>#FFA41B</propertyValue>
+    </brandingSetProperty>
+    <brandingSetProperty>
+        <propertyName>PAGE_BACKGROUND_COLOR</propertyName>
+        <propertyValue>#F6F7F8</propertyValue>
+    </brandingSetProperty>
+    <brandingSetProperty>
+        <propertyName>BRAND_IMAGE</propertyName>
+        <propertyValue>/file-asset/Najeto_Logo?v=1</propertyValue>
+    </brandingSetProperty>
+    <description>NAJETO brand (solution design ch. 13): brand orange, off-white page background, NAJETO logo.</description>
+    <masterLabel>NAJETO</masterLabel>
+</BrandingSet>

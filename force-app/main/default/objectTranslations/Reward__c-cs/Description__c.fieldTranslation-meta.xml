@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Podmínky odměny zobrazené členům; povinné před aktivací. Při vydání se kopírují na voucher.</help>
+    <label>Popis a podmínky</label>
+    <name>Description__c</name>
+</CustomFieldTranslation>

@@ -1,0 +1,86 @@
+import { LightningElement } from "lwc";
+import { ShowToastEvent } from "lightning/platformShowToastEvent";
+import findVoucher from "@salesforce/apex/VoucherVerificationController.findVoucher";
+import redeemVoucher from "@salesforce/apex/VoucherVerificationController.redeemVoucher";
+import TITLE from "@salesforce/label/c.Loyalty_Voucher_Verify_Title";
+import CODE from "@salesforce/label/c.Loyalty_Voucher_Verify_Code";
+import SEARCH from "@salesforce/label/c.Loyalty_Voucher_Verify_Search";
+import VALID from "@salesforce/label/c.Loyalty_Voucher_Verify_Valid";
+import LOCATION from "@salesforce/label/c.Loyalty_Voucher_Verify_Location";
+import ORDER from "@salesforce/label/c.Loyalty_Voucher_Verify_Order";
+import REDEEM from "@salesforce/label/c.Loyalty_Voucher_Verify_Redeem";
+import SUCCESS from "@salesforce/label/c.Loyalty_Voucher_Verify_Success";
+import STATUS from "@salesforce/label/c.Loyalty_BO_Cancel_Status";
+import REWARD from "@salesforce/label/c.Loyalty_BO_Cancel_Reward";
+import NOT_FOUND from "@salesforce/label/c.Loyalty_Voucher_Error_Not_Found";
+import { reduceError } from "c/loyaltyActionUtils";
+export default class VoucherVerification extends LightningElement {
+  labels = {
+    title: TITLE,
+    code: CODE,
+    search: SEARCH,
+    valid: VALID,
+    location: LOCATION,
+    order: ORDER,
+    redeem: REDEEM,
+    status: STATUS,
+    reward: REWARD
+  };
+  code;
+  serviceLocation;
+  serviceOrderNumber;
+  voucher;
+  errorMessage;
+  isLoading = false;
+  isSaving = false;
+  handleCode(e) {
+    this.code = e.target.value;
+  }
+  handleLocation(e) {
+    this.serviceLocation = e.target.value;
+  }
+  handleOrder(e) {
+    this.serviceOrderNumber = e.target.value;
+  }
+  async handleSearch() {
+    if (!this.code) return;
+    this.isLoading = true;
+    this.errorMessage = undefined;
+    this.voucher = undefined;
+    try {
+      this.voucher = await findVoucher({ code: this.code });
+      if (!this.voucher) this.errorMessage = NOT_FOUND;
+    } catch (e) {
+      this.errorMessage = reduceError(e);
+    } finally {
+      this.isLoading = false;
+    }
+  }
+  async handleRedeem() {
+    const valid = [...this.template.querySelectorAll("[data-validate]")].reduce(
+      (result, input) => input.reportValidity() && result,
+      true
+    );
+    if (!valid) return;
+    this.isSaving = true;
+    this.errorMessage = undefined;
+    try {
+      this.voucher = await redeemVoucher({
+        code: this.code,
+        serviceLocation: this.serviceLocation,
+        serviceOrderNumber: this.serviceOrderNumber
+      });
+      this.dispatchEvent(
+        new ShowToastEvent({
+          title: TITLE,
+          message: SUCCESS,
+          variant: "success"
+        })
+      );
+    } catch (e) {
+      this.errorMessage = reduceError(e);
+    } finally {
+      this.isSaving = false;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+:host {
+  display: block;
+  color: var(--eneoil-ink, #1d2c38);
+  font-family: var(--eneoil-font-body, "Noto Sans", sans-serif);
+}
+.page {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.page__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+}
+.page__title,
+.modal__title,
+h3 {
+  color: var(--eneoil-ink, #1d2c38);
+  font-family: var(--eneoil-font-heading, "Archivo", sans-serif);
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+}
+.page__title {
+  font-size: 1.75rem;
+  font-weight: 800;
+}
+.page__intro {
+  margin: 0;
+  color: var(--eneoil-steel, #243746);
+}
+.balance {
+  flex: 0 0 auto;
+  background: var(--eneoil-surface, #f6f7f8);
+  border: 1px solid #dfe3e6;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  text-align: right;
+}
+.balance span {
+  display: block;
+  color: var(--eneoil-muted, #505f6b);
+  font-size: 0.8rem;
+}
+.balance strong {
+  color: var(--eneoil-ink, #1d2c38);
+  font: 700 1.4rem var(--eneoil-font-mono, "Noto Sans Mono", monospace);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+.reward-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #fff;
+  border: 1px solid #dfe3e6;
+  border-top: 4px solid var(--eneoil-brand, #ffa41b);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 1px 3px rgb(29 44 56 / 12%);
+}
+.partner,
+.value {
+  color: var(--eneoil-steel, #243746);
+}
+.partner {
+  margin: 0 0 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.description {
+  flex-grow: 1;
+  min-height: 3rem;
+  white-space: pre-line;
+}
+.value {
+  font-weight: 700;
+}
+.missing,
+.error {
+  color: var(--eneoil-error, #ba0517);
+  font-weight: 600;
+}
+.empty {
+  color: var(--eneoil-steel, #243746);
+  text-align: center;
+  padding: 2rem;
+}
+lightning-button {
+  --slds-c-button-brand-color-background: var(--eneoil-brand, #ffa41b);
+  --slds-c-button-brand-color-background-hover: var(
+    --eneoil-brand-hover,
+    #f19100
+  );
+  --slds-c-button-brand-color-border: var(--eneoil-brand, #ffa41b);
+  --slds-c-button-brand-text-color: var(--eneoil-ink, #1d2c38);
+  --slds-c-button-radius-border: 4px;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: #0008;
+}
+.modal {
+  position: relative;
+  width: min(30rem, 100%);
+  box-sizing: border-box;
+  color: var(--eneoil-ink, #1d2c38);
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1rem 3rem rgb(15 23 29 / 24%);
+}
+.confirm-price {
+  font-weight: 700;
+}
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 40rem) {
+  .page__header,
+  .actions {
+    flex-direction: column;
+  }
+  .balance {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+  }
+  .actions lightning-button {
+    width: 100%;
+  }
+}

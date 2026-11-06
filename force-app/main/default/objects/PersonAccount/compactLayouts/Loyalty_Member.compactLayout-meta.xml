@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Loyalty_Member</fullName>
+    <fields>Name</fields>
+    <fields>Member_Number__c</fields>
+    <fields>Membership_Status__c</fields>
+    <fields>Points_Balance__c</fields>
+    <fields>Joined_At__c</fields>
+    <fields>Profile_Complete__c</fields>
+    <fields>Marketing_Consent__c</fields>
+    <label>Loyalty Member</label>
+</CompactLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Použitý typ odměny</label>
+    <name>Applied_Reward_Type__c</name>
+    <picklistValues>
+        <masterLabel>FixedBonus</masterLabel>
+        <translation>Pevný bonus</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BaseMultiplier</masterLabel>
+        <translation>Násobitel základu</translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<actionOverrides><actionName>View</actionName><comment>Loyalty back-office record page (B5)</comment><content>Loyalty_Campaign_Record_Page</content><formFactor>Large</formFactor><skipRecordTypeSelect>false</skipRecordTypeSelect><type>Flexipage</type></actionOverrides>
 <deploymentStatus>Deployed</deploymentStatus><description>Loyalty Campaign records for EneOil Klub. See the B1 data model design.</description><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><externalSharingModel>Read</externalSharingModel><label>Loyalty Campaign</label><nameField><label>Loyalty Campaign Name</label><type>Text</type></nameField><pluralLabel>Loyalty Campaigns</pluralLabel><sharingModel>Read</sharingModel><visibility>Public</visibility>
 </CustomObject>

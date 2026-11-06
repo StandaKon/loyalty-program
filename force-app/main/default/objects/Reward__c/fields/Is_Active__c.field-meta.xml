@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-<fullName>Is_Active__c</fullName><defaultValue>false</defaultValue><description>Is Active for the EneOil loyalty program.</description><label>Is Active</label><trackHistory>true</trackHistory><type>Checkbox</type>
+<fullName>Is_Active__c</fullName><defaultValue>false</defaultValue><description>Is Active for the EneOil loyalty program.</description><inlineHelpText>Only active rewards can be redeemed. Deactivation does not cancel already issued vouchers. Requires a description.</inlineHelpText><label>Is Active</label><trackHistory>true</trackHistory><type>Checkbox</type>
 </CustomField>

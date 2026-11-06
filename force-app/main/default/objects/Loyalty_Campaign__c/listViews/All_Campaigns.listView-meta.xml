@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Campaigns</fullName>
+    <columns>NAME</columns>
+    <columns>Is_Enabled__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Condition_Field__c</columns>
+    <columns>Threshold__c</columns>
+    <columns>Reward_Type__c</columns>
+    <columns>Reward_Value__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Všechny kampaně</label>
+</ListView>

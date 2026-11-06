@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Stav zpracování</label>
+    <name>Processing_Status__c</name>
+    <picklistValues>
+        <masterLabel>Pending</masterLabel>
+        <translation>Čeká na zpracování</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Processed</masterLabel>
+        <translation>Zpracováno</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Error</masterLabel>
+        <translation>Chyba</translation>
+    </picklistValues>
+</CustomFieldTranslation>

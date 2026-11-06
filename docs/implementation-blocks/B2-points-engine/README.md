@@ -6,6 +6,43 @@
 **Solution design reference:** Chapter 6  
 **Open points:** OP-07, Q10
 
+## Summary (what was done and why)
+
+**What it is:** the automatic points engine of EneOil Klub. When a purchase (`Loyalty_Transaction__c`) is saved – by CSV import or manual entry – Salesforce calculates the points, records them in the point ledger and updates the member balance. Nobody calculates points by hand.
+
+**Why:** members must get the right number of points exactly once, the loyalty manager must be able to explain every point (which purchase, which campaign), and campaigns must be configurable without a developer.
+
+**What it does on every purchase:**
+1. Checks the member is active and the settings are valid; otherwise the purchase gets status *Error* with a reason and no points. Invalid data (amounts not adding up, future date, unknown member) is rejected at import by the B1 validation rules.
+2. Base points: 1 per whole litre + 1 per whole CZK 20 of other spend (rates in `Loyalty_Settings__mdt`).
+3. Campaigns valid on the purchase day: fixed bonus or multiplier of base points; several can apply, everything is rounded down.
+4. Writes one ledger entry for the base and one per matched campaign; the balance on the member is a roll-up of these entries.
+5. A processed purchase is locked; the same POS ID can never be awarded twice.
+
+**Who uses the result:** members see balance and history in the portal (B6); the loyalty manager sees the points breakdown and failed purchases in the back office (B5); the management report (B9) reads ledger entries for KPIs and campaign performance.
+
+## How to Test
+
+**Automated (Apex tests):**
+```bash
+sf apex run test --class-names PointsCalculatorTest --class-names LoyaltyTransactionServiceTest --result-format human --code-coverage --wait 20
+```
+Covers T01–T07, T10 (reference calculations), T20 (amount mismatch), T21 (duplicate POS ID), blocked member, future date, multiple multipliers, Prague date boundaries, reprocessing of an *Error* purchase, lock of a processed purchase, bulk 251 purchases and invalid settings.
+
+**Smoke test in the org (acceptance example):**
+```bash
+sf apex run --file scripts/apex/b2-points-engine-smoke.apex
+```
+Creates a demo member `ENE-DEMO-B2` and the two reference campaigns if missing, imports a purchase of 45 l / 1 710 CZK + 180 CZK, prints the result and **rolls everything back** – no data is kept. Expected: status `Processed`, 109 points, ledger `PurchaseBase 54`, `CampaignBonus 50`, `CampaignBonus 5`, balance 109.
+Prerequisites for the running user: permission set `Loyalty_Manager` (field access) and the *Person Account* record type available on the profile. Without them, use the Apex tests above – they cover the same scenario and also leave no data.
+
+**Manual check in the UI** (assign permission set `Loyalty_Manager` first):
+1. Open the demo member → related list *Point Ledger* shows the three entries, *Points Balance* shows the total.
+2. Create a purchase with the same POS ID → save is rejected (duplicate).
+3. Edit a processed purchase → save is rejected (locked).
+4. Set the member to *Blocked*, create a purchase → status *Error* with reason, balance unchanged; set the member back to *Active* and save the purchase again → it is processed.
+5. Disable a campaign (`Is_Enabled__c = false`) and create a purchase → that campaign no longer adds points; earlier entries stay unchanged.
+
 ## Objective
 
 Implement a bulk-safe and idempotent engine that validates loyalty transactions, calculates base and campaign points, creates an auditable ledger, and maintains the member balance.
@@ -65,19 +102,67 @@ Implement a bulk-safe and idempotent engine that validates loyalty transactions,
 
 ### 1. Final Assignment
 
-_To be completed and approved before implementation._
+**Goal:** Every valid member purchase earns the correct points exactly once, every point is traceable to its source, and the member balance always equals the sum of ledger entries.
+
+**Input (1 record = 1 POS purchase, delivered by B3):** POS transaction ID, purchase date/time, member number (`Member_Number__c`), station, total CZK, fuel CZK, litres, other CZK.
+
+**Processing rules**
+1. **Validation:** all values ≥ 0, total > 0, fuel + other = total (to the haléř), fuel > 0 ⇔ litres > 0, member exists and is Active, purchase date is not in the future. Invalid → status *Error* with a reason, no points.
+2. **Idempotency:** the same POS ID is processed exactly once; re-import awards nothing.
+3. **Base points:** `floor(litres)` + `floor(other CZK / 20)`; rates from `Loyalty_Settings__mdt`; Decimal arithmetic only.
+4. **Campaigns:** apply automatically to all members when active, the purchase date (Europe/Prague) is within valid from–to (inclusive), and `field ≥ threshold` holds. Each campaign applies at most once per transaction; campaigns add up.
+   - Fixed bonus: `+value`.
+   - Multiplier: `floor(base × coefficient) − base`, always calculated from base points only; multiple multipliers are each calculated separately from base and summed.
+5. **Output:** base, bonus and total points + status and error message on the transaction; one ledger entry for base points and one per matched campaign (including 0-point results), unique key per transaction + BASE / transaction + campaign; ledger date = purchase date; balance = roll-up of ledger.
+6. **Integrity:** ledger entries are never edited or deleted; processing of a transaction is atomic (transaction + all its ledger entries, or nothing); 5 000 transactions in one import stay within governor limits.
+
+**User impact**
+- *Member (portal, B6):* sees the balance grow after a purchase and a history line per purchase plus a separate line per campaign, dated by purchase date.
+- *Loyalty manager (back office, B5):* sees the points breakdown per transaction, sees failed transactions with a reason, fixes them and they are reprocessed; configures campaigns without a developer.
+
+**Out of scope:** transaction input/import UI (B3), portal activities (B7 – reuse the same ledger), manual adjustment (B5), storno (OP-13), expiration and tiers (B11).
+
+**Acceptance criteria:** reference calculations T01–T07 and T10 (SD ch. 14) match exactly – T01 = 109 (54 + 5 + 50); negative scenarios T20, T21, T23, T24 and bulk T25 pass; no failure leaves a partial ledger or balance change.
+
+**Dependency:** B1 data model (incl. OP-06 campaign storage) must be stable; API names above are provisional until then.
 
 ### 2. Resolved Open Points
 
 | ID/question | Decision | Approved by/date |
 | --- | --- | --- |
-| OP-07 | | |
-| Q10 | | |
+| OP-07 | Apex via trigger-actions-framework (trigger action + service + selectors). Reason: bulk 5 000 transactions, idempotency via unique keys, full unit-test coverage of T01–T25. Campaigns and rates stay configurable as records/CMDT. | Stanislav Konopásek, 2026-11-06 |
+| Q10 | Multiple multipliers: each calculated separately from base points, results summed (order-independent). | Stanislav Konopásek, 2026-11-06 |
+| Zero bonus | A matched campaign with a 0-point result (e.g. T04) still creates a 0-point ledger entry, so campaign performance reporting (FR-34) counts every hit. | Stanislav Konopásek, 2026-11-06 |
+| Errors & retry | Statuses `Pending → Processed / Error` (names per B1). An *Error* transaction (inactive member, invalid settings) is saved with a reason and is reprocessed on its next save; invalid data is rejected at import by B1 validation rules. A *Processed* transaction is locked; corrections go through storno or manual adjustment. | Stanislav Konopásek, 2026-11-06 |
+| Campaign change | Changes to a campaign apply only to transactions processed afterwards; already awarded points are never recalculated. | Stanislav Konopásek, 2026-11-06 |
+| Backdated / future dates | Campaign eligibility by purchase date (Europe/Prague), regardless of import time; no backdating limit (historic seed data in B4). Future-dated purchase → *Error*. Simultaneous transactions: balance is a roll-up, so no shared counter is updated concurrently. | Stanislav Konopásek, 2026-11-06 |
+
+**Alignment with B1 data model** ([data-model-config.md](../B1-data-model-config/data-model-config.md)): statuses are `Pending / Processed / Error`; ledger entry types `PurchaseBase` / `CampaignBonus`; unique keys `TX:<id>:BASE` and `TX:<id>:CAM:<campaignId>`; campaign snapshot copied to `Applied_*` fields. An unknown member number is rejected by the import itself (required lookup), not stored as *Error* (B1 §4.3).
 
 ### 3. Implementation Steps
 
-_List Apex/Flow, metadata, security, test, and deployment steps in execution order._
+1. **Prerequisite (B1, owned by the B1 colleague):** deploy fields of `Account` (`Member_Number__c`, `Membership_Status__c`, `Joined_At__c`, `Points_Balance__c` roll-up), `Loyalty_Transaction__c`, `Loyalty_Campaign__c` and `Point_Ledger__c` (incl. `Applied_*`) as specified in B1 §4. In the `LOYALTY` org only object shells exist today.
+2. **Framework:** trigger-actions-framework, `dml` and `enehano-logger` are not installed in the org → plain trigger + handler, native `Database.*` DML with explicit `AccessLevel`; processing errors are stored on the transaction instead of logged (decision 2026-11-06).
+3. **Apex components** (done, see §4).
+4. **Deploy** B2 metadata after step 1 and run `PointsCalculatorTest`, `LoyaltyTransactionServiceTest`.
+5. **Hand-over:** B3 imports into `Loyalty_Transaction__c` (upsert is not allowed for idempotency – plain insert); B4 extends tests to T23–T25 with seed data; B5 adds a list view of *Error* transactions.
 
 ### 4. Implementation and Test Results
 
-_Record components, test runs, coverage, results, deviations, and follow-up work._
+| Component | Path | Purpose |
+| --- | --- | --- |
+| `LoyaltyTransactionTrigger` | `triggers/` | Routing only (before/after insert and update) |
+| `LoyaltyTransactionTriggerHandler` | `classes/triggerActions/` | Dispatches trigger contexts; `without sharing` (server-side engine) |
+| `LoyaltyTransactionService` | `classes/services/` | Validation, status, points breakdown (before save); ledger entries (after save); lock of processed purchases |
+| `PointsCalculator` | `classes/services/` | Pure calculation of base points and campaign bonuses (floor, Europe/Prague purchase day) |
+| `AccountSelector`, `LoyaltyCampaignSelector`, `LoyaltySettingsSelector` | `classes/selectors/` | SOQL / CMDT access, `WITH SYSTEM_MODE` |
+| Custom Labels `Loyalty_Tx_Error_*` | `labels/` | Error reasons stored in `Processing_Error__c` (English base; Czech translation is follow-up) |
+| `PointsCalculatorTest`, `LoyaltyTransactionServiceTest`, `LoyaltyTestDataFactory` | `classes/` | T01–T07, T10, T20, T21, multi-multiplier, date boundaries, retry, lock, bulk 251, invalid settings |
+
+**Deviation after B1 deployment (2026-11-06):** B1 validation rules (`Amounts_Valid`, `Purchase_Not_Future`, `Member_Valid`, `Required_Program_Fields`, `Processed_Transaction_Immutable`) run after the before-save trigger and reject invalid rows at import. The engine therefore stores status *Error* only for business errors that a row-level rule cannot express: blocked/cancelled member and missing/invalid `Loyalty_Settings__mdt`. Duplicate engine checks and their labels were removed. Ledger immutability is enforced by B1 rule `Point_Ledger__c.Immutable_Entry`.
+
+**Test execution (2026-11-06, org `LOYALTY`, RunSpecifiedTests):** deploy succeeded; 16/16 tests passed (`PointsCalculatorTest`, `LoyaltyTransactionServiceTest`). Coverage: `LoyaltyTransactionService` 98 %, `PointsCalculator` 94 %, trigger, handler and selectors 100 %.
+
+**Follow-up:**
+- T23 (unknown member) is a B3 import-error case; T24/T25 with seed data in B4.
+- Czech translations of the error labels.

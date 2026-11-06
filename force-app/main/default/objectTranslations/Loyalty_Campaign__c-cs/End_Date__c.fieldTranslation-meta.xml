@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Poslední den platnosti (včetně). Nesmí být před datem začátku. Po připsání prvních bodů ji nelze změnit.</help>
+    <label>Platnost do</label>
+    <name>End_Date__c</name>
+</CustomFieldTranslation>

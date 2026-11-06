@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_From__c</fullName>
+    <description
+  >Optional first date on which the reward is visible and redeemable in the member portal.</description>
+    <inlineHelpText
+  >Leave empty to make the reward available immediately after activation.</inlineHelpText>
+    <label>Available From</label>
+    <type>Date</type>
+</CustomField>

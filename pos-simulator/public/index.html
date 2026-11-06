@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="cs">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Simulátor pokladny čerpací stanice EneOil napojený na věrnostní program NAJETO v Salesforce." />
+        <title>Pokladna · NAJETO</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Noto+Sans:wght@400;600;700;800&family=Noto+Sans+Mono:wght@600;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="/styles.css" />
+        <script type="module" src="/app.js"></script>
+    </head>
+    <body>
+        <header class="topbar">
+            <a class="brand" href="/" aria-label="Pokladna NAJETO – domů">
+                <img src="/najeto-logo.png" alt="NAJETO" />
+                <span class="brand-copy"><strong>Pokladna</strong><small>EneOil · Stanice 01</small></span>
+            </a>
+            <div class="system-state"><span class="state-dot"></span><span id="connectionText">Kontroluji Salesforce</span></div>
+            <div class="clock" id="clock" aria-label="Aktuální čas"></div>
+        </header>
+
+        <main class="workspace">
+            <section class="checkout-panel">
+                <div class="section-heading">
+                    <div><span class="eyebrow">Nový nákup</span><h1>Prodej a tankování</h1></div>
+                    <button class="text-button" id="fillDemoButton" type="button">Naplnit demo 109 bodů</button>
+                </div>
+
+                <div class="member-card">
+                    <label for="memberNumber">Identifikace člena</label>
+                    <div class="member-input-row">
+                        <span class="member-icon" aria-hidden="true">◉</span>
+                        <input id="memberNumber" name="memberNumber" autocomplete="off" placeholder="Zadej číslo člena" required />
+                        <span class="input-hint">NAJETO</span>
+                    </div>
+                </div>
+
+                <div class="content-grid">
+                    <section class="fuel-card card">
+                        <div class="card-title"><span class="icon-box fuel-icon" aria-hidden="true">⛽</span><div><h2>Tankování</h2><p>Palivo a odebrané množství</p></div></div>
+                        <div class="field-grid">
+                            <label>Litry<input id="liters" type="number" min="0" step="0.001" value="0" inputmode="decimal" /><span>l</span></label>
+                            <label>Cena za litr<input id="pricePerLiter" type="number" min="0" step="0.01" value="38" inputmode="decimal" /><span>Kč</span></label>
+                        </div>
+                        <div class="sub-total"><span>Palivo celkem</span><strong id="fuelTotal">0 Kč</strong></div>
+                    </section>
+
+                    <section class="shop-card card">
+                        <div class="card-title"><span class="icon-box shop-icon" aria-hidden="true">▦</span><div><h2>Obchod</h2><p>Kliknutím přidej položku</p></div></div>
+                        <div class="products" id="products">
+                            <button type="button" data-name="Káva" data-price="60"><span>☕</span><strong>Káva</strong><small>60 Kč</small></button>
+                            <button type="button" data-name="Bageta" data-price="90"><span>🥪</span><strong>Bageta</strong><small>90 Kč</small></button>
+                            <button type="button" data-name="Voda" data-price="30"><span>💧</span><strong>Voda</strong><small>30 Kč</small></button>
+                            <button type="button" data-name="Tyčinka" data-price="45"><span>▤</span><strong>Tyčinka</strong><small>45 Kč</small></button>
+                        </div>
+                        <label class="custom-amount">Jiné zboží<input id="customAmount" type="number" min="0" step="0.01" value="0" inputmode="decimal" /><span>Kč</span></label>
+                    </section>
+                </div>
+            </section>
+
+            <aside class="receipt-panel">
+                <div class="receipt-heading"><div><span class="eyebrow">Účtenka</span><h2>Aktuální nákup</h2></div><button id="clearButton" class="clear-button" type="button">Vymazat</button></div>
+                <div class="receipt-lines" id="receiptLines"><div class="empty-receipt"><span>+</span><p>Přidej palivo nebo zboží</p></div></div>
+                <div class="receipt-summary">
+                    <div><span>Palivo</span><strong id="summaryFuel">0 Kč</strong></div>
+                    <div><span>Obchod</span><strong id="summaryShop">0 Kč</strong></div>
+                    <div class="grand-total"><span>Celkem</span><strong id="grandTotal">0 Kč</strong></div>
+                </div>
+                <button class="pay-button" id="payButton" type="button" disabled><span>Zaplatit</span><strong id="payTotal">0 Kč</strong></button>
+                <p class="security-note"><span aria-hidden="true">✓</span> Platba vytvoří jednu auditovanou transakci v Salesforce.</p>
+            </aside>
+        </main>
+
+        <div class="modal-backdrop" id="resultModal" hidden>
+            <section class="result-modal" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+                <div class="success-mark">✓</div>
+                <span class="eyebrow">Platba dokončena</span>
+                <h2 id="resultTitle">Body jsou připsané</h2>
+                <p id="resultMember"></p>
+                <div class="points-awarded"><span>Za tento nákup</span><strong id="resultPoints">+0</strong><small>bodů</small></div>
+                <div class="points-breakdown">
+                    <div><span>Palivo</span><strong id="resultFuelPoints">0</strong></div>
+                    <div><span>Obchod</span><strong id="resultShopPoints">0</strong></div>
+                    <div><span>Kampaně</span><strong id="resultCampaignPoints">0</strong></div>
+                    <div class="balance"><span>Nový zůstatek</span><strong id="resultBalance">0 bodů</strong></div>
+                </div>
+                <p class="transaction-reference" id="resultReference"></p>
+                <button class="pay-button" id="newPurchaseButton" type="button">Nový nákup</button>
+            </section>
+        </div>
+
+        <div class="toast" id="toast" role="alert" hidden></div>
+    </body>
+</html>

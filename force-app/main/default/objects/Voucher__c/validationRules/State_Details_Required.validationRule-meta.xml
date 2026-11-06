@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-<fullName>State_Details_Required</fullName><active>true</active><description>Complete the voucher state and email audit details.</description><errorMessage>Complete the voucher state and email audit details.</errorMessage><errorConditionFormula><![CDATA[OR(AND(ISPICKVAL(Status__c, "Redeemed"), OR(ISBLANK(Redeemed_At__c), ISBLANK(Redeemed_By__c))), AND(ISPICKVAL(Status__c, "Cancelled"), OR(ISBLANK(Cancelled_At__c), ISBLANK(Cancellation_Reason__c))), AND(ISPICKVAL(Email_Status__c, "Sent"), ISBLANK(Email_Sent_At__c)), AND(ISPICKVAL(Email_Status__c, "Error"), ISBLANK(Email_Error__c)))]]></errorConditionFormula>
+<fullName>State_Details_Required</fullName><active>true</active><description
+  >Complete the voucher state and email audit details.</description><errorMessage
+  >Complete the voucher state and email audit details.</errorMessage><errorConditionFormula
+  ><![CDATA[OR(AND(ISPICKVAL(Status__c, "Redeemed"), OR(ISBLANK(Redeemed_At__c), ISBLANK(Redeemed_By__c), ISBLANK(Service_Location__c), ISBLANK(Service_Order_Number__c))), AND(ISPICKVAL(Status__c, "Cancelled"), OR(ISBLANK(Cancelled_At__c), ISBLANK(Cancellation_Reason__c))), AND(ISPICKVAL(Email_Status__c, "Sent"), ISBLANK(Email_Sent_At__c)), AND(ISPICKVAL(Email_Status__c, "Error"), ISBLANK(Email_Error__c)))]]></errorConditionFormula>
 </ValidationRule>

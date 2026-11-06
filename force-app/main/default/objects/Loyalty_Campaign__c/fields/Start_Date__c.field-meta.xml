@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-<fullName>Start_Date__c</fullName><description>Start Date for the EneOil loyalty program.</description><label>Start Date</label><trackHistory>true</trackHistory><type>Date</type>
+<fullName>Start_Date__c</fullName><description>Start Date for the EneOil loyalty program.</description><inlineHelpText>First day of validity (inclusive), evaluated by the purchase date in Europe/Prague. Cannot be changed once the campaign has awarded points.</inlineHelpText><label>Start Date</label><trackHistory>true</trackHistory><type>Date</type>
 </CustomField>

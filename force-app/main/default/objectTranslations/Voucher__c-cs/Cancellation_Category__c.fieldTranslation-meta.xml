@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Proč byl voucher zrušen. Volitelný komentář je v poli Důvod zrušení / komentář.</help>
+    <label>Kategorie zrušení</label>
+    <name>Cancellation_Category__c</name>
+    <picklistValues>
+        <masterLabel>Member Request</masterLabel>
+        <translation>Na žádost člena</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Issued in Error</masterLabel>
+        <translation>Chybné vydání</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partner Unavailable</masterLabel>
+        <translation>Partner nemůže poskytnout</translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Program or Partnership Ended</masterLabel>
+        <translation>Ukončení programu nebo partnerství</translation>
+    </picklistValues>
+</CustomFieldTranslation>

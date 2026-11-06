@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help>Čerpat lze jen aktivní odměnu. Deaktivace neruší již vydané vouchery. Vyžaduje vyplněný popis.</help>
+    <label>Aktivní</label>
+    <name>Is_Active__c</name>
+</CustomFieldTranslation>

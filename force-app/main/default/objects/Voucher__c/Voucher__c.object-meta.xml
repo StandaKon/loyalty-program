@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+<actionOverrides><actionName>View</actionName><comment>Loyalty back-office record page (B5)</comment><content>Loyalty_Voucher_Record_Page</content><formFactor>Large</formFactor><skipRecordTypeSelect>false</skipRecordTypeSelect><type>Flexipage</type></actionOverrides>
 <deploymentStatus>Deployed</deploymentStatus><description>Voucher records for EneOil Klub. See the B1 data model design.</description><enableHistory>true</enableHistory><enableReports>true</enableReports><enableSearch>true</enableSearch><externalSharingModel>Private</externalSharingModel><label>Voucher</label><nameField><displayFormat>VCH-{00000000}</displayFormat><label>Voucher Number</label><startingNumber>1</startingNumber><type>AutoNumber</type></nameField><pluralLabel>Vouchers</pluralLabel><sharingModel>Private</sharingModel><visibility>Public</visibility>
 </CustomObject>
