@@ -96,14 +96,35 @@ Implement a bulk-safe and idempotent engine that validates loyalty transactions,
 | OP-07 | Apex via trigger-actions-framework (trigger action + service + selectors). Reason: bulk 5 000 transactions, idempotency via unique keys, full unit-test coverage of T01–T25. Campaigns and rates stay configurable as records/CMDT. | Stanislav Konopásek, 2026-11-06 |
 | Q10 | Multiple multipliers: each calculated separately from base points, results summed (order-independent). | Stanislav Konopásek, 2026-11-06 |
 | Zero bonus | A matched campaign with a 0-point result (e.g. T04) still creates a 0-point ledger entry, so campaign performance reporting (FR-34) counts every hit. | Stanislav Konopásek, 2026-11-06 |
-| Errors & retry | Statuses `New → Processed / Error`. An *Error* transaction is saved with a reason, can be corrected and is reprocessed on save. A *Processed* transaction is locked; corrections go through storno or manual adjustment. | Stanislav Konopásek, 2026-11-06 |
+| Errors & retry | Statuses `Pending → Processed / Error` (names per B1). An *Error* transaction is saved with a reason, can be corrected and is reprocessed on save. A *Processed* transaction is locked; corrections go through storno or manual adjustment. | Stanislav Konopásek, 2026-11-06 |
 | Campaign change | Changes to a campaign apply only to transactions processed afterwards; already awarded points are never recalculated. | Stanislav Konopásek, 2026-11-06 |
 | Backdated / future dates | Campaign eligibility by purchase date (Europe/Prague), regardless of import time; no backdating limit (historic seed data in B4). Future-dated purchase → *Error*. Simultaneous transactions: balance is a roll-up, so no shared counter is updated concurrently. | Stanislav Konopásek, 2026-11-06 |
 
+**Alignment with B1 data model** ([data-model-config.md](../B1-data-model-config/data-model-config.md)): statuses are `Pending / Processed / Error`; ledger entry types `PurchaseBase` / `CampaignBonus`; unique keys `TX:<id>:BASE` and `TX:<id>:CAM:<campaignId>`; campaign snapshot copied to `Applied_*` fields. An unknown member number is rejected by the import itself (required lookup), not stored as *Error* (B1 §4.3).
+
 ### 3. Implementation Steps
 
-_List Apex/Flow, metadata, security, test, and deployment steps in execution order._
+1. **Prerequisite (B1, owned by the B1 colleague):** deploy fields of `Account` (`Member_Number__c`, `Membership_Status__c`, `Joined_At__c`, `Points_Balance__c` roll-up), `Loyalty_Transaction__c`, `Loyalty_Campaign__c` and `Point_Ledger__c` (incl. `Applied_*`) as specified in B1 §4. In the `LOYALTY` org only object shells exist today.
+2. **Framework:** trigger-actions-framework, `dml` and `enehano-logger` are not installed in the org → plain trigger + handler, native `Database.*` DML with explicit `AccessLevel`; processing errors are stored on the transaction instead of logged (decision 2026-11-06).
+3. **Apex components** (done, see §4).
+4. **Deploy** B2 metadata after step 1 and run `PointsCalculatorTest`, `LoyaltyTransactionServiceTest`.
+5. **Hand-over:** B3 imports into `Loyalty_Transaction__c` (upsert is not allowed for idempotency – plain insert); B4 extends tests to T23–T25 with seed data; B5 adds a list view of *Error* transactions.
 
 ### 4. Implementation and Test Results
 
-_Record components, test runs, coverage, results, deviations, and follow-up work._
+| Component | Path | Purpose |
+| --- | --- | --- |
+| `LoyaltyTransactionTrigger` | `triggers/` | Routing only (before/after insert and update) |
+| `LoyaltyTransactionTriggerHandler` | `classes/triggerActions/` | Dispatches trigger contexts; `without sharing` (server-side engine) |
+| `LoyaltyTransactionService` | `classes/services/` | Validation, status, points breakdown (before save); ledger entries (after save); lock of processed purchases |
+| `PointsCalculator` | `classes/services/` | Pure calculation of base points and campaign bonuses (floor, Europe/Prague purchase day) |
+| `AccountSelector`, `LoyaltyCampaignSelector`, `LoyaltySettingsSelector` | `classes/selectors/` | SOQL / CMDT access, `WITH SYSTEM_MODE` |
+| Custom Labels `Loyalty_Tx_Error_*` | `labels/` | Error reasons stored in `Processing_Error__c` (English base; Czech translation is follow-up) |
+| `PointsCalculatorTest`, `LoyaltyTransactionServiceTest`, `LoyaltyTestDataFactory` | `classes/` | T01–T07, T10, T20, T21, multi-multiplier, date boundaries, retry, lock, bulk 251, invalid settings |
+
+**Test execution:** not run yet – the B1 fields do not exist in the `LOYALTY` org, so the code cannot be compiled there.
+
+**Follow-up:**
+- Point_Ledger__c immutability (block update/delete) – B1 §6, not part of this change.
+- If B1 adds a validation rule for `fuel + other = total`, an inconsistent row is rejected by the import instead of being stored as *Error*; the engine check remains as a safety net.
+- Czech translations of the error labels.
