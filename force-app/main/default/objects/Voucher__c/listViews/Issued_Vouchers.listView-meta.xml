@@ -14,5 +14,5 @@
         <operation>equals</operation>
         <value>Issued</value>
     </filters>
-    <label>Issued Vouchers</label>
+    <label>Vydané vouchery</label>
 </ListView>

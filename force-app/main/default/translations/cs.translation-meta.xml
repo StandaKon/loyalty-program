@@ -236,6 +236,218 @@
         <label>Body celkem</label>
         <name>Loyalty_BO_Sim_Total_Points</name>
     </customLabels>
+    <customLabels><label>Zablokovaný nebo zrušený člen nemůže čerpat odměny.</label><name>Loyalty_Reward_Error_Member_Inactive</name></customLabels>
+    <customLabels><label>Požadavek na vydání není platný. Obnov stránku a zkus to znovu.</label><name>Loyalty_Reward_Error_Invalid_Request</name></customLabels>
+    <customLabels><label>Tahle odměna už není dostupná.</label><name>Loyalty_Reward_Error_Unavailable</name></customLabels>
+    <customLabels><label>Na tuhle odměnu ti chybí {0} bodů.</label><name>Loyalty_Reward_Error_Insufficient_Balance</name></customLabels>
+    <customLabels><label>Unikátní voucher se nepodařilo vystavit. Zkus to později.</label><name>Loyalty_Reward_Error_Code_Generation</name></customLabels>
+    <customLabels><label>Přihlášený uživatel není propojený s členem programu.</label><name>Loyalty_Reward_Error_Not_Member</name></customLabels>
+    <customLabels><label>Zadej platný kód voucheru.</label><name>Loyalty_Voucher_Error_Invalid_Code</name></customLabels>
+    <customLabels><label>Kód voucheru jsme nenašli.</label><name>Loyalty_Voucher_Error_Not_Found</name></customLabels>
+    <customLabels><label>Uplatnit lze jen aktivní voucher.</label><name>Loyalty_Voucher_Error_Not_Active</name></customLabels>
+    <customLabels><label>Zadej provozovnu EneServis a číslo zakázky.</label><name>Loyalty_Voucher_Error_Redemption_Details</name></customLabels>
+    <customLabels><label>Člen nemá vyplněnou e-mailovou adresu.</label><name>Loyalty_Voucher_Email_Missing_Address</name></customLabels>
+    <customLabels><label>E-mail s voucherem se nepodařilo odeslat.</label><name>Loyalty_Voucher_Email_Unknown_Error</name></customLabels>
+    <customLabels><label>Tvůj voucher: {0}</label><name>Loyalty_Voucher_Email_Subject</name></customLabels>
+    <customLabels><label>Voucher je tvůj</label><name>Loyalty_Voucher_Email_Heading</name></customLabels>
+    <customLabels><label>Získal jsi odměnu {0}.</label><name>Loyalty_Voucher_Email_Intro</name></customLabels>
+    <customLabels><label>Kód nadiktuj při objednání nebo při příjmu auta v EneServisu.</label><name>Loyalty_Voucher_Email_Instructions</name></customLabels>
+    <customLabels><label>Cena: {0} bodů. Zbývá ti {1} bodů.</label><name>Loyalty_Voucher_Email_Points</name></customLabels>
+    <customLabels><label>Jeden voucher lze použít jednou, na jednu zakázku a v plné výši. Nemá expiraci a nelze ho vyměnit za peníze.</label><name>Loyalty_Voucher_Email_Terms</name></customLabels>
+    <customLabels><label>Odměny</label><name>Loyalty_Rewards_Title</name></customLabels>
+    <customLabels><label>Body, které využiješ. Vyměň je za voucher do autoservisu EneServis.</label><name>Loyalty_Rewards_Intro</name></customLabels>
+    <customLabels><label>Tvůj zůstatek</label><name>Loyalty_Rewards_Balance</name></customLabels>
+    <customLabels><label>Hodnota {0} Kč</label><name>Loyalty_Rewards_Value</name></customLabels>
+    <customLabels><label>Získat za {0} bodů</label><name>Loyalty_Rewards_Redeem</name></customLabels>
+    <customLabels><label>Chybí ti {0} bodů</label><name>Loyalty_Rewards_Missing</name></customLabels>
+    <customLabels><label>Vystavuji voucher…</label><name>Loyalty_Rewards_Processing</name></customLabels>
+    <customLabels><label>Voucher je tvůj. Kód: {0}. Zbývá ti {1} bodů.</label><name>Loyalty_Rewards_Success</name></customLabels>
+    <customLabels><label>Teď není dostupná žádná odměna.</label><name>Loyalty_Rewards_Empty</name></customLabels>
+    <customLabels><label>Moje vouchery</label><name>Loyalty_Vouchers_Title</name></customLabels>
+    <customLabels><label>Všechny tvoje vouchery na jednom místě. Aktivní jsou nahoře.</label><name>Loyalty_Vouchers_Intro</name></customLabels>
+    <customLabels><label>Zatím tu žádný voucher není.</label><name>Loyalty_Vouchers_Empty</name></customLabels>
+    <customLabels><label>Zkopírovat kód</label><name>Loyalty_Vouchers_Copy</name></customLabels>
+    <customLabels><label>Kód voucheru je zkopírovaný.</label><name>Loyalty_Vouchers_Copied</name></customLabels>
+    <customLabels><label>Ověřit voucher</label><name>Loyalty_Voucher_Verify_Title</name></customLabels>
+    <customLabels><label>Kód voucheru</label><name>Loyalty_Voucher_Verify_Code</name></customLabels>
+    <customLabels><label>Vyhledat voucher</label><name>Loyalty_Voucher_Verify_Search</name></customLabels>
+    <customLabels><label>Voucher je platný.</label><name>Loyalty_Voucher_Verify_Valid</name></customLabels>
+    <customLabels><label>Provozovna EneServis</label><name>Loyalty_Voucher_Verify_Location</name></customLabels>
+    <customLabels><label>Číslo servisní zakázky</label><name>Loyalty_Voucher_Verify_Order</name></customLabels>
+    <customLabels><label>Označit jako uplatněný</label><name>Loyalty_Voucher_Verify_Redeem</name></customLabels>
+    <customLabels><label>Voucher byl označený jako uplatněný.</label><name>Loyalty_Voucher_Verify_Success</name></customLabels>
+    <customLabels>
+        <label>Přehled programu</label>
+        <name>Loyalty_Dash_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Období</label>
+        <name>Loyalty_Dash_Period</name>
+    </customLabels>
+    <customLabels>
+        <label>Tento měsíc</label>
+        <name>Loyalty_Dash_This_Month</name>
+    </customLabels>
+    <customLabels>
+        <label>Minulý měsíc</label>
+        <name>Loyalty_Dash_Last_Month</name>
+    </customLabels>
+    <customLabels>
+        <label>Posledních 30 dní</label>
+        <name>Loyalty_Dash_Last_30_Days</name>
+    </customLabels>
+    <customLabels>
+        <label>Tento rok</label>
+        <name>Loyalty_Dash_This_Year</name>
+    </customLabels>
+    <customLabels>
+        <label>Obnovit</label>
+        <name>Loyalty_Dash_Refresh</name>
+    </customLabels>
+    <customLabels>
+        <label>Aktualizováno {0}</label>
+        <name>Loyalty_Dash_Updated</name>
+    </customLabels>
+    <customLabels>
+        <label>oproti předchozímu období</label>
+        <name>Loyalty_Dash_Vs_Previous</name>
+    </customLabels>
+    <customLabels>
+        <label>aktuální stav</label>
+        <name>Loyalty_Dash_Current_State</name>
+    </customLabels>
+    <customLabels>
+        <label>Aktivní členové</label>
+        <name>Loyalty_Dash_Kpi_Active_Members</name>
+    </customLabels>
+    <customLabels>
+        <label>Noví členové</label>
+        <name>Loyalty_Dash_Kpi_New_Members</name>
+    </customLabels>
+    <customLabels>
+        <label>Připsané body</label>
+        <name>Loyalty_Dash_Kpi_Points_Awarded</name>
+    </customLabels>
+    <customLabels>
+        <label>Čerpané body</label>
+        <name>Loyalty_Dash_Kpi_Points_Redeemed</name>
+    </customLabels>
+    <customLabels>
+        <label>Míra čerpání</label>
+        <name>Loyalty_Dash_Kpi_Redemption_Rate</name>
+    </customLabels>
+    <customLabels>
+        <label>Vydané vouchery</label>
+        <name>Loyalty_Dash_Kpi_Vouchers_Issued</name>
+    </customLabels>
+    <customLabels>
+        <label>Aktivní vouchery</label>
+        <name>Loyalty_Dash_Kpi_Active_Vouchers</name>
+    </customLabels>
+    <customLabels>
+        <label>Rozpočet voucherů {0}</label>
+        <name>Loyalty_Dash_Kpi_Budget</name>
+    </customLabels>
+    <customLabels>
+        <label>z {0}</label>
+        <name>Loyalty_Dash_Budget_Of</name>
+    </customLabels>
+    <customLabels>
+        <label>Rozpočet není nastaven</label>
+        <name>Loyalty_Dash_Budget_Missing</name>
+    </customLabels>
+    <customLabels>
+        <label>K vyřízení</label>
+        <name>Loyalty_Dash_Queue_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Transakce s chybou</label>
+        <name>Loyalty_Dash_Queue_Tx_Errors</name>
+    </customLabels>
+    <customLabels>
+        <label>Nezpracované transakce</label>
+        <name>Loyalty_Dash_Queue_Pending</name>
+    </customLabels>
+    <customLabels>
+        <label>Vouchery s chybou e-mailu</label>
+        <name>Loyalty_Dash_Queue_Email_Errors</name>
+    </customLabels>
+    <customLabels>
+        <label>Vše vyřízeno</label>
+        <name>Loyalty_Dash_Queue_All_Clear</name>
+    </customLabels>
+    <customLabels>
+        <label>Body za posledních 6 měsíců</label>
+        <name>Loyalty_Dash_Chart_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Připsané</label>
+        <name>Loyalty_Dash_Chart_Awarded</name>
+    </customLabels>
+    <customLabels>
+        <label>Čerpané</label>
+        <name>Loyalty_Dash_Chart_Redeemed</name>
+    </customLabels>
+    <customLabels>
+        <label>Měsíc</label>
+        <name>Loyalty_Dash_Chart_Month</name>
+    </customLabels>
+    <customLabels>
+        <label>Zobrazit tabulku</label>
+        <name>Loyalty_Dash_Show_Table</name>
+    </customLabels>
+    <customLabels>
+        <label>Zobrazit graf</label>
+        <name>Loyalty_Dash_Show_Chart</name>
+    </customLabels>
+    <customLabels>
+        <label>Nejúspěšnější kampaně</label>
+        <name>Loyalty_Dash_Campaigns_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Kampaň</label>
+        <name>Loyalty_Dash_Campaign</name>
+    </customLabels>
+    <customLabels>
+        <label>Splnění</label>
+        <name>Loyalty_Dash_Hits</name>
+    </customLabels>
+    <customLabels>
+        <label>Členové</label>
+        <name>Loyalty_Dash_Members</name>
+    </customLabels>
+    <customLabels>
+        <label>Bonusové body</label>
+        <name>Loyalty_Dash_Bonus_Points</name>
+    </customLabels>
+    <customLabels>
+        <label>V tomto období nebyly připsány žádné bonusy z kampaní.</label>
+        <name>Loyalty_Dash_Campaigns_Empty</name>
+    </customLabels>
+    <customLabels>
+        <label>Poslední ruční úpravy</label>
+        <name>Loyalty_Dash_Adjustments_Title</name>
+    </customLabels>
+    <customLabels>
+        <label>Body</label>
+        <name>Loyalty_Dash_Points</name>
+    </customLabels>
+    <customLabels>
+        <label>Kategorie</label>
+        <name>Loyalty_Dash_Category</name>
+    </customLabels>
+    <customLabels>
+        <label>Provedl</label>
+        <name>Loyalty_Dash_Created_By</name>
+    </customLabels>
+    <customLabels>
+        <label>Datum</label>
+        <name>Loyalty_Dash_Date</name>
+    </customLabels>
+    <customLabels>
+        <label>Zatím žádné ruční úpravy.</label>
+        <name>Loyalty_Dash_Adjustments_Empty</name>
+    </customLabels>
     <quickActions>
         <label>Upravit body</label>
         <name>Account.Manual_Point_Adjustment</name>

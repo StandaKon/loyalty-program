@@ -45,4 +45,15 @@ public inherited sharing class AccountSelector {
         ];
         return members.isEmpty() ? null : members[0];
     }
+
+    public Account getMemberWithEmailById(Id memberId) {
+        List<Account> members = [
+            SELECT Id, Name, PersonEmail, Member_Number__c, Membership_Status__c, Points_Balance__c
+            FROM Account
+            WHERE Id = :memberId AND IsPersonAccount = TRUE
+            WITH SYSTEM_MODE
+            LIMIT 1
+        ];
+        return members.isEmpty() ? null : members[0];
+    }
 }

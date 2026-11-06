@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Availability_Dates_Valid</fullName>
+    <active>true</active>
+    <description>The optional reward availability end date cannot precede its start date.</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Available_From__c)), NOT(ISBLANK(Available_Until__c)), Available_Until__c &lt; Available_From__c)</errorConditionFormula>
+    <errorMessage>Available Until cannot be earlier than Available From.</errorMessage>
+</ValidationRule>

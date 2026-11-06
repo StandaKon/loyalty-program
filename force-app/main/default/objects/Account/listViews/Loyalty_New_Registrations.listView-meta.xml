@@ -18,5 +18,5 @@
         <operation>equals</operation>
         <value>LAST_N_DAYS:7</value>
     </filters>
-    <label>New Registrations (Last 7 Days)</label>
+    <label>Nové registrace (posledních 7 dní)</label>
 </ListView>

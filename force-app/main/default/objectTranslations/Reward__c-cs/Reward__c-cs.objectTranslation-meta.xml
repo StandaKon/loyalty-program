@@ -10,6 +10,7 @@
     </caseValues>
     <gender>Feminine</gender>
     <nameFieldLabel>Název odměny</nameFieldLabel>
+    <validationRules><errorMessage>Datum Dostupná do nesmí být dříve než Dostupná od.</errorMessage><name>Availability_Dates_Valid</name></validationRules>
     <validationRules>
         <errorMessage>Vyplňte všechna povinná pole programu.</errorMessage>
         <name>Required_Program_Fields</name>

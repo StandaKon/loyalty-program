@@ -472,4 +472,388 @@
         <shortDescription>Back office: Sim Total Points</shortDescription>
         <value>Total points</value>
     </labels>
+    <labels><fullName>Loyalty_Reward_Error_Member_Inactive</fullName><categories>Loyalty,Rewards,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Rewards: inactive member</shortDescription><value>A blocked or cancelled member cannot redeem rewards.</value></labels>
+    <labels><fullName>Loyalty_Reward_Error_Invalid_Request</fullName><categories>Loyalty,Rewards,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Rewards: invalid request</shortDescription><value>The redemption request is invalid. Reload the page and try again.</value></labels>
+    <labels><fullName>Loyalty_Reward_Error_Unavailable</fullName><categories>Loyalty,Rewards,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Rewards: unavailable</shortDescription><value>This reward is no longer available.</value></labels>
+    <labels><fullName>Loyalty_Reward_Error_Insufficient_Balance</fullName><categories>Loyalty,Rewards,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Rewards: insufficient balance</shortDescription><value>You need {0} more points for this reward.</value></labels>
+    <labels><fullName>Loyalty_Reward_Error_Code_Generation</fullName><categories>Loyalty,Rewards,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Rewards: code generation</shortDescription><value>We could not issue a unique voucher. Try again later.</value></labels>
+    <labels><fullName>Loyalty_Reward_Error_Not_Member</fullName><categories>Loyalty,Rewards,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Rewards: no member context</shortDescription><value>The signed-in user is not linked to a loyalty member.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Error_Invalid_Code</fullName><categories>Loyalty,Vouchers,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Vouchers: invalid code</shortDescription><value>Enter a valid voucher code.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Error_Not_Found</fullName><categories>Loyalty,Vouchers,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Vouchers: not found</shortDescription><value>We could not find this voucher code.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Error_Not_Active</fullName><categories>Loyalty,Vouchers,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Vouchers: not active</shortDescription><value>Only an active voucher can be redeemed.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Error_Redemption_Details</fullName><categories>Loyalty,Vouchers,Error</categories><language>en_US</language><protected>false</protected><shortDescription>Vouchers: redemption details</shortDescription><value>Enter the EneServis location and service order number.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Email_Missing_Address</fullName><categories>Loyalty,Vouchers,Email</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher email: missing address</shortDescription><value>The member does not have an email address.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Email_Unknown_Error</fullName><categories>Loyalty,Vouchers,Email</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher email: unknown error</shortDescription><value>The voucher email could not be sent.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Email_Subject</fullName><categories>Loyalty,Vouchers,Email</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher email subject</shortDescription><value>Your voucher: {0}</value></labels>
+    <labels><fullName>Loyalty_Voucher_Email_Heading</fullName><categories>Loyalty,Vouchers,Email</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher email heading</shortDescription><value>The voucher is yours</value></labels>
+    <labels><fullName>Loyalty_Voucher_Email_Intro</fullName><categories>Loyalty,Vouchers,Email</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher email intro</shortDescription><value>You have redeemed the reward {0}.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Email_Instructions</fullName><categories>Loyalty,Vouchers,Email</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher email instructions</shortDescription><value>Give the code when booking or when your vehicle is accepted at EneServis.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Email_Points</fullName><categories>Loyalty,Vouchers,Email</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher email points</shortDescription><value>Price: {0} points. Remaining balance: {1} points.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Email_Terms</fullName><categories>Loyalty,Vouchers,Email</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher email terms</shortDescription><value>One voucher can be used once for one service order and only in full. It has no expiry and cannot be exchanged for cash.</value></labels>
+    <labels><fullName>Loyalty_Rewards_Title</fullName><categories>Loyalty,Rewards,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Rewards title</shortDescription><value>Rewards</value></labels>
+    <labels><fullName>Loyalty_Rewards_Intro</fullName><categories>Loyalty,Rewards,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Rewards intro</shortDescription><value>Points you can use. Exchange them for an EneServis voucher.</value></labels>
+    <labels><fullName>Loyalty_Rewards_Balance</fullName><categories>Loyalty,Rewards,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Rewards balance</shortDescription><value>Your balance</value></labels>
+    <labels><fullName>Loyalty_Rewards_Value</fullName><categories>Loyalty,Rewards,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Reward value</shortDescription><value>Value {0} CZK</value></labels>
+    <labels><fullName>Loyalty_Rewards_Redeem</fullName><categories>Loyalty,Rewards,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Redeem reward action</shortDescription><value>Redeem for {0} points</value></labels>
+    <labels><fullName>Loyalty_Rewards_Missing</fullName><categories>Loyalty,Rewards,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Missing points</shortDescription><value>You need {0} more points</value></labels>
+    <labels><fullName>Loyalty_Rewards_Processing</fullName><categories>Loyalty,Rewards,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Issuing voucher</shortDescription><value>Issuing voucher…</value></labels>
+    <labels><fullName>Loyalty_Rewards_Success</fullName><categories>Loyalty,Rewards,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Reward success</shortDescription><value>The voucher is yours. Code: {0}. Remaining balance: {1} points.</value></labels>
+    <labels><fullName>Loyalty_Rewards_Empty</fullName><categories>Loyalty,Rewards,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Empty reward catalogue</shortDescription><value>No rewards are currently available.</value></labels>
+    <labels><fullName>Loyalty_Vouchers_Title</fullName><categories>Loyalty,Vouchers,UI</categories><language>en_US</language><protected>false</protected><shortDescription>My vouchers title</shortDescription><value>My vouchers</value></labels>
+    <labels><fullName>Loyalty_Vouchers_Intro</fullName><categories>Loyalty,Vouchers,UI</categories><language>en_US</language><protected>false</protected><shortDescription>My vouchers intro</shortDescription><value>All your vouchers in one place. Active vouchers are shown first.</value></labels>
+    <labels><fullName>Loyalty_Vouchers_Empty</fullName><categories>Loyalty,Vouchers,UI</categories><language>en_US</language><protected>false</protected><shortDescription>No vouchers</shortDescription><value>You do not have a voucher yet.</value></labels>
+    <labels><fullName>Loyalty_Vouchers_Copy</fullName><categories>Loyalty,Vouchers,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Copy voucher code</shortDescription><value>Copy code</value></labels>
+    <labels><fullName>Loyalty_Vouchers_Copied</fullName><categories>Loyalty,Vouchers,UI</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher code copied</shortDescription><value>Voucher code copied.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Verify_Title</fullName><categories>Loyalty,Vouchers,Operator</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher verification title</shortDescription><value>Verify voucher</value></labels>
+    <labels><fullName>Loyalty_Voucher_Verify_Code</fullName><categories>Loyalty,Vouchers,Operator</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher code field</shortDescription><value>Voucher code</value></labels>
+    <labels><fullName>Loyalty_Voucher_Verify_Search</fullName><categories>Loyalty,Vouchers,Operator</categories><language>en_US</language><protected>false</protected><shortDescription>Find voucher action</shortDescription><value>Find voucher</value></labels>
+    <labels><fullName>Loyalty_Voucher_Verify_Valid</fullName><categories>Loyalty,Vouchers,Operator</categories><language>en_US</language><protected>false</protected><shortDescription>Valid voucher</shortDescription><value>The voucher is valid.</value></labels>
+    <labels><fullName>Loyalty_Voucher_Verify_Location</fullName><categories>Loyalty,Vouchers,Operator</categories><language>en_US</language><protected>false</protected><shortDescription>Service location field</shortDescription><value>EneServis location</value></labels>
+    <labels><fullName>Loyalty_Voucher_Verify_Order</fullName><categories>Loyalty,Vouchers,Operator</categories><language>en_US</language><protected>false</protected><shortDescription>Service order field</shortDescription><value>Service order number</value></labels>
+    <labels><fullName>Loyalty_Voucher_Verify_Redeem</fullName><categories>Loyalty,Vouchers,Operator</categories><language>en_US</language><protected>false</protected><shortDescription>Redeem voucher action</shortDescription><value>Mark as redeemed</value></labels>
+    <labels><fullName>Loyalty_Voucher_Verify_Success</fullName><categories>Loyalty,Vouchers,Operator</categories><language>en_US</language><protected>false</protected><shortDescription>Voucher redeemed</shortDescription><value>The voucher was marked as redeemed.</value></labels>
+    <labels>
+        <fullName>Loyalty_Dash_Title</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Program Overview</shortDescription>
+        <value>Program Overview</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Period</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Period</shortDescription>
+        <value>Period</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_This_Month</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: This month</shortDescription>
+        <value>This month</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Last_Month</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Last month</shortDescription>
+        <value>Last month</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Last_30_Days</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Last 30 days</shortDescription>
+        <value>Last 30 days</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_This_Year</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: This year</shortDescription>
+        <value>This year</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Refresh</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Refresh</shortDescription>
+        <value>Refresh</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Updated</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Updated {0}</shortDescription>
+        <value>Updated {0}</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Vs_Previous</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: vs. previous period</shortDescription>
+        <value>vs. previous period</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Current_State</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: current state</shortDescription>
+        <value>current state</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Kpi_Active_Members</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Active members</shortDescription>
+        <value>Active members</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Kpi_New_Members</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: New members</shortDescription>
+        <value>New members</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Kpi_Points_Awarded</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Points awarded</shortDescription>
+        <value>Points awarded</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Kpi_Points_Redeemed</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Points redeemed</shortDescription>
+        <value>Points redeemed</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Kpi_Redemption_Rate</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Redemption rate</shortDescription>
+        <value>Redemption rate</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Kpi_Vouchers_Issued</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Vouchers issued</shortDescription>
+        <value>Vouchers issued</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Kpi_Active_Vouchers</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Active vouchers</shortDescription>
+        <value>Active vouchers</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Kpi_Budget</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Voucher budget {0}</shortDescription>
+        <value>Voucher budget {0}</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Budget_Of</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: of {0}</shortDescription>
+        <value>of {0}</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Budget_Missing</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: No budget set</shortDescription>
+        <value>No budget set</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Queue_Title</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: To Do</shortDescription>
+        <value>To Do</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Queue_Tx_Errors</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Transactions with error</shortDescription>
+        <value>Transactions with error</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Queue_Pending</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Pending transactions</shortDescription>
+        <value>Pending transactions</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Queue_Email_Errors</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Voucher e-mail errors</shortDescription>
+        <value>Voucher e-mail errors</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Queue_All_Clear</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: All clear</shortDescription>
+        <value>All clear</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Chart_Title</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Points over the last 6 months</shortDescription>
+        <value>Points over the last 6 months</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Chart_Awarded</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Awarded</shortDescription>
+        <value>Awarded</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Chart_Redeemed</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Redeemed</shortDescription>
+        <value>Redeemed</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Chart_Month</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Month</shortDescription>
+        <value>Month</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Show_Table</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Show table</shortDescription>
+        <value>Show table</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Show_Chart</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Show chart</shortDescription>
+        <value>Show chart</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Campaigns_Title</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Top campaigns</shortDescription>
+        <value>Top campaigns</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Campaign</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Campaign</shortDescription>
+        <value>Campaign</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Hits</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Hits</shortDescription>
+        <value>Hits</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Members</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Members</shortDescription>
+        <value>Members</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Bonus_Points</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Bonus points</shortDescription>
+        <value>Bonus points</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Campaigns_Empty</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: No campaign bonuses in this period.</shortDescription>
+        <value>No campaign bonuses in this period.</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Adjustments_Title</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Recent manual adjustments</shortDescription>
+        <value>Recent manual adjustments</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Points</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Points</shortDescription>
+        <value>Points</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Category</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Category</shortDescription>
+        <value>Category</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Created_By</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: By</shortDescription>
+        <value>By</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Date</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: Date</shortDescription>
+        <value>Date</value>
+    </labels>
+    <labels>
+        <fullName>Loyalty_Dash_Adjustments_Empty</fullName>
+        <categories>Loyalty,BackOffice,Dashboard</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Dashboard: No manual adjustments yet.</shortDescription>
+        <value>No manual adjustments yet.</value>
+    </labels>
 </CustomLabels>

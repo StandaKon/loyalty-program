@@ -1,0 +1,160 @@
+<template>
+    <article class="dashboard">
+        <header class="dashboard__header">
+            <div>
+                <h2 class="dashboard__title">{labels.TITLE}</h2>
+                <p class="dashboard__meta">{periodRangeText} · {updatedText}</p>
+            </div>
+            <div class="dashboard__controls">
+                <lightning-radio-group
+                    name="period"
+                    label={labels.PERIOD}
+                    variant="label-hidden"
+                    type="button"
+                    options={periodOptions}
+                    value={period}
+                    onchange={handlePeriodChange}
+                ></lightning-radio-group>
+                <lightning-button-icon
+                    icon-name="utility:refresh"
+                    alternative-text={labels.REFRESH}
+                    title={labels.REFRESH}
+                    disabled={isRefreshing}
+                    onclick={handleRefresh}
+                ></lightning-button-icon>
+            </div>
+        </header>
+
+        <template lwc:if={errorMessage}>
+            <p class="loyalty-error slds-p-around_medium" role="alert">{errorMessage}</p>
+        </template>
+        <template lwc:if={isLoading}>
+            <div class="dashboard__loading">
+                <lightning-spinner alternative-text={labels.TITLE} size="medium"></lightning-spinner>
+            </div>
+        </template>
+
+        <template lwc:if={dashboard}>
+            <section class="kpis">
+                <template for:each={kpiTiles} for:item="tile">
+                    <div key={tile.key} class="kpi">
+                        <div class="kpi__head">
+                            <span class="kpi__icon"><lightning-icon icon-name={tile.icon} size="x-small"></lightning-icon></span>
+                            <span class="kpi__label">{tile.label}</span>
+                        </div>
+                        <p class="kpi__value">{tile.value}</p>
+                        <template lwc:if={tile.hasProgress}>
+                            <div class="kpi__progress" role="progressbar" aria-valuenow={tile.progress} aria-valuemin="0" aria-valuemax="100">
+                                <div class="kpi__progress-bar" style={tile.progressStyle}></div>
+                            </div>
+                        </template>
+                        <p class="kpi__footnote">
+                            <template lwc:if={tile.hasDelta}>
+                                <span class={tile.deltaClass}>
+                                    <lightning-icon icon-name={tile.deltaIcon} size="xx-small"></lightning-icon>
+                                    {tile.deltaText}
+                                </span>
+                            </template>
+                            {tile.footnote}
+                        </p>
+                    </div>
+                </template>
+            </section>
+
+            <section class="row">
+                <div class="panel panel_queue">
+                    <h3 class="panel__title">{labels.QUEUE_TITLE}</h3>
+                    <template lwc:if={isQueueClear}>
+                        <p class="queue__clear"><lightning-icon icon-name="utility:success" size="x-small"></lightning-icon> {labels.QUEUE_ALL_CLEAR}</p>
+                    </template>
+                    <ul class="queue">
+                        <template for:each={queueItems} for:item="item">
+                            <li key={item.key}>
+                                <button
+                                    class={item.itemClass}
+                                    data-object-api-name={item.objectApiName}
+                                    data-list-view-name={item.listViewName}
+                                    onclick={handleQueueClick}
+                                >
+                                    <lightning-icon icon-name={item.icon} size="x-small"></lightning-icon>
+                                    <span class="queue__label">{item.label}</span>
+                                    <span class="queue__count">{item.countText}</span>
+                                </button>
+                            </li>
+                        </template>
+                    </ul>
+                </div>
+                <div class="panel panel_chart">
+                    <c-najeto-points-chart trend={dashboard.trend}></c-najeto-points-chart>
+                </div>
+            </section>
+
+            <section class="row">
+                <div class="panel panel_half">
+                    <h3 class="panel__title">{labels.CAMPAIGNS_TITLE}</h3>
+                    <template lwc:if={hasTopCampaigns}>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">{labels.CAMPAIGN}</th>
+                                    <th scope="col" class="slds-text-align_right">{labels.HITS}</th>
+                                    <th scope="col" class="slds-text-align_right">{labels.MEMBERS}</th>
+                                    <th scope="col" class="slds-text-align_right">{labels.BONUS_POINTS}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={topCampaigns} for:item="row">
+                                    <tr key={row.campaignId}>
+                                        <th scope="row" class="slds-truncate">
+                                            <a href="#" data-record-id={row.campaignId} onclick={handleRecordClick}>{row.name}</a>
+                                        </th>
+                                        <td class="slds-text-align_right">{row.hitsText}</td>
+                                        <td class="slds-text-align_right">{row.membersText}</td>
+                                        <td class="slds-text-align_right loyalty-plus">{row.pointsText}</td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </template>
+                    <template lwc:else>
+                        <p class="panel__empty">{labels.CAMPAIGNS_EMPTY}</p>
+                    </template>
+                </div>
+                <div class="panel panel_half">
+                    <h3 class="panel__title">{labels.ADJUSTMENTS_TITLE}</h3>
+                    <template lwc:if={hasRecentAdjustments}>
+                        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">{labels.MEMBER}</th>
+                                    <th scope="col" class="slds-text-align_right">{labels.POINTS}</th>
+                                    <th scope="col">{labels.CATEGORY}</th>
+                                    <th scope="col">{labels.CREATED_BY}</th>
+                                    <th scope="col">{labels.DATE_LABEL}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <template for:each={recentAdjustments} for:item="row">
+                                    <tr key={row.id} title={row.reason}>
+                                        <th scope="row" class="slds-truncate">
+                                            <a href="#" data-record-id={row.memberId} onclick={handleRecordClick}>{row.memberName}</a>
+                                        </th>
+                                        <td class="slds-text-align_right"><span class={row.pointsClass}>{row.pointsText}</span></td>
+                                        <td class="slds-truncate">{row.category}</td>
+                                        <td class="slds-truncate">{row.createdBy}</td>
+                                        <td>
+                                            <lightning-formatted-date-time value={row.occurredAt} day="numeric" month="numeric" hour="2-digit" minute="2-digit" time-zone="Europe/Prague"></lightning-formatted-date-time>
+                                        </td>
+                                    </tr>
+                                </template>
+                            </tbody>
+                        </table>
+                    </template>
+                    <template lwc:else>
+                        <p class="panel__empty">{labels.ADJUSTMENTS_EMPTY}</p>
+                    </template>
+                </div>
+            </section>
+        </template>
+    </article>
+</template>

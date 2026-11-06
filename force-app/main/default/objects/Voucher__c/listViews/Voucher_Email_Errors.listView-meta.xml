@@ -14,5 +14,5 @@
         <operation>equals</operation>
         <value>Error</value>
     </filters>
-    <label>Voucher E-mail Errors</label>
+    <label>Vouchery s chybou e-mailu</label>
 </ListView>

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+<classAccesses><apexClass>VoucherVerificationController</apexClass><enabled>true</enabled></classAccesses>
 <description>Loyalty Service Operator. Additive permissions only; record access remains governed by sharing.</description><customPermissions><enabled>true</enabled><name>Loyalty_Service_Operator</name></customPermissions><hasActivationRequired>false</hasActivationRequired><label>Loyalty Service Operator</label>
 </PermissionSet>

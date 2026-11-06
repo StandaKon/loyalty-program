@@ -14,5 +14,5 @@
         <operation>equals</operation>
         <value>1</value>
     </filters>
-    <label>Active Campaigns</label>
+    <label>Aktivní kampaně</label>
 </ListView>

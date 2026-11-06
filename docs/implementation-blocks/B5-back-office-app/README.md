@@ -97,7 +97,7 @@ Provide loyalty managers and back-office users with a focused Lightning applicat
 | Member actions | Manual adjustment, Change membership status, Edit profile (+ Simulate purchase, see below). | Stanislav Konopásek, 2026-11-06 |
 | Voucher cancellation | Implemented fully in B5 (LWC quick action + Apex, Manager only); B8 reuses it. | Stanislav Konopásek, 2026-11-06 |
 | Cancellation reason | New field `Voucher__c.Cancellation_Category__c` (restricted picklist `MemberRequest`, `IssuedInError`, `PartnerUnavailable`, `ProgramEnded` per B8 spec), required; existing `Cancellation_Reason__c` becomes an optional comment. | Stanislav Konopásek, 2026-11-06 |
-| List views | Members: *New registrations (last 7 days)*, *Blocked members*. Transactions: *Transactions with error*, *Pending transactions*. Vouchers: *Issued vouchers*, *Voucher e-mail error*. Campaigns: *Active campaigns*. Rewards: *Active rewards*. Point Ledger: *Manual adjustments*. Shared with all internal users. | Stanislav Konopásek, 2026-11-06 |
+| List views | Members: *New registrations (last 7 days)*, *Blocked members*. Transactions: *Transactions with error*, *Pending transactions*. Vouchers: *Issued vouchers*, *Voucher e-mail error*. Campaigns: *Active campaigns*. Rewards: *Active rewards*. Point Ledger: *Manual adjustments*. Plus one "All …" view per object (*Všichni členové*, *Všechny transakce*, *Všechny pohyby bodů*, *Všechny kampaně*, *Všechny odměny*, *Všechny vouchery*). Labels in Czech. Shared with all internal users. | Stanislav Konopásek, 2026-11-06 |
 | Campaign/reward wizard | Not needed; standard record pages with Dynamic Forms sections. | Stanislav Konopásek, 2026-11-06 |
 | Campaign lock after first use | Apex before-update check: if any `CampaignBonus` ledger entry references the campaign, changes of `Condition_Field__c`, `Threshold__c`, `Reward_Type__c`, `Reward_Value__c`, `Start_Date__c`, `End_Date__c` are rejected. | Stanislav Konopásek, 2026-11-06 |
 | Validation rules | Existing B1 validation rules stay unchanged; no new VRs. | Stanislav Konopásek, 2026-11-06 |
@@ -157,11 +157,19 @@ Provide loyalty managers and back-office users with a focused Lightning applicat
 5. The compact layout must live under the `PersonAccount` object; an unused `Account.Loyalty_Member` compact layout remains in the org from a first deploy attempt (removal needs a destructive deploy).
 6. Manager-only actions (adjust points, change membership status, cancel voucher) share the custom permission `Loyalty_Adjust_Points`.
 7. When no comment is given, `Cancellation_Reason__c` and the refund `Reason__c` get the category label, because B1 validation rules require them.
-8. List view labels are English; all active org users have language `en_US`, so Czech translations show only after switching user language to Czech.
+8. List view labels are written directly in Czech (owner decision, exception from English base metadata). Other active org users keep language `en_US`, so Czech translations show only for users switched to Czech.
+10. Org theme `NAJETO` (BrandingSet + LightningExperienceTheme, activated via LightningExperienceSettings): brand colour `#FFA41B`, page background `#F6F7F8`, NAJETO logo. Applies org-wide; app Najeto now uses the org theme (`shouldOverrideOrgTheme=false`). Owner accepted white text on orange despite low contrast against the brand kit rule.
 9. The working directory also contained parallel B3 work (`PosTransactionService`, `PosTransactionRestResource`); it was deployed together with the B5 classes, and `LoyaltyTransactionSelector` now serves both blocks (`getById`, `getByPosTransactionId`).
 
+**Rerun in Czech (2026-11-06):** user Stanislav Konopásek switched to language `cs` and assigned `Loyalty_Back_Office` in addition to `Loyalty_Manager` (no dedicated persona users due to licences). Smoke test 14/14 PASS with Czech messages; custom permission, app visibility and Czech object, field, picklist and label translations verified. UI click-through is done by the owner.
+
+**Extension – manager home dashboard (approved 2026-11-06)**
+- Scope: KPI tiles, to-do queue, 6-month points chart, top campaigns and recent manual adjustments; period switch (this month / last month / last 30 days / this year) compared with the previous period of the same length; Europe/Prague business dates; home page as app default in Najeto (Tab override for `standard-home`).
+- Components: `LoyaltyDashboardSelector` (without sharing, aggregates only), `LoyaltyDashboardService`, `LoyaltyDashboardController` (cacheable); LWC `najetoManagerDashboard` + `najetoPointsChart` (SVG, legend, hover tooltip, table view; colours `#2D6E22` / `#E8901A` validated for CVD); FlexiPage `Najeto_Home_Page` (dashboard, list view cards *Transakce s chybou*, *Vydané vouchery*, *Nové registrace*, recent items); 43 dashboard Custom Labels with `cs` translations.
+- Verified: service returns data for all four periods in the org (≈22 SOQL per call).
+- **Pending:** `Loyalty_Manager` permission set (class access `LoyaltyDashboardController`) is not deployed, because the file now also contains parallel B8 field permissions (`Reward__c.Available_From__c`, `Available_Until__c`, `Voucher__c.Service_Location__c`, `Service_Order_Number__c`) for fields not yet in the org, placed before `applicationVisibilities` (invalid order). Deploy together with B8 after moving those lines below `description`. Users with `Loyalty_Back_Office` already have access.
+
 **Follow-up**
-- Create Back Office and Manager test users (or switch existing ones) and run the persona checks from Verification.
-- Switch back-office users to Czech language.
+- Persona separation (Back Office without Manager) can only be verified with a user holding `Loyalty_Back_Office` alone.
 - Consents LWC on the member page; optional destructive removal of `Account.Loyalty_Member` compact layout.
 - Seed data (B4): include rewards, a partner and vouchers so voucher cancellation can be demonstrated.

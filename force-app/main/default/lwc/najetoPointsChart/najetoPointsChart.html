@@ -1,0 +1,59 @@
+<template>
+    <div class="chart">
+        <div class="chart__header">
+            <h3 class="chart__title">{labels.TITLE}</h3>
+            <lightning-button variant="base" label={toggleLabel} onclick={handleToggle}></lightning-button>
+        </div>
+        <ul class="legend">
+            <li><span class="legend__swatch legend__swatch_awarded"></span>{labels.AWARDED}</li>
+            <li><span class="legend__swatch legend__swatch_redeemed"></span>{labels.REDEEMED}</li>
+        </ul>
+        <template lwc:if={isTableView}>
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_x-small">
+                <thead>
+                    <tr>
+                        <th scope="col">{labels.MONTH}</th>
+                        <th scope="col" class="slds-text-align_right">{labels.AWARDED}</th>
+                        <th scope="col" class="slds-text-align_right">{labels.REDEEMED}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <template for:each={rows} for:item="row">
+                        <tr key={row.key}>
+                            <th scope="row">{row.month}</th>
+                            <td class="slds-text-align_right">{row.awardedText}</td>
+                            <td class="slds-text-align_right">{row.redeemedText}</td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+        </template>
+        <template lwc:else>
+            <div class="plot" onmouseleave={handleLeave}>
+                <svg viewBox={viewBox} class="plot__svg" role="img" aria-label={labels.TITLE}>
+                    <template for:each={gridLines} for:item="line">
+                        <g key={line.key}>
+                            <line class="grid" x1={line.x1} x2={line.x2} y1={line.y} y2={line.y}></line>
+                            <text class="axis-label" x={line.labelX} y={line.labelY} text-anchor="end">{line.label}</text>
+                        </g>
+                    </template>
+                    <template for:each={groups} for:item="group">
+                        <g key={group.key}>
+                            <rect class={group.hitClass} x={group.hitX} y={group.hitY} width={group.hitWidth} height={group.hitHeight} data-index={group.index} onmouseenter={handleEnter} onfocus={handleEnter} tabindex="0" aria-label={group.ariaLabel}></rect>
+                            <path class="bar bar_awarded" d={group.awardedPath}></path>
+                            <path class="bar bar_redeemed" d={group.redeemedPath}></path>
+                            <text class="axis-label" x={group.labelX} y={group.labelY} text-anchor="middle">{group.month}</text>
+                        </g>
+                    </template>
+                </svg>
+                <template lwc:if={activeRow}>
+                    <div class="tooltip" style={tooltipStyle} role="status">
+                        <p class="tooltip__title">{activeRow.month}</p>
+                        <p><span class="legend__swatch legend__swatch_awarded"></span>{labels.AWARDED}: <strong>{activeRow.awardedText}</strong></p>
+                        <p><span class="legend__swatch legend__swatch_redeemed"></span>{labels.REDEEMED}: <strong>{activeRow.redeemedText}</strong></p>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>

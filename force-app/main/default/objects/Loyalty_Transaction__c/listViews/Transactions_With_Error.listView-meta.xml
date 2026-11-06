@@ -14,5 +14,5 @@
         <operation>equals</operation>
         <value>Error</value>
     </filters>
-    <label>Transactions with Error</label>
+    <label>Transakce s chybou</label>
 </ListView>

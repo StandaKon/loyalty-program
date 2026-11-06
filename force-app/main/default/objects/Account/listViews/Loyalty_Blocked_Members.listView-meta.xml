@@ -12,5 +12,5 @@
         <operation>equals</operation>
         <value>Blocked</value>
     </filters>
-    <label>Blocked Members</label>
+    <label>Blokovaní členové</label>
 </ListView>

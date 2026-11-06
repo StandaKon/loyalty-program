@@ -13,5 +13,5 @@
         <operation>equals</operation>
         <value>Pending</value>
     </filters>
-    <label>Pending Transactions</label>
+    <label>Nezpracované transakce</label>
 </ListView>

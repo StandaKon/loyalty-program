@@ -14,5 +14,5 @@
         <operation>equals</operation>
         <value>Adjustment</value>
     </filters>
-    <label>Manual Adjustments</label>
+    <label>Ruční úpravy bodů</label>
 </ListView>
