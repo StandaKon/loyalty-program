@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Signs_Valid</fullName><active>true</active><description>The points sign must match the entry type.</description><errorMessage>The points sign must match the entry type.</errorMessage><errorConditionFormula><![CDATA[OR(AND(OR(ISPICKVAL(Entry_Type__c, "PurchaseBase"), ISPICKVAL(Entry_Type__c, "CampaignBonus")), Points__c < 0), AND(OR(ISPICKVAL(Entry_Type__c, "ProfileBonus"), ISPICKVAL(Entry_Type__c, "MarketingBonus"), ISPICKVAL(Entry_Type__c, "Refund")), Points__c <= 0), AND(ISPICKVAL(Entry_Type__c, "Redemption"), Points__c >= 0), AND(ISPICKVAL(Entry_Type__c, "Adjustment"), Points__c = 0))]]></errorConditionFormula>
+</ValidationRule>

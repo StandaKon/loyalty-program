@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Issued_At__c</fullName><description>Issued At for the EneOil loyalty program.</description><label>Issued At</label><type>DateTime</type>
+</CustomField>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Applied_Reward_Type__c</fullName><description>Applied Reward Type for the EneOil loyalty program.</description><label>Applied Reward Type</label><type>Picklist</type><valueSet><restricted>true</restricted><valueSetDefinition><sorted>false</sorted><value><fullName>FixedBonus</fullName><default>false</default><label>FixedBonus</label></value><value><fullName>BaseMultiplier</fullName><default>false</default><label>BaseMultiplier</label></value></valueSetDefinition></valueSet>
+</CustomField>

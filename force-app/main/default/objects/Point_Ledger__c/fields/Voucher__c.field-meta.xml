@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Voucher__c</fullName><deleteConstraint>Restrict</deleteConstraint><description>Voucher for the EneOil loyalty program.</description><label>Voucher</label><referenceTo>Voucher__c</referenceTo><relationshipLabel>Point Entries</relationshipLabel><relationshipName>Point_Entries</relationshipName><type>Lookup</type>
+</CustomField>

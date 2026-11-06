@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+<fullName>Liters__c</fullName><description>Liters for the EneOil loyalty program.</description><label>Liters</label><precision>12</precision><scale>3</scale><type>Number</type>
+</CustomField>
